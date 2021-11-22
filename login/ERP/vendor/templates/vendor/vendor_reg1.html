@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vendor Registration</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="static/assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="static/assets/css/adminlte.min.css">
+
+</head>
+<!--<body class="hold-transition sidebar-mini">-->
+<!-- Site wrapper -->
+<div class="wrapper">
+  <!-- Content Wrapper. Contains page content -->
+  <!-- <div class="content-wrapper">
+ 
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Vendor Registration</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Vendor Registration</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Registration Form</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <form action="register" method="POST">
+              {% csrf_token %}
+            <div class="card-body">
+              <div class="form-group">
+                <label for="inputStatus">Types of service /proprietary of Busniness</label>
+                <select id="inputStatus" name="service_type" class="form-control custom-select">
+                  <option selected disabled>Select one</option>
+                  <option>Propreitorship</option>
+                  <option>partnership</option>
+                  <option>company</option>
+                  <option>individual</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="inputName">Firm / Company Name *</label>
+                <input type="text" id="inputName" name="company_name" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Name of authorized person *</label>
+                <input type="text" id="inputName" name="name_of_authorized" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Mobile number *</label>
+                <input type="text" id="inputName" name="mobile" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Email ID *</label>
+                <input type="text" id="inputName" name="email" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Please enter the captcha *</label>
+                <input type="text" id="inputName" class="form-control">
+              </div>
+              <div>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                <label for="vehicle3">The details given by me are true. ,</label><br><br>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <div class="col-md-6">
+          <div class="card card-secondary">
+            <div class="card-header">
+              <h3 class="card-title">CONTRACTOR REGISTRATION INSTRUCTIONS</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="worning">
+                {% for message in messages %}
+                <p style="color: red; font-size:13px;">{{message}}</p>
+                {% endfor %}
+              </div>
+            <div class="card-body">
+              <div class="form-group">
+                <article>
+                    <h3>Kindly register for empanelment with MPMKVVCL as contractor using your basic details</h3>
+                    <p></p>
+                    <ul>
+                        <li>Enter service type.</li>
+                        <li>Enter the name of the company or firm.</li>
+                        <li>Enter the full name of the contact person.</li>
+                        <li>Enter valid mobile number of the authorized person.</li>
+                        <li>Enter valid email id of the authorized person.</li>
+                        <li>Check your mail and SMS for login details.</li>
+                        <li>After filling the information, portal fee of Rs 2000 will have to be paid.</li>
+                        <li>Login and continue to next step.</li>
+                        <li>Note:- The person authorized by the company to process the activities of the company. </li>
+                    </ul>
+                    <span class="text-danger">Note: Enter valid email id and contact information for the contact.</span>
+                    <br>  <br>
+                                Check your mail and SMS for login details. Login and complete the details.
+                    <br> <br>  <br>
+                </article>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <input type="reset" value="Fix again" class="btn btn-secondary">
+          <!-- <input type="submit" value="Register" class="btn btn-success"> -->
+          <button type="submit" id="submit" class="btn-second btn-submit full-width">Submit</button>
+        </div>
+      </div>
+    </section>
+   
+
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+<!--  <footer class="main-footer">-->
+<!--    <div class="float-right d-none d-sm-block">-->
+<!--      <b>Version</b> 3.1.0-->
+<!--    </div>-->
+<!--    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.-->
+<!--  </footer>-->
+
+  <!-- Control Sidebar -->
+<!--  <aside class="control-sidebar control-sidebar-dark">-->
+<!--    &lt;!&ndash; Control sidebar content goes here &ndash;&gt;-->
+<!--  </aside>-->
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+</body>
+</html>

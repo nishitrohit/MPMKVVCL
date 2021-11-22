@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Index</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="static/assets/css/style.css">
+   <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.css">
+   <link rel="stylesheet" href="static/assets/css/bootstrap-datepicker.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+.container {
+    max-width: 1170px;
+  
+}
+a {
+    color: #e28473;
+}
+figure {
+    margin: 0 0 1rem;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif,Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    text-transform: none;
+    color: #000;
+}
+.header a img {
+    width: 120px;
+}
+.header {
+    padding: 20px 0;
+    margin-bottom: 40px;
+}
+.signup-content {
+    background: #fff;
+    box-shadow: 0 15px 16.83px 0.17px rgb(0 0 0 / 5%);
+    border-radius: 20px;
+    padding:20px 40px;
+	    float: left;
+    width: 100%;
+}
+.signup-image {
+    float: right;
+    width: 40%;
+    text-align: right;
+}
+.signup-form {
+    width: 50%;
+    float: left;
+}
+ul.socials li a {
+    float: left;
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+    border: 2px solid #d8deec;
+    border-radius: 5px;
+    color: #222;
+    font-weight: 500;
+    line-height: 40px;
+	    font-size: 20px;
+}
+ul.socials li a:hover {
+    background: #d8deec;
+}
+ul.socials li {
+    float: left;
+    width: 50%;
+    list-style-type: none;
+    padding: 0 10px;
+}
+ul.socials {
+    float: left;
+    width: 100%;
+    padding: 0;
+	margin:0 0 20px 0
+}
+h2.form-title {
+    font-size: 30px;
+    line-height: 1.66;
+    text-align: center;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #222;
+}
+.social-login {
+    margin-top: 0px;
+    float: left;
+    width: 100%;
+}
+
+ul.socials li a img {
+    width: 20px;
+    border-radius: 2px;
+    display: inline-block;
+}
+.signup-form .form-group input {
+    border: none;
+    font-size: 16px;
+} 
+.signup-form label {
+    width: 6%;
+}
+.signup-form i {
+    font-size: 20px;
+    color: #222;
+}
+.signup-form .form-group {
+    border-bottom: 2px solid #d8deec;
+}
+.signup-form a#signup{
+    background: #e28473;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0 25px;
+    line-height: 45px;
+    text-transform: uppercase;
+    font-weight: 500;
+	    font-size: 16px;
+}
+.signup-form .form-group.check-form {
+    border: none;
+}
+.signup-form .form-group.check-form input#agree-term {
+    float: left;
+    width: 4%;
+    margin-top: 12px;
+    margin-right: 10px;
+}
+.signup-form .form-group.check-form label.label-agree-term {
+    width: 90%;
+    font-size: 15px;
+    line-height: 9px;
+}
+.signup-image a.signup-image-link {
+    text-align: center;
+    display: table;
+    margin: 0px auto;
+}
+.signup-form .form-group.form-button {
+    border: none;
+}
+.signup-form .form-group.form-button input {
+    background: #e28473;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0 25px;
+    line-height: 45px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.header .header-left img {
+    width: 120px;
+}
+body {
+    background: #f8f8f8;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+</style>
+  </head>
+<body>
+<div class="header">
+<div class="container">
+<a href="#"><img src="static/assets/images/mpmk.png"> </a>
+
+</div>
+
+</div>
+<div class="row justify-content-md-center">
+<div class="col-md-7">
+
+
+<div class="signup-form"> 
+<form action="login" method="POST">
+{% csrf_token %}
+<div class="form-group">
+<div class="col-lg-6 col-md-12 col-sm-6">
+    <div class="form-group">
+        
+        
+
+        <select onchange="Veg_sachkti()" id="type" name="type" class="form-control form-control-submit registration-cont" required="required">
+        <!-- <option value="select-option-user-four" selected>Food Preference</option> -->
+        <option value="" disabled selected hidden>Type</option>
+        <option value="vendor">VENDOR</option>
+        <option value="nabl">NABL</option>
+        <!-- <option value="jain-user">Jain</option> -->
+        
+        </select>
+    </div>
+    </div>
+<label for="email"><i class="fa fa-envelope" aria-hidden="true"></i></label>
+<input type="text" name="username" id="email" placeholder="Username">
+</div>
+<div class="form-group">
+<label for="pass"><i class="fa fa-lock" aria-hidden="true"></i></label>
+<input type="password" name="password" id="pass" placeholder="Password">
+</div>
+<div class="forgot-password pt-3"><a href="forgot_password">Forgot Password</a></div>
+<div class="form-group form-button">
+<p style="color: red; font-size:13px;">{{msg}}</p>
+<button type="submit" class="btn btn-secondary" style="margin-top:60px; width: 300px;">Login</button>
+<!-- <a type="submit" name="signup" id="signup"  href="dashboard.html" class="form-submit" value="Register" style="margin-top:125px;">Login </a> -->
+</div>
+</form> 
+
+</div> 
+<div class="signup-image">
+<figure><img src="static/assets/images/signup/signup-image.jpg" alt="sing up image"></figure>
+<a href="register" class="signup-image-link">Create Your Free Account</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ <script src="static/assets/js/popper.min.js"></script>
+  <script src="static/assets/js/bootstrap.min.js"></script>
+   <script src="static/assets/js/jquery.easing.min.js"></script>
+    <script src="static/assets/js/bootstrap-datepicker.min.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>

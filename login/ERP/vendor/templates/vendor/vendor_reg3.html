@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vendor Registration</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="static/assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="static/assets/css/adminlte.min.css">
+
+</head>
+<!--<body class="hold-transition sidebar-mini">-->
+<!-- Site wrapper -->
+<div class="wrapper">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Vendor Registration</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Please fill in your details and company/firm details before using your account!</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+
+<div class=" card-body col-lg-6">
+<h4 class="heading">Authorized Person Details</h4>
+</div>
+<form   action="vendor_registration_three" method="POST">
+    {% csrf_token %}
+<div class="row card-body">
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Name (English) *</label>
+            <input type="text" id="port" name="auth_name" value={{auth_name}} readonly="readonly" class="form-control" placeholder="Frequently used port by the Device/Product" required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Name (Hindi) *</label>
+            <input type="text" id="protocol" name="auth_name" value={{auth_name}} readonly="readonly" class="form-control" placeholder="" required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Date of birth*</label>
+            <input type="text" id="protocol" name="dob" class="form-control" placeholder="" required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Mobile number *</label>
+            <input type="text" id="protocol" name="mobile" value={{mobile}} class="form-control" placeholder="" readonly="readonly" type="text" required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>E-mail *</label>
+            <input type="text" id="protocol" name="email" class="form-control" placeholder="" readonly="readonly" type="text" value={{email}} required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Aadhar Number*</label>
+            <input type="text" id="protocol" name="aadhar" class="form-control" placeholder="Adhar Number" required>
+        </div>
+        <div class="form-group multiple-radio">
+           <div class="d-flex justify-content-between">
+           <div class="form-check pt-1 pb-1">
+              <input class="form-check-input form-check-input-cve" type="checkbox" name="defaultCheck" id="defaultCheck1" checked value="yes">
+              <label class="form-check-label" for="defaultCheck1">
+                I have no objection in sharing the information received from my UIDAI (Unique Identification Authority of India) Aadhaar.
+              </label>
+            </div>
+           </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Address Line 1*</label>
+            <input type="text" id="erererer" name="add5" class="form-control" placeholder="" required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Address Line 2*</label>
+            <input type="text" id="protocol" name="add6" class="form-control" placeholder="" required>
+        </div>
+    </div>
+     <div class="col-lg-6 flex-lg-fill">
+        <div class="form-group form-group-select">
+            <label for="exampleFormControlSelect1">State *</label>
+            <select class="form-control" name="state" id="authentication" >
+                <option value="0">select one</option>
+                  <option value="02">Andaman and Nicobar Island</option>
+                    <option value="03">Andhra Pradesh</option>
+                    <option value="04">Arunachal Pradesh</option>
+                    <option value="05">Assam</option>
+                    <option value="06">Bihar</option>
+                    <option value="07">Chandigarh</option>
+                    <option value="08">Chhattisgarh</option>
+                    <option value="09">Dadra and Nagar Haveli</option>
+                    <option value="10">Daman and Diu</option>
+                    <option value="11">Delhi</option>
+                    <option value="12">Goa</option>
+                    <option value="13">Gujarat</option>
+                    <option value="14">Haryana</option>
+                    <option value="15">Himachal Pradesh</option>
+                    <option value="16">Jammu and Kashmir</option>
+                    <option value="17">Jharkhand</option>
+                    <option value="18">Karnataka</option>
+                    <option value="19">Kerala</option>
+                    <option value="20">Lakshadweep</option>
+                    <option value="21">Maharashtra</option>
+                    <option value="22">Manipur</option>
+                    <option value="23">Meghalaya</option>
+                    <option value="24">Mizoram</option>
+                    <option value="25">Nagaland</option>
+                    <option value="26">Odisha</option>
+                    <option value="27">Puducherry</option>
+                    <option value="28">Punjab</option>
+                    <option value="29">Rajasthan</option>
+                    <option value="30">Sikkim</option>
+                    <option value="31">Tamil Nadu</option>
+                    <option value="32">Telangana</option>
+                    <option value="33">Tripura</option>
+                    <option value="34">Uttar Pradesh</option>
+                    <option value="35">Uttarakhand</option>
+                    <option value="36">West Bengal</option>
+                    <option value="01">Madhya Pradesh</option>
+            </select>
+        </div>
+    </div>
+     <div class="col-lg-6 flex-lg-fill">
+        <div class="form-group form-group-select">
+            <label for="exampleFormControlSelect1">District/City *</label>
+            <select class="form-control" name="district" id="authentication">
+                  <option value="0">select one</option>
+                  <option value="2">Bhopal</option>
+                  <option value="3">Gwalior</option>
+                  <option value="4">Sehore</option>
+                  <option value="5">Honsangabad</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Pin Code *</label>
+            <input type="text" id="protocol" name="zip" name="protocol" class="form-control" placeholder="" required>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-6">
+<span class="text-danger pull-right" style="font-size: 15px">
+<input type="checkbox" name="vehicle" id="copyAddress" value="FALSE" />Address is same<br></span>
+</div>
+
+<div class="col-lg-6">
+    <div class="form-group">
+        <h4 class="heading">Director / Owner / Partner Details</h4>
+    </div>
+</div>
+
+<div class="row card-body">
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Name (English) *</label>
+            <input type="text" id="port" name="dir_name" class="form-control" placeholder="Frequently used port by the Device/Product" required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Name (Hindi) *</label>
+            <input type="text" id="protocol" name="dir_name_hindi" class="form-control" placeholder="" required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Date of birth*</label>
+            <input type="text" id="protocol" name="dir_dob" class="form-control" placeholder="" required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Mobile number *</label>
+            <input type="text" id="protocol" name="dir_mobile" class="form-control" placeholder=""  type="text"  required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>E-mail *</label>
+            <input type="text" id="protocol" name="dir_email" class="form-control" placeholder=""  type="text"  required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Aadhar Number*</label>
+            <input type="text" id="protocol" name="dir_aadhar" class="form-control" placeholder="" required>
+        </div>
+        <div class="form-group multiple-radio">
+           <div class="d-flex justify-content-between">
+           <div class="form-check pt-1 pb-1">
+              <input class="form-check-input form-check-input-cve" type="checkbox" name="defaultCheck" id="defaultCheck1" checked value="yes">
+              <label class="form-check-label" for="defaultCheck1">
+                I have no objection in sharing the information received from my UIDAI (Unique Identification Authority of India) Aadhaar.
+              </label>
+            </div>
+           </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Address Line 1*</label>
+            <input type="text" id="erererer" name="dir_add1" class="form-control" placeholder="" required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Address Line 2*</label>
+            <input type="text" id="protocol" name="dir_add2" class="form-control" placeholder="" required>
+        </div>
+    </div>
+     <div class="col-lg-6 flex-lg-fill">
+        <div class="form-group form-group-select">
+            <label for="exampleFormControlSelect1">State *</label>
+            <select class="form-control" name="dir_state" id="authentication">
+                <option value="0">select one</option>
+                  <option value="02">Andaman and Nicobar Island</option>
+                    <option value="03">Andhra Pradesh</option>
+                    <option value="04">Arunachal Pradesh</option>
+                    <option value="05">Assam</option>
+                    <option value="06">Bihar</option>
+                    <option value="07">Chandigarh</option>
+                    <option value="08">Chhattisgarh</option>
+                    <option value="09">Dadra and Nagar Haveli</option>
+                    <option value="10">Daman and Diu</option>
+                    <option value="11">Delhi</option>
+                    <option value="12">Goa</option>
+                    <option value="13">Gujarat</option>
+                    <option value="14">Haryana</option>
+                    <option value="15">Himachal Pradesh</option>
+                    <option value="16">Jammu and Kashmir</option>
+                    <option value="17">Jharkhand</option>
+                    <option value="18">Karnataka</option>
+                    <option value="19">Kerala</option>
+                    <option value="20">Lakshadweep</option>
+                    <option value="21">Maharashtra</option>
+                    <option value="22">Manipur</option>
+                    <option value="23">Meghalaya</option>
+                    <option value="24">Mizoram</option>
+                    <option value="25">Nagaland</option>
+                    <option value="26">Odisha</option>
+                    <option value="27">Puducherry</option>
+                    <option value="28">Punjab</option>
+                    <option value="29">Rajasthan</option>
+                    <option value="30">Sikkim</option>
+                    <option value="31">Tamil Nadu</option>
+                    <option value="32">Telangana</option>
+                    <option value="33">Tripura</option>
+                    <option value="34">Uttar Pradesh</option>
+                    <option value="35">Uttarakhand</option>
+                    <option value="36">West Bengal</option>
+                    <option value="01">Madhya Pradesh</option>
+            </select>
+        </div>
+    </div>
+     <div class="col-lg-6 flex-lg-fill">
+        <div class="form-group form-group-select">
+            <label for="exampleFormControlSelect1">District/City *</label>
+            <select class="form-control" id="authentication" name="dir_city">
+                  <option value="0">select one</option>
+                  <option value="2">Bhopal</option>
+                  <option value="3">Gwalior</option>
+                  <option value="4">Sehore</option>
+                  <option value="5">Honsangabad</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Pin Code *</label>
+            <input type="text" id="protocol" name="dir_zip" class="form-control" placeholder="" required>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+    <div class="col-md-6">
+  <div class="card card-secondary">
+    <div class="card-header">
+      <h3 class="card-title">Firm / Company Details</h3>
+      <div class="card-tools">
+        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+          <i class="fas fa-minus"></i>
+        </button>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <article>
+            <h3>Fill the information related to the firm / company</h3>
+            <p></p>
+            <ul>
+                <li>Write the name of the firm/company in English and Hindi.</li>
+                <li>To write name in Hindi, type in English, choose your name from Hindi words.</li>
+                <li>Tel./Fax No. ,</li>
+                <li>Write the address of the firm/company:- Any communication, whether in writing, type or printed letters, will be sent by registered post to the correspondence office address given by you, will be deemed to have been received by you.</li>
+                <li>Firm/Company's PAN No. Write |</li>
+                <li>Firm/Company Registration No. and write the date of validity.</li>
+            </ul>
+            <span class="text-danger">Note: It is mandatory to give the information marked with * in the information related to the firm / company.</span>
+        </article>
+      </div>
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</div>
+</div>
+
+    <div class="row card-body">
+        <div class="col-lg-5">
+            <div class="form-group">
+                <input type="reset" value="Fix again" class="btn btn-secondary">
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="form-group">
+                <!-- <input type="submit" value="Register" class="btn btn-success"> -->
+                <a href="dashboard2"></a>
+                                              
+                <button type="Submit" class="btn-second btn-submit ">Submit</button>
+      
+                </a>
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- /.content -->
+  </div>
+</form>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+
+</body>
+</html>

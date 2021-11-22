@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vendor Registration</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="static/assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="static/assets/css/adminlte.min.css">
+
+</head>
+<!--<body class="hold-transition sidebar-mini">-->
+<!-- Site wrapper -->
+<div class="wrapper">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Vendor Registration</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Please fill in your details and company/firm details before using your account!</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <form   action="vendor_registration_two" method="POST">
+              {% csrf_token %}
+            <div class="card-body">
+              <div class="form-group">
+                <label for="inputStatus">Service Type/Business Ownership Type</label>
+                <input id="firmName" name="v_service_type" data-validate="required" class="form-control" readonly="readonly" type="text" value={{type}} class="form-control">
+
+              </div>
+              <div class="form-group">
+                <label for="inputName">Firm / Company Name (English) *</label>
+                <input id="firmName" name="v_company_name" data-validate="required" class="form-control" readonly="readonly" type="text" value={{cname}} class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Firm / Company Name (Hindi) *</label>
+                <input id="firmName" name="v_company_name" data-validate="required" class="form-control" readonly="readonly" type="text" value={{cname}} class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Telephone number *</label>
+                <input type="text" id="inputName" name="v_mobile" value={{mobile}} readonly="readonly" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Fax number *</label>
+                <input type="text" name="fax" id="inputName" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Firm/Company's PAN Number *</label>
+                <input type="text" name="pan" id="inputName" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Firm/Company Registration Number* *</label>
+                <input type="text" name="reg_no" id="inputName" class="form-control">
+              </div>
+                <div class="form-group">
+                <label for="inputName">Firm/Company's GST Number</label>
+                <input type="text" name="gst" id="inputName" class="form-control">
+              </div>
+                <div class="form-group">
+                <label for="inputName">Firm/Company Registration Date*</label>
+                <input type="text" name="reg_date" id="inputName" class="form-control">
+              </div>
+                <div class="form-group">
+                <label for="inputName">Validity date of registration of firm/company</label>
+                <input type="text" name="validity_date" id="inputName" class="form-control">
+              </div>
+                <div class="form-group">
+                <label for="inputName">Registered Office Address</label>
+              </div>
+                <div class="form-group">
+                <label for="inputName">Firm / Company Address Line 1*</label>
+                <input type="text" name="add1" id="inputName" class="form-control">
+              </div>
+                <div class="form-group">
+                <label for="inputName">Firm / Company Address Line 2</label>
+                <input type="text" name="add2" id="inputName" class="form-control">
+              </div>
+                <div class="form-group">
+                <label for="inputName">City *</label>
+                <input type="text" name="city" id="inputName" class="form-control">
+              </div>
+                <div class="form-group">
+                <label for="inputStatus">State *</label>
+                <select id="serviceOwnerType" name="state" data-validate="required" class="form-control">
+                      <option value="0">select one</option>
+                      <option value="02">Andaman and Nicobar Island</option>
+                        <option value="03">Andhra Pradesh</option>
+                        <option value="04">Arunachal Pradesh</option>
+                        <option value="05">Assam</option>
+                        <option value="06">Bihar</option>
+                        <option value="07">Chandigarh</option>
+                        <option value="08">Chhattisgarh</option>
+                        <option value="09">Dadra and Nagar Haveli</option>
+                        <option value="10">Daman and Diu</option>
+                        <option value="11">Delhi</option>
+                        <option value="12">Goa</option>
+                        <option value="13">Gujarat</option>
+                        <option value="14">Haryana</option>
+                        <option value="15">Himachal Pradesh</option>
+                        <option value="16">Jammu and Kashmir</option>
+                        <option value="17">Jharkhand</option>
+                        <option value="18">Karnataka</option>
+                        <option value="19">Kerala</option>
+                        <option value="20">Lakshadweep</option>
+                        <option value="21">Maharashtra</option>
+                        <option value="22">Manipur</option>
+                        <option value="23">Meghalaya</option>
+                        <option value="24">Mizoram</option>
+                        <option value="25">Nagaland</option>
+                        <option value="26">Odisha</option>
+                        <option value="27">Puducherry</option>
+                        <option value="28">Punjab</option>
+                        <option value="29">Rajasthan</option>
+                        <option value="30">Sikkim</option>
+                        <option value="31">Tamil Nadu</option>
+                        <option value="32">Telangana</option>
+                        <option value="33">Tripura</option>
+                        <option value="34">Uttar Pradesh</option>
+                        <option value="35">Uttarakhand</option>
+                        <option value="36">West Bengal</option>
+                        <option value="01">Madhya Pradesh</option>
+                </select>
+              </div>
+                <div class="form-group">
+                <label for="inputStatus">District *</label>
+                <select id="serviceOwnerType" name="district" data-validate="required" class="form-control">
+                      <option value="0">select one</option>
+                      <option value="2">Bhopal</option>
+                      <option value="3">Gwalior</option>
+                      <option value="4">Sehore</option>
+                      <option value="5">Honsangabad</option>
+                </select>
+              </div>
+                <div class="form-group">
+                <label for="inputName">Pincode *</label>
+                <input type="text" name="zip" id="inputName" class="form-control">
+              </div>
+                <div class="form-group">
+                    <label for="inputName">Office correspondence address</label>
+                    <input type="checkbox" id="" name="" value="">
+                    <label for="vehicle3">If the address is the same</label><br><br>
+                   <span class="text-danger pull-right" style="font-size: 15px">
+                   <input type="checkbox" name="vehicle" id="copyAddress" value="FALSE" />If the address is the same<br></span>
+                </div>
+                <div class="form-group">
+                <label for="inputName">Firm / Company Address Line 1*</label>
+                <input type="text" name="add3" id="inputName" class="form-control">
+              </div>
+                <div class="form-group">
+                <label for="inputName">Firm / Company Address Line 2</label>
+                <input type="text" name="add4" id="inputName" class="form-control">
+              </div>
+                <div class="form-group">
+                <label for="inputName">City *</label>
+                <input type="text" name="city2" id="inputName" class="form-control">
+              </div>
+                <div class="form-group">
+                <label for="inputStatus">State *</label>
+                <select id="serviceOwnerType" name="state2" data-validate="required" class="form-control">
+                      <option value="0">select one</option>
+                      <option value="2">Madhya Pradesh</option>
+                      <option value="3">Maharastra</option>
+                      <option value="4">Rajasthan</option>
+                      <option value="5">Uttar Pradesh</option>
+                </select>
+              </div>
+                <div class="form-group">
+                <label for="inputStatus">District *</label>
+                <select id="serviceOwnerType" name="district2" data-validate="required" class="form-control">
+                      <option value="0">select one</option>
+                      <option value="2">Bhopal</option>
+                      <option value="3">Gwalior</option>
+                      <option value="4">Sehore</option>
+                      <option value="5">Honsangabad</option>
+                </select>
+              </div>
+                <div class="form-group">
+                <label for="inputName">Pincode *</label>
+                <input type="text" name="zip2" id="inputName" class="form-control">
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <div class="col-md-6">
+          <div class="card card-secondary">
+            <div class="card-header">
+              <h3 class="card-title">Firm / Company Details</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <article>
+                    <h3>Fill the information related to the firm / company</h3>
+                    <p></p>
+                    <ul>
+                        <li>Write the name of the firm/company in English and Hindi.</li>
+                        <li>To write name in Hindi, type in English, choose your name from Hindi words.</li>
+                        <li>Tel./Fax No. ,</li>
+                        <li>Write the address of the firm/company:- Any communication, whether in writing, type or printed letters, will be sent by registered post to the correspondence office address given by you, will be deemed to have been received by you.</li>
+                        <li>Firm/Company's PAN No. Write |</li>
+                        <li>Firm/Company Registration No. and write the date of validity.</li>
+                    </ul>
+                    <span class="text-danger">Note: It is mandatory to give the information marked with * in the information related to the firm / company.</span>
+                </article>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <input type="reset" value="Fix again" class="btn btn-secondary">
+          <!-- <input type="submit" value="Register" class="btn btn-success"> -->
+          <a href="dashboard2"></a>
+                                              
+          <button type="Submit" class="btn-second btn-submit ">Submit</button>
+
+          </a>
+        </div>
+      </div>
+    </form>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+
+</body>
+</html>
