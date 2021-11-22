@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vendor Registration</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="static/assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="static/assets/css/adminlte.min.css">
+
+     <!-- Ekko Lightbox -->
+  <link rel="stylesheet" href="../plugins/ekko-lightbox/ekko-lightbox.css">
+ <style>
+
+     .btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #10707f;
+}
+
+ </style>
+</head>
+<!--<body class="hold-transition sidebar-mini">-->
+<!-- Site wrapper -->
+<div class="wrapper mb-8">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Vendor Registration</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+<!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-primary">
+              <div class="card-body" >
+                  <div class="btn-group w-100 mb-2 ">
+                    <a class="btn btn-info active" href="javascript:void(0)" data-filter="all" style="background-color: #007bff;"> Instruction </a>
+                    <a class="btn btn-info" href="javascript:void(0)" data-filter="1" style="background-color: #007bff;"> General/personal Details</a>
+                    <a class="btn btn-info" href="javascript:void(0)" data-filter="2" style="background-color: #007bff;"> Technical Details </a>
+                    <a class="btn btn-info" href="javascript:void(0)" data-filter="3" style="background-color: #007bff;"> Financial Details </a>
+                    <a class="btn btn-info" href="javascript:void(0)" data-filter="4" style="background-color: #007bff;"> Declaration Details</a>
+                  </div>
+                <div>
+                  <div class="filter-container p-0 row">
+                  </div>
+                </div>
+
+              </div>
+              <div class="container">
+                <table class="table">
+                  <label for="inputStatus">1.Type tests reports from NABL accredited Laboratory(Valid)</label>
+                  <thead>
+                      <tr>
+                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        </th>
+                          <th>Type tests reports from NABL accredited Laboratory(Valid)<input type="text" id="inputName" class="form-control">
+                          </th>
+                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                      </tr>
+                  </thead>
+                </table>
+              </div>
+                   <br>
+              <div class="container">
+                <table class="table">
+                  <label for="inputStatus">2.GTP and Drawing of applied item as per the technical specification </label>
+                  <thead>
+                      <tr>
+                        <th>GTP and Drawing of applied item as per the requirement No <input type="text" id="inputName" class="form-control">
+                        </th>
+                              <th>uploade file<input type="file" id="inputName" class="form-control">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+
+                      </tr>
+                  </thead>
+                </table>
+              </div>
+                  <br>
+
+
+                  <div class="container">
+                <table class="table">
+                  <label for="inputStatus">3. Supply Criteria as mention in minimum eligibility Criteria </label>
+                  <thead>
+                      <tr>
+                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        </th>
+                          <th>Supply Criteria as mention in minimum eligibility Criteria No<input type="text" id="inputName" class="form-control">
+                          </th>
+                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                      </tr>
+                  </thead>
+                </table>
+              </div>
+                <br>
+
+
+                       <div class="container">
+                <table class="table">
+                  <label for="inputStatus">4. List of Plants & Machineries </label>
+                  <thead>
+                      <tr>
+                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        </th>
+                          <th>List of Plants & Machineries No<input type="text" id="inputName" class="form-control">
+                          </th>
+                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                      </tr>
+                  </thead>
+                </table>
+              </div>
+                <br>
+
+             <div class="container">
+                <table class="table">
+                  <label for="inputStatus">5. List of Testing Equipment's </label>
+                  <thead>
+                      <tr>
+                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        </th>
+                          <th>List of Testing Equipment's No<input type="text" id="inputName" class="form-control">
+                          </th>
+                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                      </tr>
+                  </thead>
+                </table>
+              </div>
+              <br>
+
+             <div class="container">
+                <table class="table">
+                  <label for="inputStatus">6. Calibration certificates Testing Equipment's </label>
+                  <thead>
+                      <tr>
+                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        </th>
+                          <th>alibration certificates Testing Equipment's No<input type="text" id="inputName" class="form-control">
+                          </th>
+                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                      </tr>
+                  </thead>
+                </table>
+              </div>
+                <br>
+
+
+                        <div class="container">
+                <table class="table">
+                  <label for="inputStatus">7. BIS LICENSE </label>
+                  <thead>
+                      <tr>
+                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        </th>
+                          <th>BIS LICENSE  No<input type="text" id="inputName" class="form-control">
+                          </th>
+                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                      </tr>
+                  </thead>
+                </table>
+              </div>
+                  <br>
+
+
+                         <div class="container">
+                <table class="table">
+                  <label for="inputStatus">8. ISI LICENSE </label>
+                  <thead>
+                      <tr>
+                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        </th>
+                          <th>ISI LICENSE  No<input type="text" id="inputName" class="form-control">
+                          </th>
+                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                      </tr>
+                  </thead>
+                </table>
+              </div>
+                  <br>
+
+
+                        <div class="container">
+                <table class="table">
+                  <label for="inputStatus">9. PRODUCTS MANUFACTURED WITH COMPLETE DESCRIPTION </label>
+                  <thead>
+                      <tr>
+                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        </th>
+                          <th>products manufactured with complete description No<input type="text" id="inputName" class="form-control">
+                          </th>
+                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                      </tr>
+                  </thead>
+                </table>
+              </div>
+                       <br>
+
+                           <div class="container">
+                <table class="table">
+                  <label for="inputStatus">10. METHOD ADOPTED FOR QUALITY CONTROL </label>
+                  <thead>
+                      <tr>
+                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        </th>
+                          <th>Method adopted for quality control No<input type="text" id="inputName" class="form-control">
+                          </th>
+                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                      </tr>
+                  </thead>
+                </table>
+              </div>
+                      <br>
+
+                           <div class="container">
+                <table class="table">
+                  <label for="inputStatus">11. SOURCE OF SUPPLY OF RAW MATERIAL WITH ADDRESS </label>
+                  <thead>
+                      <tr>
+                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        </th>
+                          <th>Source of supply of raw material with address No<input type="text" id="inputName" class="form-control">
+                          </th>
+                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                      </tr>
+                  </thead>
+                </table>
+              </div>
+                 <br>
+
+
+                <div class="container">
+                <table class="table">
+                  <label for="inputStatus">12. LIST OF ITEMS HOLDING ISO 9001 CERTIFICATE   </label>
+                  <thead>
+                      <tr>
+                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        </th>
+                          <th>list of items holding ISO 9001 certificate  No<input type="text" id="inputName" class="form-control">
+                          </th>
+                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                      </tr>
+                  </thead>
+                </table>
+              </div>
+              <div class="container">
+                <div class="row card-body">
+      <div class="col-lg-6">
+            <div class="form-group">
+                <input type="reset" value="Previous" class="btn btn-secondary">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <input type="submit" value="Save & Next" class="btn btn-success">
+            </div>
+          </div>
+        </div>
+              </div>
+
+
+              </div>
+          </div>
+        </div>
+
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+
+<script>
+  $(function () {
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({gutterPixels: 3});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+  })
+</script>
+
+
+<!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Ekko Lightbox -->
+<script src="../plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- Filterizr-->
+<script src="../plugins/filterizr/jquery.filterizr.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+<!-- Page specific script -->
+</body>
+</html>

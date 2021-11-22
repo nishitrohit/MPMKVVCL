@@ -16,6 +16,10 @@ urlpatterns = [
 	# path('success/',views.payment_success, name='payment-success'),
 
 	path('vendor_registration_six',views.Vendor_Registration_Six, name='home'),
-    path('success' ,views.payment_success , name='success')
-
+    path('success' ,views.payment_success , name='success'),
+    path('vendor_registration_seven', views.Vendor_Registration_Seven, name='dashboard5'),
+	path('vendor_registration_eight', views.Vendor_Registration_Eight, name='dashboard6'),
+	path('vendor_registration_nine', views.Vendor_Registration_Nine, name='dashboard7'),
+	path('vendor_registration_ten', views.Vendor_Registration_Ten, name='dashboard8'),
+	path('vendor_registration_eleven', views.Vendor_Registration_Eleven, name='dashboard9')
 ]

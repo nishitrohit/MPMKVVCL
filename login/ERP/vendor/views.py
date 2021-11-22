@@ -9,34 +9,36 @@ from django.contrib import messages
 from datetime import datetime
 import razorpay
 from django.views.decorators.csrf import csrf_exempt
-
+from django.conf import settings
+import requests
 def Login(request):
-    if request.method == 'POST':
-        if VendorRegistration.objects.filter(type=request.POST['type']):
-            if VendorRegistration.objects.filter(username=request.POST['username']):
-                if VendorRegistration.objects.filter(password1=request.POST['password']):
-                    res = VendorRegistration.objects.filter(type=request.POST['type'],username=request.POST['username'],
-                                                            password1=request.POST['password'])
-                    if res:
-                        request.session['uid'] = request.POST['username']
-                        a= request.session['uid']
-                        aa = VendorRegistration.objects.filter(username=request.session["uid"])   
-                        cc = VendorRegistration_Serializer(aa,many=True)
-                        dd = cc.data
-                        ee = json.loads(json.dumps(dd))
-                        tem = ee[-1]['temp']
-                        print("helooool",tem)
-                        if tem==True:
-                            return redirect('dashboard')
-                        else:
-                            return HttpResponse("Admin not verifly your information please login after some time")
+    # if request.method == 'POST':
+    #     return HttpResponse("We are working on Dashboard")
+        # if VendorRegistration.objects.filter(type=request.POST['type']):
+        #     if VendorRegistration.objects.filter(username=request.POST['username']):
+        #         if VendorRegistration.objects.filter(password1=request.POST['password']):
+        #             res = VendorRegistration.objects.filter(type=request.POST['type'],username=request.POST['username'],
+        #                                                     password1=request.POST['password'])
+        #             if res:
+        #                 request.session['uid'] = request.POST['username']
+        #                 a= request.session['uid']
+        #                 aa = VendorRegistration.objects.filter(username=request.session["uid"])   
+        #                 cc = VendorRegistration_Serializer(aa,many=True)
+        #                 dd = cc.data
+        #                 ee = json.loads(json.dumps(dd))
+        #                 tem = ee[-1]['temp']
+        #                 print("helooool",tem)
+        #                 if tem==True:
+        #                     return redirect('dashboard')
+        #                 else:
+        #                     return HttpResponse("Admin not verifly your information please login after some time")
                         
-                else:
-                    return render(request, 'vendor/login.html', {"msg": "invalid password"})
-            else:
-                return render(request, 'vendor/login.html', {"msg": "invalid username"})
-        else:
-            return render(request, 'vendor/login.html', {"msg": "Not matched"})
+        #         else:
+        #             return render(request, 'vendor/login.html', {"msg": "invalid password"})
+        #     else:
+        #         return render(request, 'vendor/login.html', {"msg": "invalid username"})
+    # else:
+    #     return HttpResponse("We are working on Dashboard")
     return render(request, 'vendor/login.html')
 
   
@@ -67,7 +69,19 @@ def Registration(request):
             user_data.save()
             request.session['uid'] = request.POST['email']
             aaaaa= request.session['uid']
-            print("heeeeeeloo",aaaaa)
+         
+            # url = "https://www.fast2sms.com/dev/bulkV2"
+
+            # payload = "message=This%20is%20a%20test%20message&language=english&route=q&numbers=9407820866"
+            # headers = {
+            #     'authorization': "FxOXbDJ3kKZRYH2pInuv5cigmLUWw9toEdq1zfTNSPy87heQ4AXHwf94UNnvzpjdcGmTeMZEQ0LJqYBD",
+            #     'Content-Type': "application/x-www-form-urlencoded",
+            #     'Cache-Control': "no-cache",
+            #     }
+
+            # response = requests.request("POST", url, data=payload, headers=headers)
+
+            # print(response.text)
             return redirect('dashboard')
     return render(request,'vendor/vendor_reg1.html')
 
@@ -163,23 +177,6 @@ def Vendor_Registration_Four(request):
 def Vendor_Registration_Five(request):
     return render(request,'vendor/vendor_reg5.html')
 
-# def Vendor_Registration_Six(request):
-#     amount = 100 #100 here means 1 dollar,1 rupree if currency INR
-#     # client = razorpay.Client(auth=(os.getenv('razorpaykey'), os.getenv('razorpaysecret')))
-#     client = razorpay.Client(
-#                 auth=("rzp_live_b8kvPyTH49V69F", "pl7ndE0ndRRyiYgbmH0cMyQ4"))
-#     response = client.order.create({'amount':amount,'currency':'USD','payment_capture':1})
-#     print(response)
-#     context = {'response':response}
-#     return render(request,"vendor/vendor_reg5.html",context)
-
-
-# @csrf_exempt
-# def payment_success(request):
-#     if request.method =="POST":
-#         print(request.POST)
-#         return HttpResponse("Done payment hurrey!")
-
 
 
 
@@ -201,22 +198,78 @@ def payment_success(request):
     return render(request, "success.html")
 
 
+def Vendor_Registration_Seven(request):
+    return render(request,'vendor/vendor_reg7.html')
 
 
 
+def Vendor_Registration_Eight(request):
+    if request.session.has_key('uid'):
+        if request.method == "POST":
+            vendor_data=request.session['uid']
+            get_data =VendorRegistration.objects.get(v_email=vendor_data)
+            get_data.v_experienc= request.POST.get('work_experience')
+            get_data.v_turnover=request.POST.get('turn_over')
+            get_data.save()
+            return redirect("dashboard7")
+    return render(request,'vendor/vendor_reg8.html')
 
 
 
+def Vendor_Registration_Nine(request):
+    if request.session.has_key('uid'):
+        if request.method == "POST":
+            vendor_data=request.session['uid']
+            get_data =VendorRegistration.objects.get(v_email=vendor_data)
+            get_data.v_existing_pan= request.POST.get('ac_number')
+            get_data.save()
+            return redirect("dashboard8")
+    return render(request,'vendor/vendor_reg9.html')
+
+
+def Vendor_Registration_Ten(request):
+    if request.session.has_key('uid'):
+        if request.method == "POST":
+            vendor_data=request.session['uid']
+            get_data =VendorRegistration.objects.get(v_email=vendor_data)
+            get_data.v_office_name= request.POST.get('v_office_name')
+            get_data.v_dic_reg_num=request.POST.get('v_dic_reg_num')
+            get_data.v_issue_date=request.POST.get('v_issue_date')
+            get_data.v_end_date=request.POST.get('v_end_date')
+            get_data.v_p_aadhar_hoder_name=request.POST.get('v_p_aadhar_hoder_name')
+
+            get_data.v_p_aadhar_reg_number= request.POST.get('v_p_aadhar_reg_number')
+            get_data.v_p_issue_date=request.POST.get('v_p_issue_date')
+            get_data.v_p_a_end_date=request.POST.get('v_p_a_end_date')
+            get_data.v_p_office_name=request.POST.get('v_p_office_name')
+            get_data.v_p_reg_number=request.POST.get('v_p_reg_number')
+
+            get_data.v_p_end_date= request.POST.get('v_p_end_date')
+            get_data.v_upload_file=request.POST.get('v_upload_file')
+            get_data.v_father_aadhar_name=request.POST.get('v_father_aadhar_name')
+            get_data.v_father_number=request.POST.get('v_father_number')
+            get_data.v_upload_file_father=request.POST.get('v_upload_file_father')
+
+            get_data.v_mother_aadhar_name= request.POST.get('v_mother_aadhar_name')
+            get_data.v_mother_number=request.POST.get('v_mother_number')
+            get_data.v_upload_file_mother=request.POST.get('v_upload_file_mother')
+            get_data.v_area_occupied=request.POST.get('v_area_occupied')
+            get_data.v_working_shift=request.POST.get('v_working_shift')
+
+            get_data.v_personal_work_factroyr= request.POST.get('v_personal_work_factroyr')
+            get_data.v_buit_up=request.POST.get('v_buit_up')
+            get_data.v_product_capacity=request.POST.get('v_product_capacity')
+            get_data.v_faculty_license_number=request.POST.get('v_faculty_license_number')
+            get_data.v_upload_file_factory=request.POST.get('v_upload_file_factory')
+            get_data.save()
+            return redirect("dashboard9")
+    return render(request,'vendor/vendor_reg10.html')
 
 
 
-
-
-
-
-
-
-
+def Vendor_Registration_Eleven(request):
+   
+    return render(request,'vendor/vendor_reg11.html')
 
 
 

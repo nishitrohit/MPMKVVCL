@@ -209,14 +209,16 @@ body {
 <label for="pass"><i class="fa fa-lock" aria-hidden="true"></i></label>
 <input type="password" name="password" id="pass" placeholder="Password">
 </div>
-<div class="forgot-password pt-3"><a href="forgot_password">Forgot Password</a></div>
-<div class="form-group form-button">
-<p style="color: red; font-size:13px;">{{msg}}</p>
-<button type="submit" class="btn btn-secondary" style="margin-top:60px; width: 300px;">Login</button>
-<!-- <a type="submit" name="signup" id="signup"  href="dashboard.html" class="form-submit" value="Register" style="margin-top:125px;">Login </a> -->
-</div>
-</form> 
+<!-- <div class="forgot-password pt-3"><a href="forgot_password">Forgot Password</a></div> -->
 
+
+</form> 
+<div class="form-group form-button">
+    <p style="color: red; font-size:13px;">{{msg}}</p>
+    <button onclick="myFunction()" type="submit" class="btn btn-secondary" style="margin-top:60px; width: 300px;">Login</button>
+    <!-- <a type="submit" name="signup" id="signup"  href="dashboard.html" class="form-submit" value="Register" style="margin-top:125px;">Login </a> -->
+    </div>
+<p id="demo"></p>
 </div> 
 <div class="signup-image">
 <figure><img src="static/assets/images/signup/signup-image.jpg" alt="sing up image"></figure>
@@ -237,7 +239,11 @@ body {
     <script src="static/assets/js/bootstrap-datepicker.min.js"></script>
 
 
-
+    <script>
+        function myFunction() {
+          document.getElementById("demo").innerHTML = "We are Working on Dashboard";
+        }
+        </script>
 
 
 

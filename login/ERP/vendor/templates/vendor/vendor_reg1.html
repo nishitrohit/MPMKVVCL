@@ -72,18 +72,18 @@
               </div>
               <div class="form-group">
                 <label for="inputName">Mobile number *</label>
-                <input type="text" id="inputName" name="mobile" class="form-control">
+                <input type="tel" id="inputName" name="mobile" class="form-control" pattern="^\d{10}$" maxlength="10" minlength="10" required="required">
               </div>
               <div class="form-group">
                 <label for="inputName">Email ID *</label>
-                <input type="text" id="inputName" name="email" class="form-control">
+                <input type="email" id="inputName" name="email" class="form-control">
               </div>
               <div class="form-group">
                 <label for="inputName">Please enter the captcha *</label>
                 <input type="text" id="inputName" class="form-control">
               </div>
               <div>
-                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" required="required">
                 <label for="vehicle3">The details given by me are true. ,</label><br><br>
               </div>
             </div>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vendor Registration</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="static/assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="static/assets/css/adminlte.min.css">
+
+     <!-- Ekko Lightbox -->
+  <link rel="stylesheet" href="../plugins/ekko-lightbox/ekko-lightbox.css">
+ <style>
+
+     .btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #10707f;
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: inherit;
+}
+ </style>
+</head>
+<!--<body class="hold-transition sidebar-mini">-->
+<!-- Site wrapper -->
+<div class="wrapper mb-8">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Vendor Registration</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+<!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-primary">
+              <div class="card-body" >
+                  <div class="btn-group w-100 mb-2 ">
+                    <a class="btn btn-info " href="javascript:void(0)" data-filter="all" style="background-color: #007bff;"> Instruction </a>
+                    <a class="btn btn-info active" href="javascript:void(0)" data-filter="1" style="background-color: #007bff;"> General/personal Details</a>
+                    <a class="btn btn-info" href="javascript:void(0)" data-filter="2" style="background-color: #007bff;"> Technical Details </a>
+                    <a class="btn btn-info" href="javascript:void(0)" data-filter="3" style="background-color: #007bff;"> Financial Details </a>
+                    <a class="btn btn-info" href="javascript:void(0)" data-filter="4" style="background-color: #007bff;"> Declaration Details</a>
+                  </div>
+                <div>
+                  <div class="filter-container p-0 row">
+
+                    <div class="card-body col-lg-12">
+                        <div class="form-group">
+                          <article>
+                              <h5>Instructions for Vendor Registration/Registration:</h5>
+                              <p></p>
+                              <ul>
+                                  <li>For vendor registration of Central Zone Electricity Distribution Company, it will be mandatory for the vendor/manufacturer/supplier to be registered in the company's online portal "Annexure".</li>
+                                  <li>It is mandatory to fill in all the clauses in the registration form of the beder in the "Annexure" portal and upload the documents along with/ as proof where required.</li>
+                                  <li>Vendors can register for one or more products.</li>
+                                  <li>The officials of Central Zone Electricity Distribution Company will review the registration form of the vendor and decide whether the vendor can be registered or not.</li>
+                                  <li>After successful registration of the vendor, the inability of the vendor to provide the products will be inspected by the company. Non refundable inspection fee for each product inspection by the vendor is Rs. 10,000/- + GST ​​has to be deposited.</li>
+                                  <li>If the vendor is rejected on inspection, the vendor will not be empaneled. Vendor will have to get re-inspected to be empaneled.</li>
+                                  <li>The vendor will be eligible for inspection for empanelment. It will be mandatory to pay the fee 10000+GST for inspection.</li>
+                                  <li>If all the documents of the vendor are valid and declared eligible in the inspection, then the vendor will be empaneled/enlisted to provide the products in Central Zone Electricity Distribution Company.</li>
+                                  <li>Empanelment does not mean that orders for supply of products will be issued to the vendor. The order will be subject to tender specifications. Also, after the empanelment, it will be mandatory for the vendor to fulfill the terms and conditions mentioned in the tender contract issued by the company.</li>
+                              </ul>
+                          </article>
+                        </div>
+                  </div>
+                  <form   action="vendor_registration_nine" method="POST">
+                    {% csrf_token %}
+                  <div class="col-lg-12">
+                      <div class="form-group">
+                          <label>Are you currently or existing vendor? *</label>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-12">
+                      <div class="form-group">
+                          <label class="radio-inline">
+                            <input type="radio" name="optradio">Yes (Existing member)
+                          </label>
+                          <label class="radio-inline">
+                            <input type="radio" name="optradio">No (New member)
+                          </label>
+                      </div>
+                  </div>
+                
+                  <div class="col-lg-12">
+                      <div class="form-group">
+                          <label>PAN CARD NO.</label>
+                          <!-- <input type="text" id="pan" name="ac_number" class="form-control"> -->
+                          <input type="text" name="ac_number" id="inputName" class="form-control">
+                      </div>
+                  </div>
+                 
+               
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <div class="form-group multiple-radio">
+                         <div class="d-flex justify-content-between">
+                         <div class="form-check pt-1 pb-1">
+                            <input class="form-check-input form-check-input-cve" type="checkbox" name="defaultCheck" id="defaultCheck1" required=required>
+                            <label class="form-check-label" for="defaultCheck1">
+                              All the details provided by me are completely correct, if found to be wrong / forged in future, the company Can take any kind of legal action against me.
+                            </label>
+                          </div>
+                         </div>
+                      </div>
+                      </div>
+                  </div>
+                
+                  <a href="dashboard9"></a>
+                                              
+                  <button type="Submit" class="btn-second btn-submit ">Submit</button>
+        
+                  </a>
+                </div>
+                
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+
+<script>
+  $(function () {
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({gutterPixels: 3});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+  })
+</script>
+
+
+<!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Ekko Lightbox -->
+<script src="../plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- Filterizr-->
+<script src="../plugins/filterizr/jquery.filterizr.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+<!-- Page specific script -->
+</body>
+</html>

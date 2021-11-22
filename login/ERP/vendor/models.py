@@ -54,10 +54,38 @@ class VendorRegistration(models.Model):
     v_bank_ac_number_re_enter = models.CharField(max_length=30)
     
 
+    v_experienc = models.CharField(max_length=3,null=True,blank=True)
+    v_turnover = models.CharField(max_length=15,null=True,blank=True)
 
+    v_existing_pan = models.CharField(max_length=10,null=True,blank=True)
 
-
-
+    v_office_name  = models.CharField(max_length=15,null=True,blank=True)
+    v_dic_reg_num = models.CharField(max_length=15,null=True,blank=True)
+    v_issue_date = models.CharField(max_length=15,null=True,blank=True)
+    v_end_date = models.CharField(max_length=15,null=True,blank=True)
+    v_p_aadhar_hoder_name = models.CharField(max_length=15,null=True,blank=True)
+    v_p_aadhar_reg_number = models.CharField(max_length=15,null=True,blank=True)
+    v_p_issue_date = models.CharField(max_length=15,null=True,blank=True)
+    v_p_a_end_date = models.CharField(max_length=15,null=True,blank=True)
+    v_p_office_name = models.CharField(max_length=15,null=True,blank=True)
+    v_p_reg_number = models.CharField(max_length=15,null=True,blank=True)
+    v_p_end_date = models.CharField(max_length=15,null=True,blank=True)
+    v_upload_file = models.ImageField(upload_to="img",null=True)
+    v_father_aadhar_name = models.CharField(max_length=15,null=True,blank=True)
+    v_father_number = models.CharField(max_length=15,null=True,blank=True)
+    v_upload_file_father = models.ImageField(upload_to="img",null=True)
+    v_mother_aadhar_name = models.CharField(max_length=15,null=True,blank=True)
+    v_mother_number = models.CharField(max_length=15,null=True,blank=True)
+    v_upload_file_mother = models.ImageField(upload_to="img",null=True)
+    v_area_occupied = models.CharField(max_length=15,null=True,blank=True)
+    v_working_shift = models.CharField(max_length=15,null=True,blank=True)
+    v_personal_work_factroyr = models.CharField(max_length=15,null=True,blank=True)
+    v_buit_up = models.CharField(max_length=15,null=True,blank=True)
+    v_product_capacity = models.CharField(max_length=15,null=True,blank=True)
+    v_faculty_license_number = models.CharField(max_length=15,null=True,blank=True)
+    v_upload_file_factory = models.ImageField(upload_to="img",null=True)
+    def __str__(self):
+        return self.v_service_type
 
 # class Company_Details(models.Model):
 #     V_id = models.ForeignKey(Vendor, default="", on_delete=models.CASCADE)
