@@ -24,6 +24,7 @@
 
  </style>
 </head>
+<body>
 <!--<body class="hold-transition sidebar-mini">-->
 <!-- Site wrapper -->
 <div class="wrapper mb-8">
@@ -41,10 +42,12 @@
     </section>
 
 <!-- Main content -->
+
     <section class="content">
+    
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
+          <div class="col-8">
             <div class="card card-primary">
               <div class="card-body" >
                   <div class="btn-group w-100 mb-2 ">
@@ -60,18 +63,20 @@
                 </div>
 
               </div>
+              <form   action="vendor_registration_eleven" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
               <div class="container">
                 <table class="table">
                   <label for="inputStatus">1.Type tests reports from NABL accredited Laboratory(Valid)</label>
                   <thead>
                       <tr>
-                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        <th>Office  Name<input type="text" name="v_e_office_name" id="inputName" class="form-control">
                         </th>
-                          <th>Type tests reports from NABL accredited Laboratory(Valid)<input type="text" id="inputName" class="form-control">
+                          <th>Type tests reports from NABL accredited Laboratory(Valid)<input type="text" name="v_test_type_report" id="inputName" class="form-control">
                           </th>
-                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                            <th>uploade file<input type="file" name="v_upload_file_media" id="inputName" class="form-control">
                           </th>
-                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                          <th><input type="button"  class="button btn btn-primary" value="View"></th>
                       </tr>
                   </thead>
                 </table>
@@ -82,9 +87,9 @@
                   <label for="inputStatus">2.GTP and Drawing of applied item as per the technical specification </label>
                   <thead>
                       <tr>
-                        <th>GTP and Drawing of applied item as per the requirement No <input type="text" id="inputName" class="form-control">
+                        <th>GTP and Drawing of applied item as per the requirement No <input type="text" name="v_gtp_drawing" id="inputName" class="form-control">
                         </th>
-                              <th>uploade file<input type="file" id="inputName" class="form-control">
+                              <th>uploade file<input type="file" name="v_upload_file_e" id="inputName" class="form-control">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
 
@@ -100,11 +105,11 @@
                   <label for="inputStatus">3. Supply Criteria as mention in minimum eligibility Criteria </label>
                   <thead>
                       <tr>
-                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        <th>Office  Name<input type="text" name="v_office_name_supply" id="inputName" class="form-control">
                         </th>
-                          <th>Supply Criteria as mention in minimum eligibility Criteria No<input type="text" id="inputName" class="form-control">
+                          <th>Supply Criteria as mention in minimum eligibility Criteria No<input type="text" name="v_supply_criteria" id="inputName" class="form-control">
                           </th>
-                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                            <th>uploade file<input type="file" id="inputName" name="v_upload_file_ele" class="form-control">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -119,11 +124,11 @@
                   <label for="inputStatus">4. List of Plants & Machineries </label>
                   <thead>
                       <tr>
-                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        <th>Office  Name<input type="text" name="v_office_name_list" id="inputName" class="form-control">
                         </th>
-                          <th>List of Plants & Machineries No<input type="text" id="inputName" class="form-control">
+                          <th>List of Plants & Machineries No<input type="text" name="v_list_plants" id="inputName" class="form-control">
                           </th>
-                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                            <th>uploade file<input type="file" id="inputName" name="v_file_upload_elev" class="form-control">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -137,11 +142,11 @@
                   <label for="inputStatus">5. List of Testing Equipment's </label>
                   <thead>
                       <tr>
-                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        <th>Office  Name<input type="text" name="v_list_testing" id="inputName" class="form-control">
                         </th>
-                          <th>List of Testing Equipment's No<input type="text" id="inputName" class="form-control">
+                          <th>List of Testing Equipment's No<input type="text" name="v_list_testing_eqi" id="inputName" class="form-control">
                           </th>
-                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                            <th>uploade file<input type="file" name="v_upload_file_eleve" id="inputName" class="form-control">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -155,11 +160,11 @@
                   <label for="inputStatus">6. Calibration certificates Testing Equipment's </label>
                   <thead>
                       <tr>
-                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        <th>Office  Name<input type="text" id="inputName" name="v_office_name_calib" class="form-control">
                         </th>
-                          <th>alibration certificates Testing Equipment's No<input type="text" id="inputName" class="form-control">
+                          <th>alibration certificates Testing Equipment's No<input type="text" name="v_alibration" id="inputName" class="form-control">
                           </th>
-                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                            <th>uploade file<input type="file" name="v_file_upload_eleven" id="inputName" class="form-control">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -174,11 +179,11 @@
                   <label for="inputStatus">7. BIS LICENSE </label>
                   <thead>
                       <tr>
-                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        <th>Office  Name<input type="text" name="v_office_name_bis" id="inputName" class="form-control">
                         </th>
-                          <th>BIS LICENSE  No<input type="text" id="inputName" class="form-control">
+                          <th>BIS LICENSE  No<input type="text" name="v_bis_license_no" id="inputName" class="form-control">
                           </th>
-                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                            <th>uploade file<input type="file" name="v_upload_se" id="inputName" class="form-control">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -193,11 +198,11 @@
                   <label for="inputStatus">8. ISI LICENSE </label>
                   <thead>
                       <tr>
-                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        <th>Office  Name<input type="text" name="v_office_eight" id="inputName" class="form-control">
                         </th>
-                          <th>ISI LICENSE  No<input type="text" id="inputName" class="form-control">
+                          <th>ISI LICENSE  No<input type="text" name="v_isi_licence" id="inputName" class="form-control">
                           </th>
-                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                            <th>uploade file<input type="file" name="v_upload_eight" id="inputName" class="form-control">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -212,11 +217,11 @@
                   <label for="inputStatus">9. PRODUCTS MANUFACTURED WITH COMPLETE DESCRIPTION </label>
                   <thead>
                       <tr>
-                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        <th>Office  Name<input type="text" name="v_office_name_nine" id="inputName" class="form-control">
                         </th>
-                          <th>products manufactured with complete description No<input type="text" id="inputName" class="form-control">
+                          <th>products manufactured with complete description No<input type="text" name="v_product_nine" id="inputName" class="form-control">
                           </th>
-                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                            <th>uploade file<input type="file" name="v_upload_nine" id="inputName" class="form-control">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -230,11 +235,11 @@
                   <label for="inputStatus">10. METHOD ADOPTED FOR QUALITY CONTROL </label>
                   <thead>
                       <tr>
-                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        <th>Office  Name<input type="text" name="v_office_name_ten" id="inputName" class="form-control">
                         </th>
-                          <th>Method adopted for quality control No<input type="text" id="inputName" class="form-control">
+                          <th>Method adopted for quality control No<input type="text" name="v_method_ten" id="inputName" class="form-control">
                           </th>
-                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                            <th>uploade file<input type="file" name="v_upload_ten" id="inputName" class="form-control">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -248,11 +253,11 @@
                   <label for="inputStatus">11. SOURCE OF SUPPLY OF RAW MATERIAL WITH ADDRESS </label>
                   <thead>
                       <tr>
-                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        <th>Office  Name<input type="text" name="v_office_name_one" id="inputName" class="form-control">
                         </th>
-                          <th>Source of supply of raw material with address No<input type="text" id="inputName" class="form-control">
+                          <th>Source of supply of raw material with address No<input type="text" name="v_eleven_source" id="inputName" class="form-control">
                           </th>
-                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                            <th>uploade file<input type="file" name="v_eleven_upload_one" id="inputName" class="form-control">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -267,11 +272,11 @@
                   <label for="inputStatus">12. LIST OF ITEMS HOLDING ISO 9001 CERTIFICATE   </label>
                   <thead>
                       <tr>
-                        <th>Office  Name<input type="text" id="inputName" class="form-control">
+                        <th>Office  Name<input type="text" name="v_office_name_two" id="inputName" class="form-control">
                         </th>
-                          <th>list of items holding ISO 9001 certificate  No<input type="text" id="inputName" class="form-control">
+                          <th>list of items holding ISO 9001 certificate  No<input type="text" name="v_office_list_two" id="inputName" class="form-control">
                           </th>
-                            <th>uploade file<input type="file" id="inputName" class="form-control">
+                            <th>uploade file<input type="file" name="v_upload_file_two" id="inputName" class="form-control">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -286,9 +291,14 @@
             </div>
         </div>
         <div class="col-lg-6">
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <input type="submit" value="Save & Next" class="btn btn-success">
-            </div>
+            </div> -->
+            <a href="dashboard10"></a>
+                                              
+                  <button type="Submit" class="btn-second btn-submit ">Submit</button>
+        
+                  </a>
           </div>
         </div>
               </div>

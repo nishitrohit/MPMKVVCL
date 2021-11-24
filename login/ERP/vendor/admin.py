@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import VendorRegistration
+
 from .models import *
 
 
@@ -59,11 +59,52 @@ class VendorRegistrationAdmin(admin.ModelAdmin):
 
         "v_experienc", 
         "v_turnover",
-        "v_existing_pan"
+        "v_existing_pan",
+        "v_upload_file",
+        "v_upload_file_father",
+        "v_upload_file_mother",
+        "v_upload_file_factory"
 
 
     )
     list_filter = (
         'v_company_name',
         'v_email',
+   )
+
+@admin.register(finance_officer)
+class Finance_OfficerAdmin(admin.ModelAdmin):
+    list_display = (
+        "user_name",
+        "password"
+    )
+    list_filter= (
+         "user_name",
+         "password"
+    )
+
+@admin.register(working_officer)
+class Working_OfficerAdmin(admin.ModelAdmin):
+    list_display = (
+        "user_name",
+        "password"
+    )
+    list_filter= (
+         "user_name",
+         "password"
+    )
+
+
+
+@admin.register(officer)
+class officerAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "v_company_name",
+        "user_name",
+        "password", 
+
+    )
+    list_filter = (
+        'user_name',
    )

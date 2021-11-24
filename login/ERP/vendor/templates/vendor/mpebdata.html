@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finance Data</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="static/assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="static/assets/css/adminlte.min.css">
+
+     <!-- Ekko Lightbox -->
+  <link rel="stylesheet" href="../plugins/ekko-lightbox/ekko-lightbox.css">
+ <style>
+
+     .btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #10707f;
+}
+
+ </style>
+</head>
+<!--<body class="hold-transition sidebar-mini">-->
+<!-- Site wrapper -->
+<div class="wrapper mb-8">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-10">
+            <h4>The Details Given By You Are Below, You Have To Do Digital Signature, Before That Check It.</h4>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+<!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-primary">
+              <form   method="POST">
+                {% csrf_token %}
+
+
+                        <div class="card-body p-3">
+          <!-- <table class="table table-striped projects">
+              <thead>
+                  <tr>
+                    <th style="width:10%">
+                     Serial No
+                    </th>
+                      <th>
+                          Document Name
+                      </th>
+                     
+                        <th style="width: 10%">
+                        Document
+                      </th>
+                   
+                  </tr>
+              </thead>
+                <tbody>
+
+                  <tr>
+                      <td>
+                        <p>1</p>
+                      </td>
+                      <td>
+                          <p>AADHAR CARD</p>
+                      <td>
+
+                      <td>
+                          <p></p>
+                      </td>
+                    
+                    </tr>
+
+           
+
+                  <tr>
+                    <td>
+                      <p>2</p>
+                    </td>
+                      <td>
+                        <p>AADHAR CARD FATHER</p>
+                      </td>
+                     
+                      <td >
+                          <p></p>
+                      </td>
+                
+                      
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>3</p>
+                    </td>
+                      <td>
+                        <p>NABL Certificate</p>
+                      </td>
+                     
+                      <td >
+                          <p></p>
+                      </td>
+                  
+                      
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>4</p>
+                    </td>
+                      <td>
+                        <p>GST Document</p>
+                      </td>
+                     
+                      <td >
+                          <p></p>
+                      </td>
+                  
+                      
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>5</p>
+                    </td>
+                      <td>
+                        <p>Lists of Plants and Machinery</p>
+                      </td>
+                     
+                      <td >
+                          <p></p>
+                      </td>
+                  
+                      
+                  </tr>
+          
+
+           </tbody>
+
+
+
+
+              <tbody>
+                {% for name in supplier %}
+                  <tr>
+                      <td>
+                         {{name.Supplier_id}}Test
+                      </td>
+                      <td>
+                          <a>
+                              {{name.Supplier_name}}Test
+                          </a>
+                          <br/>
+                              Created {{name.Supplier_Add_date}}Test
+                      </td>
+                      <td>
+                          {{name.Supplier_phone_no}}
+                      </td>
+                      <td class="project_progress">
+                              {{name.Supplier_email}}
+                      </td>
+                      <td class="project-state">
+                          {{name.Supplier_address}}
+                      </td>
+                      <td class="project-actions text-right">
+                          <a class="btn btn-primary btn-sm" href="/dashboard/showSupplier/{{name.Supplier_id}}">
+                              <i class="fas fa-folder">
+                              </i>
+                              View
+                          </a>
+                          <a class="btn btn-info btn-sm" href="/dashboard/editSupplier/{{name.Supplier_id}}">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm" href="/dashboard/deleteSupplier/{{name.Supplier_id}}">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
+                      </td>
+                  </tr>
+              {% endfor %}
+
+           </tbody>
+          </table> -->
+
+          <table  class="table table-striped">
+            <thead>
+                <tr>
+                    <!-- <th>Id</th> -->
+                    <th>Vendor Name</th>
+                    <th>Send PO</th>
+                    
+                </tr>
+             
+               
+            </thead>
+            
+            <td>{% for number in final %}
+              {{number}}<br>
+          {% endfor %}</td>
+                    <!-- <td>{% for i in father_data %}
+                      <img src={{i}} style="width: 400px;"><br>
+                    {% endfor %}</td>
+
+                    <td>{% for i in mother_data %}
+                      <img src={{i}} style="width: 400px;"><br>
+                    {% endfor %}</td> -->
+
+                    
+                   
+                <!-- </tr> -->
+             
+              
+            </tbody>
+         </table>
+        </div>
+
+
+
+
+
+
+              <div class="container">
+                <div class="row card-body">
+      <div class="col-lg-6">
+            <div class="form-group">
+                <input type="reset" value="Previous" class="btn btn-secondary">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+              <a href="dashboard13"></a>
+                                              
+              <button type="Submit" class="btn-second btn-submit ">Submit</button>
+    
+              </a>
+                <!-- <input type="submit" value="For" class="btn btn-success"> -->
+            </div>
+          </div>
+        </div>
+              </div>
+              </div>
+          </div>
+        </div>
+
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+
+<script>
+  $(function () {
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({gutterPixels: 3});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+  })
+</script>
+
+
+<!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Ekko Lightbox -->
+<script src="../plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- Filterizr-->
+<script src="../plugins/filterizr/jquery.filterizr.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+<!-- Page specific script -->
+</body>
+</html>

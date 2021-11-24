@@ -60,7 +60,7 @@
                 </div>
 
               </div>
-              <form   action="vendor_registration_ten" method="POST">
+              <form   action="vendor_registration_ten" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
               <div class="container">
                 <table class="table">
@@ -112,7 +112,7 @@
                           </th>
                           <th>End Date<input type="text" id="inputName" name="v_p_end_date" class="form-control">
                           </th>
-                          <th>uploade file<input type="file" name="v_upload_file" id="inputName" class="form-control">
+                          <th>uploade file<input type="file"  name="v_upload_file" accept="image/*" id="inputName" class="form-control">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                           </div>
@@ -130,7 +130,7 @@
                           </th>
                           <th>adaar card mother number<input type="text" name="v_father_number" id="inputName" class="form-control">
                           </th>
-                          <th>Upload file<input type="file" id="inputName" name="v_upload_file_father" class="form-control">
+                          <th>Upload file<input type="file" id="inputName" name="v_upload_file_father" accept="image/*" class="form-control">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -146,7 +146,7 @@
                         </th>
                         <th>Adhaar card mother number<input type="text" name="v_mother_number" id="inputName" class="form-control">
                         </th>
-                          <th>Upload file<input type="file" name="v_upload_file_mother" id="file" class="form-control">
+                          <th>Upload file<input type="file" name="v_upload_file_mother" accept="image/*" id="file" class="form-control">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -160,7 +160,8 @@
                       <tr>
                         <th>faculty license number<input type="text" name="v_faculty_license_number" id="inputName" class="form-control">
                         </th>
-                          <th>Choose Documents<input type="file" name="v_upload_file_factory" id="file" class="form-control">
+                          <th>Choose Documents<input type="file" name="v_upload_file_factory" accept="image/*" id="file" class="form-control">
+                          </th> id="file" class="form-control">
                           </th>
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>    

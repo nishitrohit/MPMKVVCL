@@ -21,5 +21,16 @@ urlpatterns = [
 	path('vendor_registration_eight', views.Vendor_Registration_Eight, name='dashboard6'),
 	path('vendor_registration_nine', views.Vendor_Registration_Nine, name='dashboard7'),
 	path('vendor_registration_ten', views.Vendor_Registration_Ten, name='dashboard8'),
-	path('vendor_registration_eleven', views.Vendor_Registration_Eleven, name='dashboard9')
+	path('vendor_registration_eleven', views.Vendor_Registration_Eleven, name='dashboard9'),
+
+	path('vendor_registration_twelve', views.Vendor_Registration_Twelve, name='dashboard10'),
+	path('vendor_registration_thirteen', views.Vendor_Registration_Thirteen, name='dashboard11'),
+	path('vendor_registration_fourteen', views.Vendor_Registration_Fourteen, name='dashboard12'),
+	path('vendor_registration_fifteen', views.Vendor_Registration_Fifteen, name='dashboard13'),
+	path('vendor_registration_sixteen', views.Vendor_Registration_Sixteen, name='dashboard14'),
+
+	path('finance_login', views.Finance, name='finance'),
+	path('working_login', views.Working, name='working'),
+	path('mpebregiter', views.mpebregiter, name='mpebregiter')
+
 ]
