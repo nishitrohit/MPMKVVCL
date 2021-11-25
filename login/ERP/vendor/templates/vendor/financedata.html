@@ -34,7 +34,6 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-10">
-            <h4>The Details Given By You Are Below, You Have To Do Digital Signature, Before That Check It.</h4>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -45,155 +44,12 @@
         <div class="row">
           <div class="col-12">
             <div class="card card-primary">
-              <form    method="POST">
+              <form  action="finance_home"  method="POST">
                 {% csrf_token %}
 
 
                         <div class="card-body p-3">
-          <!-- <table class="table table-striped projects">
-              <thead>
-                  <tr>
-                    <th style="width:10%">
-                     Serial No
-                    </th>
-                      <th>
-                          Document Name
-                      </th>
-                     
-                        <th style="width: 10%">
-                        Document
-                      </th>
-                   
-                  </tr>
-              </thead>
-                <tbody>
-
-                  <tr>
-                      <td>
-                        <p>1</p>
-                      </td>
-                      <td>
-                          <p>AADHAR CARD</p>
-                      <td>
-
-                      <td>
-                          <p></p>
-                      </td>
-                    
-                    </tr>
-
-           
-
-                  <tr>
-                    <td>
-                      <p>2</p>
-                    </td>
-                      <td>
-                        <p>AADHAR CARD FATHER</p>
-                      </td>
-                     
-                      <td >
-                          <p></p>
-                      </td>
-                
-                      
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>3</p>
-                    </td>
-                      <td>
-                        <p>NABL Certificate</p>
-                      </td>
-                     
-                      <td >
-                          <p></p>
-                      </td>
-                  
-                      
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <p>4</p>
-                    </td>
-                      <td>
-                        <p>GST Document</p>
-                      </td>
-                     
-                      <td >
-                          <p></p>
-                      </td>
-                  
-                      
-                  </tr>
-
-                  <tr>
-                    <td>
-                      <p>5</p>
-                    </td>
-                      <td>
-                        <p>Lists of Plants and Machinery</p>
-                      </td>
-                     
-                      <td >
-                          <p></p>
-                      </td>
-                  
-                      
-                  </tr>
-          
-
-           </tbody>
-
-
-
-
-              <tbody>
-                {% for name in supplier %}
-                  <tr>
-                      <td>
-                         {{name.Supplier_id}}Test
-                      </td>
-                      <td>
-                          <a>
-                              {{name.Supplier_name}}Test
-                          </a>
-                          <br/>
-                              Created {{name.Supplier_Add_date}}Test
-                      </td>
-                      <td>
-                          {{name.Supplier_phone_no}}
-                      </td>
-                      <td class="project_progress">
-                              {{name.Supplier_email}}
-                      </td>
-                      <td class="project-state">
-                          {{name.Supplier_address}}
-                      </td>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="/dashboard/showSupplier/{{name.Supplier_id}}">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a>
-                          <a class="btn btn-info btn-sm" href="/dashboard/editSupplier/{{name.Supplier_id}}">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="/dashboard/deleteSupplier/{{name.Supplier_id}}">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                  </tr>
-              {% endfor %}
-
-           </tbody>
-          </table> -->
-
+         
           <table  class="table table-striped">
             <thead>
                 <tr>

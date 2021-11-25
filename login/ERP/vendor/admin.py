@@ -75,23 +75,25 @@ class VendorRegistrationAdmin(admin.ModelAdmin):
 @admin.register(finance_officer)
 class Finance_OfficerAdmin(admin.ModelAdmin):
     list_display = (
-        "user_name",
-        "password"
+        "v_company_name",
+        "verified"
+       
     )
     list_filter= (
-         "user_name",
-         "password"
+         "v_company_name",
+         "verified"
     )
 
 @admin.register(working_officer)
 class Working_OfficerAdmin(admin.ModelAdmin):
     list_display = (
-        "user_name",
-        "password"
+        "v_company_name",
+        "verified"
+       
     )
     list_filter= (
-         "user_name",
-         "password"
+         "v_company_name",
+         "verified"
     )
 
 

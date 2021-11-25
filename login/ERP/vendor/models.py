@@ -4,7 +4,7 @@ from django.db import models
 
 class VendorRegistration(models.Model):
     v_service_type = models.CharField(max_length=15,null=True)
-    v_company_name = models.EmailField(max_length=30,unique=True,primary_key=True)
+    v_company_name = models.CharField(max_length=30,unique=True,primary_key=True)
     v_name_of_authorized = models.CharField(max_length=30)
     v_email  = models.EmailField(max_length=30,unique=True)
     v_mobile= models.CharField(max_length=10,unique=True)
@@ -164,29 +164,26 @@ class VendorRegistration(models.Model):
 
 class finance_officer(models.Model):
     # v_company_name = models.ForeignKey(VendorRegistration,on_delete=models.CASCADE)
-    user_name = models.CharField(max_length=10,null=True,blank=True)
-    password = models.CharField(max_length=10,null=True,blank=True)
-    verified = models.BooleanField(default=False)
-    v_name_of_authorized = models.CharField(max_length=30,null=True,blank=True)
+    v_company_name = models.CharField(max_length=30,null=True,blank=True)
+    user_name = models.CharField(max_length=10,null=True,blank=True,default="finance")
+    password = models.CharField(max_length=10,null=True,blank=True,default="12345")
+    verified = models.BooleanField(default=False,null=True)
+
     v_file_upload_eleven = models.ImageField(upload_to="images/",null=True)
     v_file_upload = models.ImageField(upload_to="images/",null=True)
 
 class working_officer(models.Model):
-    v_company_name = models.ForeignKey(VendorRegistration,on_delete=models.CASCADE)
+    v_company_name = models.CharField(max_length=30,null=True,blank=True)
     user_name = models.CharField(max_length=10,null=True,blank=True,default="working")
     password = models.CharField(max_length=10,null=True,blank=True,default="12345")
-    verified = models.BooleanField(default=False)
-    v_name_of_authorized = models.CharField(max_length=30,null=True,blank=True)
-    v_three_years_income_1 = models.CharField(max_length=30,null=True,blank=True)
-    v_three_years_income_2 = models.CharField(max_length=30,null=True,blank=True)
-    v_three_years_income_3= models.CharField(max_length=30,null=True,blank=True)
-    v_three_years_tax_1= models.CharField(max_length=30,null=True,blank=True)
-    v_three_years_tax_2= models.CharField(max_length=30,null=True,blank=True)
-    v_three_years_tax_3= models.CharField(max_length=30,null=True,blank=True)
+    verified = models.BooleanField(default=False,null=True)
+
+    incode_first_year = models.CharField(max_length=30,null=True,blank=True)
+    incode_secound_year = models.CharField(max_length=30,null=True,blank=True)
 
 
 class officer(models.Model):
-    v_company_name = models.ForeignKey(VendorRegistration,on_delete=models.CASCADE)
+    v_company_name = models.CharField(max_length=30,null=True,blank=True)
     user_name = models.CharField(max_length=10,null=True,blank=True,default="working")
     password = models.CharField(max_length=10,null=True,blank=True,default="12345")
     verified = models.BooleanField(default=False)

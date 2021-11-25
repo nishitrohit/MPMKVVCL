@@ -13,6 +13,7 @@ from django.conf import settings
 import requests
 import random,math
 from copy import deepcopy
+from django.db.models import Count
 
 def Login(request):
     # if request.method == 'POST':
@@ -464,53 +465,61 @@ def Vendor_Registration_Fifteen(request):
 
 def Finance(request):
     if request.method == 'POST':
-        if finance_officer.objects.filter(user_name="finance"):
-            if finance_officer.objects.filter(password="12345"):
-                finance = VendorRegistration.objects.all()
-                finance_serializer =VendorRegistration_Serializer(finance,many=True)
-                data = finance_serializer.data
-                jsondata = json.loads(json.dumps(data))
-                finance_data = len(jsondata)
-                f_data = []
-                m_data = []
-                ven_name = []
-                for i in range(finance_data):
-                    father_data = jsondata[i]['v_upload_file_father']
-                    mother_data = jsondata[i]['v_upload_file_mother']
-                    vendor_data = jsondata[i]['v_company_name']
-                    f_data.append(father_data)
-                    m_data.append(mother_data)
-                    ven_name.append(vendor_data)
-                # for i in ven_name:
-                #     user_data = finance_officer(v_name_of_authorized=i)
-                #     user_data.save()
-                print(f_data)
-                lst_f_data = []
-                lst_m_data = []
-                for i in f_data:
-                    str_i = str(i)
-                    test = str_i.split('/media')
-                    lst_f_data.append(test[1])
-                    
-                
-                for i in m_data:
-                    str_i = str(i)
-                    test = str_i.split('/media')
-                    lst_m_data.append(test[1])
-                   
+        finance = VendorRegistration.objects.all()
+        finance_serializer =VendorRegistration_Serializer(finance,many=True)
+        data = finance_serializer.data
+        jsondata = json.loads(json.dumps(data))
+        finance_data = len(jsondata)
+        f_data = []
+        m_data = []
+        ven_name = []
+        for i in range(finance_data):
+            father_data = jsondata[i]['v_upload_file_father']
+            mother_data = jsondata[i]['v_upload_file_mother']
+            vendor_data = jsondata[i]['v_company_name']
+            f_data.append(father_data)
+            m_data.append(mother_data)
+            ven_name.append(vendor_data)
+              
+            
+        # for i in ven_name:
+        #     user_data = finance_officer(v_name_of_authorized=i)
+        #     user_data.save()
+        lst_f_data = []
+        lst_m_data = []
 
-                final_data =zip(ven_name,f_data,m_data)
-                aa = zip(ven_name,lst_f_data,lst_m_data)
-                for i,j,k in aa:
-                    user_data = finance_officer(v_name_of_authorized=i,v_file_upload_eleven=j,v_file_upload=k)
-                    user_data.save()
-                return render(request,'vendor/financedata.html',{"final":final_data}) 
-                # finance_data = jsondata['v_upload_file_father']
-                print(jsondata)
-                # return render(request,'vendor/finance.html') 
+        for i in f_data:
+            str_i = str(i)
+            test = str_i.split('/media')
+            lst_f_data.append(test[1])
+            
+        
+        for i in m_data:
+            str_i = str(i)
+            test = str_i.split('/media')
+            lst_m_data.append(test[1])
+            
+
+        final_data =zip(ven_name,f_data,m_data)
+        
+        aa = zip(ven_name,lst_f_data,lst_m_data)
+        final_set = set(aa)
+        final_list_data = list(final_set)
+        for i,j,k in final_list_data:
+            onek = bool(request.POST.get('vehicle3'))
+            if finance_officer.objects.filter(v_company_name=i).exists():
+                break
             else:
-                return render(request,'vendor/finnance_officer_sign.html')
-        return render(request,'vendor/finnance_officer_sign.html')   
+                user_data = finance_officer(v_company_name=i,v_file_upload_eleven=j,v_file_upload=k,verified=onek)
+                
+                user_data.save()
+    
+
+         
+        return render(request,'vendor/financedata.html',{"final":final_data})
+        # finance_data = jsondata['v_upload_file_father']
+  
+        
     return render(request,'vendor/finnance_officer_sign.html')
 
 def Working(request):
@@ -526,21 +535,31 @@ def Working(request):
                 m_data = []
                 ven_name = []
                 for i in range(finance_data):
-                    father_data = jsondata[i]['v_three_years_income_1']
-                    mother_data = jsondata[i]['v_three_years_income_2']
                     
+                    vendor_data = jsondata[i]['v_company_name']
+                    mother_data = jsondata[i]['incode_first_year']
+                    father_data = jsondata[i]['incode_secound_year']
+                    ven_name.append(vendor_data)
                     f_data.append(father_data)
                     m_data.append(mother_data)
                    
                 # for i in ven_name:
                 #     user_data = finance_officer(v_name_of_authorized=i)
                 #     user_data.save()
-                print(f_data)
-                print(m_data)
-                print(ven_name)
-                   
-
-                final_data =zip(f_data,m_data)
+              
+ 
+                final_data =zip(ven_name,f_data,m_data)
+                aa = zip(ven_name,f_data,m_data)
+                final_set = set(aa)
+                final_list_data = list(final_set)
+                for i,j,k in final_list_data:
+                    onek = bool(request.POST.get('vehicle3'))
+                    if working_officer.objects.filter(v_company_name=i).exists():
+                        break
+                    else:
+                        user_data = working_officer(v_company_name=i,v_file_upload_eleven=j,v_file_upload=k,verified=onek)
+                        
+                        user_data.save()
             
                 return render(request,'vendor/working_data.html',{"final_data":final_data}) 
                 # finance_data = jsondata['v_upload_file_father']
@@ -568,12 +587,60 @@ def mpebregiter(request):
                     v_data = jsondata[i]['v_company_name']
                     f_data.append(v_data)              
 
-                print("kjhkhkhellllooo",f_data)
+                for i in f_data:
+                   
+                    user_data = officer(v_company_name=i)
+                    
+                    user_data.save()
+                result = officer.objects.values('v_company_name').order_by('v_company_name').annotate(count=Count('v_company_name'))
+                print("hhhhhhhhhhhhhhhhh",result)
                 return render(request,'vendor/mpebdata.html',{"final":f_data}) 
                 # finance_data = jsondata['v_upload_file_father']
-                print(jsondata)
+             
                 # return render(request,'vendor/finance.html') 
             else:
                 return render(request,'vendor/mpeb_reg.html')
         return render(request,'vendor/mpeb_reg.html')   
     return render(request,'vendor/mpeb_reg.html')
+
+
+
+def vendor_home(request):
+	return render(request, 'vendor/vendor_dashboard.html', {})
+
+
+def vendor_base(request):
+	return render(request, 'vendor/vendor_base.html', {})
+
+
+def vendor_purchase(request):
+	return render(request, 'vendor/vendor_purchase_order.html', {})
+
+def vendor_material(request):
+	return render(request, 'vendor/vendor_material_dispatch.html', {})
+
+
+def area_base(request):
+	return render(request, 'vendor/areastore_base.html', {})
+
+def area_dashboard(request):
+	return render(request, 'vendor/areastore_dashboard.html', {})
+
+def area_process(request):
+	return render(request, 'vendor/area_process_inventory.html', {})
+
+def area_stock(request):
+	return render(request, 'vendor/area_stock_inventory.html', {})
+
+
+
+def Finance_login(request):
+    if request.method == 'POST':
+        if finance_officer.objects.filter(user_name="finance"):
+            if finance_officer.objects.filter(password="12345"):
+                return render(request,'vendor/financedata.html') 
+          
+            else:
+                return render(request,'vendor/finnance_officer_sign.html')
+        return render(request,'vendor/finnance_officer_sign.html')   
+    return render(request,'vendor/finnance_officer_sign.html')

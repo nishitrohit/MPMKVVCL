@@ -2,6 +2,8 @@ from django.conf.urls import url
 from django.urls import path
 from . import views
 from django.contrib import admin
+from django.urls import reverse
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
 	
@@ -29,8 +31,19 @@ urlpatterns = [
 	path('vendor_registration_fifteen', views.Vendor_Registration_Fifteen, name='dashboard13'),
 	path('vendor_registration_sixteen', views.Vendor_Registration_Sixteen, name='dashboard14'),
 
-	path('finance_login', views.Finance, name='finance'),
+	path('finance_login', views.Finance_login, name='finance'),
+	path('finance_home', views.Finance, name='finance_index'),
 	path('working_login', views.Working, name='working'),
-	path('mpebregiter', views.mpebregiter, name='mpebregiter')
+	path('mpebregiter', views.mpebregiter, name='mpebregiter'),
+	path('home', views.vendor_home, name ="home"),
+
+    path('vendor_base', views.vendor_base, name ="vendor_base"),
+    path('vendor_material', views.vendor_material, name ="vendor_material"),
+    path('vendor_purchase', views.vendor_purchase, name ="vendor_purchase"),
+	path('area_base', views.area_base, name ="area_base"),
+    path('area_dashboard', views.area_dashboard, name="area_dashboard"),
+    path('area_process', views.area_process, name="area_process"),
+    path('area_stock', views.area_stock, name="area_stock"),
+	
 
 ]
