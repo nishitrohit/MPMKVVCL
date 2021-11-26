@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vendor Registration</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="static/assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="static/assets/css/adminlte.min.css">
+
+</head>
+<!--<body class="hold-transition sidebar-mini">-->
+<!-- Site wrapper -->
+<div class="wrapper">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Vendor Registration</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    <form   action="vendor_registration_sixteen" method="POST">
+      {% csrf_token %}
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h2 class="card-title">Choose Signature Type</h2>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+
+<div class=" card-body col-lg-12">
+<!-- <h4 class="heading">By uploading any document, all the pages related to that document will have to be re-uploaded.</h4> -->
+</div>
+<div class="card-body">
+      <div class="form-group" type="radio">
+        <article>
+            <!-- <h5>After reporting any service, you will have to upload the necessary documents to you.</h5> -->
+            <p></p>
+            <ul>
+                <input type="radio" name="opinions" id="radio-1" checked/>
+                <label for="radio-1"></label>
+                <label for="radio-1">Online Verification (Verification will be done through Aadhar after registration through Mobile No., Aadhar No.)</label><br>
+                <input type="radio" name="opinions" id="radio-2" />
+                <label for="radio-1"></label>
+                <label for="radio-1">Digital Signature (Token of digital signature verified by CA)</label>
+            </ul>
+        <div>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" checked><h3>Please check all the details before digital signing as once the digital signature is implemented no further changes can be allowed. Do you want to continue with digital signature?</h3>
+        </div>
+
+            <button  style="margin-top: 10px;" class="button btn btn-primary" onclick="">Previous</button>
+            <!-- <button  style="margin-top: 10px;" class="button btn btn-primary" onclick="">Next and Save</button> -->
+            <a href="dashboard14"></a>
+                                              
+            <button type="Submit" class="btn-success">Submit</button>
+  
+            </a>
+        </article>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+    <div class="row card-body">
+        <div class="col-lg-5">
+            <div class="form-group">
+                <input type="reset" value="Seva Prabhandan pe Jaye" class="btn btn-secondary">
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+
+</body>
+</html>

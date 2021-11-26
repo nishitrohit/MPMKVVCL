@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vendor Registration</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="static/assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="static/assets/css/adminlte.min.css">
+
+</head>
+<body onload="cap()"></body>
+
+<!-- Site wrapper -->
+<div class="wrapper">
+  <!-- Content Wrapper. Contains page content -->
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Vendor Registration</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Registration Form</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                </button>
+              </div>
+            </div>
+            <form action="register" method="POST">
+              {% csrf_token %}
+            <div class="card-body">
+              <div class="form-group">
+                <label for="inputStatus">Types of service /proprietary of Busniness</label>
+                <select id="inputStatus" name="service_type" class="form-control custom-select">
+                  <option selected disabled value="">Select one</option>
+                  <option>Propreitorship</option>
+                  <option>partnership</option>
+                  <option>company</option>
+                  <option>individual</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="company_name">Firm / Company Name *</label>
+                <input type="text" id="company_name" name="company_name" class="form-control" required="required">
+              </div>
+              <div class="form-group">
+                <label for="name_of_authorized">Name of authorized person *</label>
+                <input type="text" id="name_of_authorized" name="name_of_authorized" class="form-control" required="required">
+              </div>
+              <div class="form-group">
+                <label for="mobile">Mobile number *</label>
+                <input type="tel" id="mobile" name="mobile" class="form-control" pattern="^\d{10}$" maxlength="10" minlength="10" required="required">
+              </div>
+              <div class="form-group">
+                <label for="email">Email ID *</label>
+                <input type="email" id="email" name="email" class="form-control" required="required">
+              </div>
+
+              <label>Enter Captcha:</label>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" readonly id="capt">
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" id="textinput">
+                </div>
+              </div>
+              <h6>Captcha not visible <img src="static/assets/images/refresh.png" width="40px" onclick="cap()"></h6>
+      
+              <div>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" required="required">
+                <label for="vehicle3">The details given by me are true. ,</label><br><br>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <div class="col-md-6">
+          <div class="card card-secondary">
+            <div class="card-header">
+              <h3 class="card-title">CONTRACTOR REGISTRATION INSTRUCTIONS</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="worning">
+                {% for message in messages %}
+                <p style="color: red; font-size:13px;">{{message}}</p>
+                {% endfor %}
+              </div>
+            <div class="card-body">
+              <div class="form-group">
+                <article>
+                    <h3>Kindly register for empanelment with MPMKVVCL as contractor using your basic details</h3>
+                    <p></p>
+                    <ul>
+                        <li>Enter service type.</li>
+                        <li>Enter the name of the company or firm.</li>
+                        <li>Enter the full name of the contact person.</li>
+                        <li>Enter valid mobile number of the authorized person.</li>
+                        <li>Enter valid email id of the authorized person.</li>
+                        <li>Check your mail and SMS for login details.</li>
+                        <li>After filling the information, portal fee of Rs 2000 will have to be paid.</li>
+                        <li>Login and continue to next step.</li>
+                        <li>Note:- The person authorized by the company to process the activities of the company. </li>
+                    </ul>
+                    <span class="text-danger">Note: Enter valid email id and contact information for the contact.</span>
+                    <br>  <br>
+                                Check your mail and SMS for login details. Login and complete the details.
+                    <br> <br>  <br>
+                </article>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+
+    <div class="row card-body">
+      <div class="col-lg-5">
+            <div class="form-group">
+                <input type="reset" value="Previous" class="btn btn-secondary">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <button onclick="validcap()" type="submit" id="submit" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+    </div>
+    </section>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function cap(){
+    var alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V'
+                 ,'W','X','Y','Z','1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f','g','h','i',
+                 'j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', '!','@','#','$','%','^','&','*','+'];
+                 var a = alpha[Math.floor(Math.random()*53)];
+                 var b = alpha[Math.floor(Math.random()*53)];
+                 var c = alpha[Math.floor(Math.random()*53)];
+                 var d = alpha[Math.floor(Math.random()*53)];
+                 var e = alpha[Math.floor(Math.random()*53)];
+                 var f = alpha[Math.floor(Math.random()*53)];
+
+                 var final = a+b+c+d+e+f;
+                 document.getElementById("capt").value=final;
+               }
+               function validcap(){
+                var stg1 = document.getElementById('capt').value;
+                var stg2 = document.getElementById('textinput').value;
+                if(stg1==stg2){
+                  alert("Form is validated Succesfully");
+                  return true;
+                }else{
+                  alert("Please enter a valid captcha");
+                  return false;
+                }
+               }
+</script>
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+</body>
+</html>

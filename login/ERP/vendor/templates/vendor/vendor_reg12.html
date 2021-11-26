@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vendor Registration</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="static/assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="static/assets/css/adminlte.min.css">
+
+     <!-- Ekko Lightbox -->
+  <link rel="stylesheet" href="../plugins/ekko-lightbox/ekko-lightbox.css">
+ <style>
+
+     .btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #10707f;
+}
+
+ </style>
+</head>
+<!--<body class="hold-transition sidebar-mini">-->
+<!-- Site wrapper -->
+<div class="wrapper mb-8">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Vendor Registration</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+<!-- Main content -->
+    <table class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-primary">
+              <div class="card-body" >
+                  <div class="btn-group w-100 mb-2 ">
+                    <a class="btn btn-info active" href="javascript:void(0)" data-filter="all" style="background-color: #007bff;"> Instruction </a>
+                    <a class="btn btn-info" href="javascript:void(0)" data-filter="1" style="background-color: #007bff;"> General/personal Details</a>
+                    <a class="btn btn-info" href="javascript:void(0)" data-filter="2" style="background-color: #007bff;"> Technical Details </a>
+                    <a class="btn btn-info" href="javascript:void(0)" data-filter="3" style="background-color: #007bff;"> Financial Details </a>
+                    <a class="btn btn-info" href="javascript:void(0)" data-filter="4" style="background-color: #007bff;"> Declaration Details</a>
+                  </div>
+                <div>
+                  <div class="filter-container p-0 row">
+                  </div>
+                </div>
+
+                <form action="vendor_registration_twelve" method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
+              <div class="container">
+                <table class="table">   
+                <div class="row card-body ">
+                        <div class="col-lg-6">
+                            <label>TURN OVER OF LAST THREE YEARS(in lakhs), PREVIOUS LAST THREE YEARS MAXIMUM INCOME(in lakhs)*</label>
+                            <div class="form-group">
+                                <label>Yearly Income 2021-2020</label>
+                                <input type="text" id="erererer" name="v_three_years_income_1" class="form-control" placeholder="" required="required">
+                                <label>Yearly Income 2021-2020 </label>
+                                <input type="text" id="erererer" name="v_three_years_income_2" class="form-control" placeholder="" required="required">
+                                <label>Yearly Income 2021-2020 </label>
+                                <input type="text" id="erererer" name="v_three_years_income_3" class="form-control" placeholder="" required="required">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <label>LAST THREE YEARS TAX RETURN(in lakhs)*</label>
+                            <div class="form-group">
+                                <label>Tax 2021-2020</label>
+                                <input type="text" id="protocol" name="v_three_years_tax_1" class="form-control" placeholder="" required="required">
+                                <label>Tax 2021-2020</label>
+                                <input type="text" id="protocol" name="v_three_years_tax_2" class="form-control" placeholder="" required="required">
+                                <label>Tax 2021-2020</label>
+                                <input type="text" id="protocol" name="v_three_years_tax_3" class="form-control" placeholder="" required="required">
+                            </div>
+                        </div>
+
+
+
+                  <label for="inputStatus">1.BALANCE SHEET</label>
+                  <thead>
+                      <tr>
+                        <th>
+                        <label for="exampleFormControlSelect1">Year *</label>
+                            <select class="form-control" id="authentication" name="v_balance_sheet_1" required>
+                                  <option selected disabled value="">Select One</option>
+                                  <option value="2">2021-2020</option>
+                                  <option value="3">2020-2019</option>
+                                  <option value="4">2019-2018</option>
+                                  <option value="5">2018-2017</option>
+                            </select>
+                        </th>
+                          <th>Balance Sheet Number<input type="text" name="v_balance_sheet_2" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th>Choose Document file<input type="file" name="v_balance_sheet_1_upload" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                          </div>
+                      </tr>
+
+                     <tr>
+                        <th>
+                        <label for="exampleFormControlSelect1">Year *</label>
+                            <select class="form-control" id="authentication" name="v_balance_sheet_3" required>
+                                  <option selected disabled value="">Select One</option>
+                                  <option value="2">2021-2020</option>
+                                  <option value="3">2020-2019</option>
+                                  <option value="4">2019-2018</option>
+                                  <option value="5">2018-2017</option>
+                            </select>
+                        </th>
+                          <th>Balance Sheet Number<input type="text" id="inputName" name="v_balance_sheet_4" class="form-control" required="required">
+                          </th>
+                          <th>Choose Document file<input type="file" name="v_balance_sheet_2_upload" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                          </div>
+                      </tr>
+
+                    <tr>
+                        <th>
+                        <label for="exampleFormControlSelect1">Year *</label>
+                            <select class="form-control" id="authentication" name="v_balance_sheet_5" required>
+                                  <option selected disabled value="">Select One</option>
+                                  <option value="2">2021-2020</option>
+                                  <option value="3">2020-2019</option>
+                                  <option value="4">2019-2018</option>
+                                  <option value="5">2018-2017</option>
+                            </select>
+                        </th>
+                          <th>Balance Sheet Number<input type="text"  name="v_balance_sheet_6" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th>Choose Document file<input type="file" name="v_balance_sheet_3_upload" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                          </div>
+                      </tr>
+                  </thead>
+
+        <table class="table">
+                <label for="inputStatus">2.PROFIT - LOSS SHEET</label>
+                  <thead>
+                      <tr>
+                        <th>
+                        <label for="exampleFormControlSelect1">Year *</label>
+                            <select class="form-control" id="authentication" name="v_profit_loss_sheet_1" required>
+                                  <option selected disabled value="">Select One</option>
+                                  <option value="2">2021-2020</option>
+                                  <option value="3">2020-2019</option>
+                                  <option value="4">2019-2018</option>
+                                  <option value="5">2018-2017</option>
+                            </select>
+                        </th>
+                          <th>Profit - Loss Sheet Number<input type="text" name="v_profit_loss_sheet_2" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th>Choose Document file<input type="file" name="v_profit_loss_sheet_1_upload" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                          </div>
+                      </tr>
+
+                     <tr>
+                        <th>
+                        <label for="exampleFormControlSelect1">Year *</label>
+                            <select class="form-control" id="authentication" name="v_profit_loss_sheet_3" required>
+                                  <option selected disabled value="">Select One</option>
+                                  <option value="2">2021-2020</option>
+                                  <option value="3">2020-2019</option>
+                                  <option value="4">2019-2018</option>
+                                  <option value="5">2018-2017</option>
+                            </select>
+                        </th>
+                          <th>Profit - Loss Sheet Number<input type="text" name="v_profit_loss_sheet_4" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th>Choose Document file<input type="file" name="v_profit_loss_sheet_2_upload" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                          </div>
+                      </tr>
+
+                    <tr>
+                        <th>
+                        <label for="exampleFormControlSelect1">Year *</label>
+                            <select class="form-control" id="authentication" name="v_profit_loss_sheet_5" required>
+                                  <option selected disabled value="">Select One</option>
+                                  <option value="2">2021-2020</option>
+                                  <option value="3">2020-2019</option>
+                                  <option value="4">2019-2018</option>
+                                  <option value="5">2018-2017</option>
+                            </select>
+                        </th>
+                          <th>Profit - Loss Sheet Number<input type="text" name="v_profit_loss_sheet_6" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th>Choose Document file<input type="file" name="v_profit_loss_sheet_3_upload" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                      </tr>
+                  </thead>
+
+        <table class="table">
+                <label for="inputStatus">3.PAN CARD NUMBER</label>
+                  <thead>
+                      <tr>
+                        </th>
+                          <th>Name<input type="text" id="inputName" name="v_pan_name_t" class="form-control" required="required">
+                          </th>
+                          <th>Pan Card Number<input type="text" id="inputName" name="v_pan_number_t" class="form-control" required="required">
+                          </th>
+                          <th>Date of issue<input type="date" name="v_pan_issue_t" id="v_pan_issue_t" class="form-control" required="required">
+                          </th>
+                          <th>Choose Document file<input type="file" name="v_pan_issue_t_upload" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                      </tr>
+                  </thead>
+        </table>
+              <table class="table">
+                <label for="inputStatus">4.INCOME TAX RETURN LAST YEAR</label>
+                  <thead>
+                      <tr>
+                        </th>
+                          <th>Name<input type="text" name="v_income_tax_return_name" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th>Income Tax Return Number<input type="text" name="v_income_tax_return_number" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th>Choose Document file<input type="file" name="v_income_tax_return_name_doc_upload" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                      </tr>
+                  </thead>
+        </table>
+
+        </table>
+              <table class="table">
+                <label for="inputStatus">5.ACTIVE GST NO. (ALONG WITH COPY OF CURRENT PAID CHALLAN AND ITS RECEIPT)</label>
+                  <thead>
+                      <tr>
+                        </th>
+                          <th>State<input type="text" name="v_gst_number_state" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th>Active GST Serial Number<input type="text" name="v_gst_serial_number" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th>Choose Document file<input type="file" name="v_gst_doc" id="inputName" class="form-control" required="required">
+                          </th>
+                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                      </tr>
+                  </thead>
+        </table>
+
+         </table>
+              <table class="table">
+                <label for="inputStatus">If you want to finally submit all the documents, click on the checkbox !!</label>
+        </table>
+
+        <div class="form-group multiple-radio">
+           <div class="d-flex justify-content-between">
+           <div class="form-check pt-1 pb-1">
+              <input class="form-check-input form-check-input-cve" type="checkbox" name="defaultCheck" id="defaultCheck1" checked value="yes" required="required">
+              <label class="form-check-label" for="defaultCheck1">
+                    Document finally submitted !!
+              </label>
+            </div>
+           </div>
+        </div>
+
+    <div class="row card-body">
+      <div class="col-lg-6">
+            <div class="form-group">
+                <input type="reset" value="Previous" class="btn btn-secondary">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+              <a href="dashboard11"></a>
+                                              
+              <button type="Submit" class="btn-success">Submit</button>
+    
+              </a>
+                <!-- <input type="submit" value="Save & Next" class="btn btn-success"> -->
+            </div>
+        </div>
+    </div>
+
+              </div>
+          </div>
+        </div>
+
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+
+<script>
+  $(function () {
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({gutterPixels: 3});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+  })
+</script>
+
+
+<!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Ekko Lightbox -->
+<script src="../plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- Filterizr-->
+<script src="../plugins/filterizr/jquery.filterizr.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+<!-- Page specific script -->
+</body>
+</html>

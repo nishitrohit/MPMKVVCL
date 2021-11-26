@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MPMKVVCL</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="static/assets/css/style.css">
+   <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.css">
+   <link rel="stylesheet" href="static/assets/css/bootstrap-datepicker.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+.container {
+    max-width: 1170px;
+  
+}
+a {
+    color: #e28473;
+}
+figure {
+    margin: 0 0 1rem;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif,Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    text-transform: none;
+    color: #000;
+}
+.header a img {
+    width: 120px;
+}
+.header {
+    padding: 20px 0;
+    margin-bottom: 40px;
+}
+.signup-content {
+    background: #fff;
+    box-shadow: 0 15px 16.83px 0.17px rgb(0 0 0 / 5%);
+    border-radius: 20px;
+    padding:20px 40px;
+	    float: left;
+    width: 100%;
+}
+.signup-image {
+    float: right;
+    width: 40%;
+    text-align: right;
+}
+.signup-form {
+    width: 50%;
+    float: left;
+}
+ul.socials li a {
+    float: left;
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+    border: 2px solid #d8deec;
+    border-radius: 5px;
+    color: #222;
+    font-weight: 500;
+    line-height: 40px;
+	    font-size: 20px;
+}
+ul.socials li a:hover {
+    background: #d8deec;
+}
+ul.socials li {
+    float: left;
+    width: 50%;
+    list-style-type: none;
+    padding: 0 10px;
+}
+ul.socials {
+    float: left;
+    width: 100%;
+    padding: 0;
+	margin:0 0 20px 0
+}
+h2.form-title {
+    font-size: 30px;
+    line-height: 1.66;
+    text-align: center;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #222;
+}
+.social-login {
+    margin-top: 0px;
+    float: left;
+    width: 100%;
+}
+
+ul.socials li a img {
+    width: 20px;
+    border-radius: 2px;
+    display: inline-block;
+}
+.signup-form .form-group input {
+    border: none;
+    font-size: 16px;
+} 
+.signup-form label {
+    width: 6%;
+}
+.signup-form i {
+    font-size: 20px;
+    color: #222;
+}
+.signup-form .form-group {
+    border-bottom: 2px solid #d8deec;
+}
+.signup-form a#signup{
+    background: #e28473;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0 25px;
+    line-height: 45px;
+    text-transform: uppercase;
+    font-weight: 500;
+	    font-size: 16px;
+}
+.signup-form .form-group.check-form {
+    border: none;
+}
+.signup-form .form-group.check-form input#agree-term {
+    float: left;
+    width: 4%;
+    margin-top: 12px;
+    margin-right: 10px;
+}
+.signup-form .form-group.check-form label.label-agree-term {
+    width: 90%;
+    font-size: 15px;
+    line-height: 9px;
+}
+.signup-image a.signup-image-link {
+    text-align: center;
+    display: table;
+    margin: 0px auto;
+}
+.signup-form .form-group.form-button {
+    border: none;
+}
+.signup-form .form-group.form-button input {
+    background: #e28473;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0 25px;
+    line-height: 45px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.header .header-left img {
+    width: 120px;
+}
+body {
+    background: #f8f8f8;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+.header a img {
+    width: 1200px;
+    height: 250px;
+}
+
+img {
+    display: block;
+    width: 25%;
+    height: 25%;
+}
+
+label {
+    display: inline;
+    margin-bottom: .5rem;
+}
+</style>
+  </head>
+<body onload="cap()">
+<div class="header">
+<div class="container">
+<a href="#"><img src="static/assets/images/mpmkvvcl_logo.png"> </a>
+</div>
+</div>
+
+<div class="row justify-content-md-center">
+<div class="col-md-7 row justify-content-md-center">
+
+<div class="signup-form"> 
+<form action="login" method="POST">
+{% csrf_token %}
+<div class="form-group">
+<div>
+    <div class="form-group">
+        <label for="inputStatus">Select User Type</label>
+        <select onchange="Veg_sachkti()" id="type" name="type" class="form-control form-control-submit registration-cont" required="required">
+        <option value="" disabled selected hidden>Type</option>
+        <option value="vendor">VENDOR</option>
+        <option value="nabl">NABL</option>
+        </select>
+    </div>
+</div>
+
+<label for="email"><i class="fa fa-envelope" aria-hidden="true"></i></label>
+<input type="text" name="username" id="email" placeholder="Username">
+</div>
+<div class="form-group">
+<label for="pass"><i class="fa fa-lock" aria-hidden="true"></i></label>
+<input type="password" name="password" id="pass" placeholder="Password">
+</div>
+
+<label>Enter Captcha:</label>
+<div class="form-row">
+  <div class="form-group col-md-6">
+      <input type="text" class="form-control" readonly id="capt">
+  </div>
+  <div class="form-group col-md-6">
+      <input type="text" class="form-control" id="textinput">
+  </div>
+</div>
+<h6>Captcha not visible <img src="static/assets/images/refresh.png" height="10px" width="10px" onclick="cap()"></h6>
+
+<div class="form-row">
+    <div class="col-md-6">
+        <a href="forgot_password">Forgot Password</a>
+    </div>
+    <div class="col-md-6">
+        <a href="register" class="signup-image-link">Create Your Account</a>
+    </div>
+</div>
+
+
+<div class="form-group form-button">
+    <div class="form-row">
+        <div class="col-lg-6">
+            <p style="color: red; font-size:13px;">{{msg}}</p>
+            <button onclick="validcap();myFunction();" type="submit" class="btn btn-secondary" style="width: 200px;">Login</button>
+        </div>
+        <div class="col-lg-6">
+            <p style="color: red; font-size:13px;"></p>
+            <button type="reset" class="btn btn-secondary" style="width: 200px;">Clear</button>
+        </div>
+    </div>
+</div>
+
+<p id="demo"></p>
+</form>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+function cap(){
+    var alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V'
+                 ,'W','X','Y','Z','1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f','g','h','i',
+                 'j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', '!','@','#','$','%','^','&','*','+'];
+                 var a = alpha[Math.floor(Math.random()*53)];
+                 var b = alpha[Math.floor(Math.random()*53)];
+                 var c = alpha[Math.floor(Math.random()*53)];
+                 var d = alpha[Math.floor(Math.random()*53)];
+                 var e = alpha[Math.floor(Math.random()*53)];
+                 var f = alpha[Math.floor(Math.random()*53)];
+
+                 var final = a+b+c+d+e+f;
+                 document.getElementById("capt").value=final;
+               }
+               function validcap(){
+                var stg1 = document.getElementById('capt').value;
+                var stg2 = document.getElementById('textinput').value;
+                if(stg1==stg2){
+                  alert("Form is validated Succesfully");
+                  return true;
+                }else{
+                  alert("Please enter a valid captcha");
+                  return false;
+                }
+               }
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ <script src="static/assets/js/popper.min.js"></script>
+  <script src="static/assets/js/bootstrap.min.js"></script>
+   <script src="static/assets/js/jquery.easing.min.js"></script>
+    <script src="static/assets/js/bootstrap-datepicker.min.js"></script>
+
+
+    <script>
+        function myFunction() {
+          document.getElementById("demo").innerHTML = "We are Working on Dashboard";
+        }
+        </script>
+
+
+
+</body>
+
+</html>
