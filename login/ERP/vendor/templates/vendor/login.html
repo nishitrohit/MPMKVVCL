@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Index</title>
+  <title>MPMKVVCL</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
@@ -169,39 +169,48 @@ body {
     width: 100%;
     overflow-x: hidden;
 }
+.header a img {
+    width: 1200px;
+    height: 250px;
+}
+
+img {
+    display: block;
+    width: 25%;
+    height: 25%;
+}
+
+label {
+    display: inline;
+    margin-bottom: .5rem;
+}
 </style>
   </head>
-<body>
+<body onload="cap()">
 <div class="header">
 <div class="container">
-<a href="#"><img src="static/assets/images/mpmk.png"> </a>
-
+<a href="#"><img src="static/assets/images/mpmkvvcl_logo.png"> </a>
+</div>
 </div>
 
-</div>
 <div class="row justify-content-md-center">
-<div class="col-md-7">
-
+<div class="col-md-7 row justify-content-md-center">
 
 <div class="signup-form"> 
 <form action="login" method="POST">
 {% csrf_token %}
 <div class="form-group">
-<div class="col-lg-6 col-md-12 col-sm-6">
+<div>
     <div class="form-group">
-        
-        
-
+        <label for="inputStatus">Select User Type</label>
         <select onchange="Veg_sachkti()" id="type" name="type" class="form-control form-control-submit registration-cont" required="required">
-        <!-- <option value="select-option-user-four" selected>Food Preference</option> -->
         <option value="" disabled selected hidden>Type</option>
         <option value="vendor">VENDOR</option>
         <option value="nabl">NABL</option>
-        <!-- <option value="jain-user">Jain</option> -->
-        
         </select>
     </div>
-    </div>
+</div>
+
 <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i></label>
 <input type="text" name="username" id="email" placeholder="Username">
 </div>
@@ -209,28 +218,74 @@ body {
 <label for="pass"><i class="fa fa-lock" aria-hidden="true"></i></label>
 <input type="password" name="password" id="pass" placeholder="Password">
 </div>
-<!-- <div class="forgot-password pt-3"><a href="forgot_password">Forgot Password</a></div> -->
 
+<label>Enter Captcha:</label>
+<div class="form-row">
+  <div class="form-group col-md-6">
+      <input type="text" class="form-control" readonly id="capt">
+  </div>
+  <div class="form-group col-md-6">
+      <input type="text" class="form-control" id="textinput">
+  </div>
+</div>
+<h6>Captcha not visible <img src="static/assets/images/refresh.png" height="10px" width="10px" onclick="cap()"></h6>
 
-</form> 
-<div class="form-group form-button">
-    <p style="color: red; font-size:13px;">{{msg}}</p>
-    <button onclick="myFunction()" type="submit" class="btn btn-secondary" style="margin-top:60px; width: 300px;">Login</button>
-    <!-- <a type="submit" name="signup" id="signup"  href="dashboard.html" class="form-submit" value="Register" style="margin-top:125px;">Login </a> -->
+<div class="form-row">
+    <div class="col-md-6">
+        <a href="forgot_password">Forgot Password</a>
     </div>
+    <div class="col-md-6">
+        <a href="register" class="signup-image-link">Create Your Account</a>
+    </div>
+</div>
+
+
+<div class="form-group form-button">
+    <div class="form-row">
+        <div class="col-lg-6">
+            <p style="color: red; font-size:13px;">{{msg}}</p>
+            <button onclick="validcap();myFunction();" type="submit" class="btn btn-secondary" style="width: 200px;">Login</button>
+        </div>
+        <div class="col-lg-6">
+            <p style="color: red; font-size:13px;"></p>
+            <button type="reset" class="btn btn-secondary" style="width: 200px;">Clear</button>
+        </div>
+    </div>
+</div>
+
 <p id="demo"></p>
-</div> 
-<div class="signup-image">
-<figure><img src="static/assets/images/signup/signup-image.jpg" alt="sing up image"></figure>
-<a href="register" class="signup-image-link">Create Your Free Account</a>
-</div>
-
+</form>
 </div>
 </div>
 </div>
 
+<script type="text/javascript">
+function cap(){
+    var alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V'
+                 ,'W','X','Y','Z','1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f','g','h','i',
+                 'j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', '!','@','#','$','%','^','&','*','+'];
+                 var a = alpha[Math.floor(Math.random()*53)];
+                 var b = alpha[Math.floor(Math.random()*53)];
+                 var c = alpha[Math.floor(Math.random()*53)];
+                 var d = alpha[Math.floor(Math.random()*53)];
+                 var e = alpha[Math.floor(Math.random()*53)];
+                 var f = alpha[Math.floor(Math.random()*53)];
 
-
+                 var final = a+b+c+d+e+f;
+                 document.getElementById("capt").value=final;
+               }
+               function validcap(){
+                var stg1 = document.getElementById('capt').value;
+                var stg2 = document.getElementById('textinput').value;
+                if(stg1==stg2){
+                  alert("Form is validated Succesfully");
+                  return true;
+                }else{
+                  alert("Please enter a valid captcha");
+                  return false;
+                }
+               }
+</script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
  <script src="static/assets/js/popper.min.js"></script>

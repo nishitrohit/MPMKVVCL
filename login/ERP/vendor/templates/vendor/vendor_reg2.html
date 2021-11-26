@@ -17,7 +17,7 @@
 <!-- Site wrapper -->
 <div class="wrapper">
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+<!--  <div class="content-wrapper">-->
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -36,10 +36,8 @@
           <div class="card card-primary">
             <div class="card-header">
               <h3 class="card-title">Please fill in your details and company/firm details before using your account!</h3>
-
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-minus"></i>
                 </button>
               </div>
             </div>
@@ -47,66 +45,62 @@
               {% csrf_token %}
             <div class="card-body">
               <div class="form-group">
-                <label for="inputStatus">Service Type/Business Ownership Type</label>
-                <input id="firmName" name="v_service_type" data-validate="required" class="form-control" readonly="readonly" type="text" value={{type}} class="form-control">
+                <label for="v_service_type">Service Type/Business Ownership Type</label>
+                <input id="v_service_type" name="v_service_type" data-validate="required" readonly="readonly" type="text" value={{type}} class="form-control">
 
               </div>
               <div class="form-group">
-                <label for="inputName">Firm / Company Name (English) *</label>
-                <input id="firmName" name="v_company_name" data-validate="required" class="form-control" readonly="readonly" type="text" value={{cname}} class="form-control">
+                <label for="v_company_name">Firm / Company Name (English) *</label>
+                <input id="v_company_name" name="v_company_name" data-validate="required" readonly="readonly" type="text" value={{cname}} class="form-control">
               </div>
               <div class="form-group">
-                <label for="inputName">Firm / Company Name (Hindi) *</label>
-                <input id="firmName" name="v_company_name" data-validate="required" class="form-control" readonly="readonly" type="text" value={{cname}} class="form-control">
+                <label for="v_company_name">Firm / Company Name (Hindi) *</label>
+                <input id="v_company_name" name="v_company_name" data-validate="required" readonly="readonly" type="text" value={{cname}} class="form-control">
               </div>
               <div class="form-group">
-                <label for="inputName">Telephone number *</label>
-                <input type="text" id="inputName" name="v_mobile" value={{mobile}} readonly="readonly" class="form-control">
+                <label for="v_mobile">Telephone number *</label>
+                <input type="text" id="v_mobile" name="v_mobile" value={{mobile}} readonly="readonly" class="form-control">
               </div>
               <div class="form-group">
-                <label for="inputName">Fax number *</label>
-                <input type="text" name="fax" id="inputName" class="form-control">
+                <label for="fax">Fax number *</label>
+                <input type="tel" id="fax" name="fax" class="form-control" pattern="^\d{10}$" maxlength="10" minlength="10" required="required">
               </div>
               <div class="form-group">
-                <label for="inputName">Firm/Company's PAN Number *</label>
-                <input type="text" name="pan" id="inputName" class="form-control">
+                <label for="pan">Firm/Company's PAN Number *</label>
+                <input type="text" name="pan" id="pan" class="form-control" required="required">
               </div>
               <div class="form-group">
-                <label for="inputName">Firm/Company Registration Number* *</label>
-                <input type="text" name="reg_no" id="inputName" class="form-control">
+                <label for="reg_no">Firm/Company Registration Number* *</label>
+                <input type="tel" id="reg_no" name="reg_no" class="form-control" pattern="^\d{10}$" maxlength="10" minlength="10" required="required">
               </div>
                 <div class="form-group">
-                <label for="inputName">Firm/Company's GST Number</label>
-                <input type="text" name="gst" id="inputName" class="form-control">
+                <label for="gst">Firm/Company's GST Number</label>
+                <input type="tel" id="gst" name="gst" class="form-control" pattern="^\d{10}$" maxlength="10" minlength="10" required="required">
               </div>
                 <div class="form-group">
-                <label for="inputName">Firm/Company Registration Date*</label>
-                <input type="text" name="reg_date" id="inputName" class="form-control">
+                <label for="reg_date">Firm/Company Registration Date*</label>
+                <input type="date" name="reg_date" id="reg_date" class="form-control" required="required">
               </div>
                 <div class="form-group">
-                <label for="inputName">Validity date of registration of firm/company</label>
-                <input type="text" name="validity_date" id="inputName" class="form-control">
+                <label for="validity_date">Validity date of registration of firm/company</label>
+                <input type="date" name="validity_date" id="validity_date" class="form-control" required="required">
               </div>
                 <div class="form-group">
-                <label for="inputName">Registered Office Address</label>
+                <label>Registered Office Address</label>
               </div>
                 <div class="form-group">
-                <label for="inputName">Firm / Company Address Line 1*</label>
-                <input type="text" name="add1" id="padd1" class="form-control">
+                <label for="add1">Firm / Company Address Line 1*</label>
+                <input type="text" name="add1" id="add1" class="form-control" required="required">
               </div>
                 <div class="form-group">
-                <label for="inputName">Firm / Company Address Line 2</label>
-                <input type="text" name="add2" id="padd2" class="form-control">
+                <label for="add2">Firm / Company Address Line 2</label>
+                <input type="text" name="add2" id="add2" class="form-control" required="required">
               </div>
                 <div class="form-group">
-                <label for="inputName">City *</label>
-                <input type="text" name="city" id="pcity" class="form-control">
-              </div>
-                <div class="form-group">
-                <label for="inputStatus">State *</label>
-                <select id="serviceOwnerType" name="state" id="pstate" data-validate="required" class="form-control">
-                      <option value="0">select one</option>
-                      <option value="02">Andaman and Nicobar Island</option>
+                <label for="state">State *</label>
+                <select name="state" id="state" data-validate="required" class="form-control" required>
+                        <option selected disabled value="">Select One</option>
+                        <option value="02">Andaman and Nicobar Island</option>
                         <option value="03">Andhra Pradesh</option>
                         <option value="04">Arunachal Pradesh</option>
                         <option value="05">Assam</option>
@@ -145,41 +139,145 @@
                 </select>
               </div>
                 <div class="form-group">
-                <label for="inputStatus">District *</label>
-                <select id="serviceOwnerType" name="district" id="pdist" data-validate="required" class="form-control">
-                      <option value="0">select one</option>
-                      <option value="2">Bhopal</option>
-                      <option value="3">Gwalior</option>
-                      <option value="4">Sehore</option>
-                      <option value="5">Honsangabad</option>
+                <label for="district">District *</label>
+                <select name="district" id="district" data-validate="required" class="form-control" required>
+                      <option selected disabled value="">Select one</option>
+
+                      <option value="0120">Balaghat</option>
+
+                      <option value="0121">Barwani</option>
+
+                      <option value="0123">Chhatarpur</option>
+
+                      <option value="0124">Chhindwara</option>
+
+                      <option value="0125">Damoh</option>
+
+                      <option value="0127">Dhar</option>
+
+                      <option value="0130">Jabalpur</option>
+
+                      <option value="0134">Khargone</option>
+
+                      <option value="0136">Mandsaur</option>
+
+                      <option value="0138">Neemuch</option>
+
+                      <option value="0140">Ratlam</option>
+
+                      <option value="0141">Rewa</option>
+
+                      <option value="0144">Seoni</option>
+
+                      <option value="0146">Shajapur</option>
+
+                      <option value="0148">Singrauli</option>
+
+                      <option value="0150">Ujjain</option>
+
+                      <option value="0153">Sohagpur</option>
+
+                      <option value="0118">Alirajpur</option>
+
+                      <option value="0119">Anuppur</option>
+
+                      <option value="0122">Burhanpur</option>
+
+                      <option value="0126">Dewas</option>
+
+                      <option value="0128">Dindori</option>
+
+                      <option value="0129">Indore</option>
+
+                      <option value="0131">Jhabua</option>
+
+                      <option value="0132">Katni</option>
+
+                      <option value="0133">Khandwa</option>
+
+                      <option value="0135">Mandla</option>
+
+                      <option value="0137">Narsinghpur</option>
+
+                      <option value="0139">Panna</option>
+
+                      <option value="0142">Sagar</option>
+
+                      <option value="0143">Satna</option>
+
+                      <option value="0145">Shahdol</option>
+
+                      <option value="0147">Sidhi</option>
+
+                      <option value="0149">Tikamgarh</option>
+
+                      <option value="0151">Umaria</option>
+
+                      <option value="0152">Agar Malwa</option>
+
+                      <option value="0154">Babai</option>
+
+                      <option value="0103">SHIVPURI</option>
+
+                      <option value="0101">Demo District</option>
+
+                      <option value="0102">BHIND</option>
+
+                      <option value="0104">BHOPAL</option>
+
+                      <option value="0105">Raisen</option>
+
+                      <option value="0106">Rajgarh</option>
+
+                      <option value="0107">SEHORE</option>
+
+                      <option value="0108">Sheopur</option>
+
+                      <option value="0109">HOSHANGABAD</option>
+
+                      <option value="0110">HARDA</option>
+
+                      <option value="0111">Vidisha</option>
+
+                      <option value="0112">Guna</option>
+
+                      <option value="0113">Ashoknagar</option>
+
+                      <option value="0114">Betul</option>
+
+                      <option value="0115">GWALIOR</option>
+
+                      <option value="0116">Datia</option>
+
+                      <option value="0117">MORENA</option>
+
                 </select>
               </div>
-                <div class="form-group">
-                <label for="inputName">Pincode *</label>
-                <input type="text" name="zip" id="pzip" class="form-control">
+              <div class="form-group">
+                <label for="city">City *</label>
+                <input type="text" name="city" id="city" class="form-control" required="required">
               </div>
                 <div class="form-group">
-                    <label for="inputName">Office correspondence address</label>
-                    
-                    <label for="vehicle3">If the address is the same</label><br><br>
+                <label for="zip">Pincode *</label>
+                <input type="text" name="zip" id="zip" class="form-control" required="required">
+              </div>
+                <div class="form-group">
+                    <label>Office correspondence address</label>
+                    <label for="homepostalcheck">If the address is the same</label><br><br>
                    <span class="text-danger pull-right" style="font-size: 15px">
-                    <input type="checkbox" name="homepostalcheck" id="homepostalcheck"/>If the address is the same<br></span>
+                    <input type="checkbox" name="homepostalcheck" id="homepostalcheck" value="FALSE"/>If the address is the same<br></span>
                 </div>
                 <div class="form-group">
-                <label for="inputName">Firm / Company Address Line 1*</label>
-                <input type="text" name="add3" id="cadd1" class="form-control">
+                <label for="add3">Firm / Company Address Line 1*</label>
+                <input type="text" name="add3" id="add3" data-validate="required" class="form-control" value="">
               </div>
                 <div class="form-group">
-                <label for="inputName">Firm / Company Address Line 2</label>
-                <input type="text" name="add4" id="cadd2" class="form-control">
+                <label for="add4">Firm / Company Address Line 2</label>
+                <input type="text" name="add4" id="add4" data-validate="required" class="form-control" value="">
               </div>
-                <div class="form-group">
-                <label for="inputName">City *</label>
-                <input type="text" name="city2" id="ccity" class="form-control">
-              </div>
-                <div class="form-group">
-                <label for="inputStatus">State *</label>
-                <select id="serviceOwnerType" name="state2" id="cstate" data-validate="required" class="form-control">
+              <div class="form-group">
+                <label for="state2">State *</label>
+                <select  name="state2" id="state2" data-validate="required" class="form-control">
                       <option value="0">select one</option>
                       <option value="02">Andaman and Nicobar Island</option>
                         <option value="03">Andhra Pradesh</option>
@@ -220,18 +318,125 @@
                 </select>
               </div>
                 <div class="form-group">
-                <label for="inputStatus">District *</label>
-                <select id="serviceOwnerType" name="district2" id="cdist" data-validate="required" class="form-control">
+                <label for="district2">District *</label>
+                <select name="district2" id="district2" data-validate="required" class="form-control">
                       <option value="0">select one</option>
-                      <option value="2">Bhopal</option>
-                      <option value="3">Gwalior</option>
-                      <option value="4">Sehore</option>
-                      <option value="5">Honsangabad</option>
+                      <option value="0120">Balaghat</option>
+
+                      <option value="0121">Barwani</option>
+
+                      <option value="0123">Chhatarpur</option>
+
+                      <option value="0124">Chhindwara</option>
+
+                      <option value="0125">Damoh</option>
+
+                      <option value="0127">Dhar</option>
+
+                      <option value="0130">Jabalpur</option>
+
+                      <option value="0134">Khargone</option>
+
+                      <option value="0136">Mandsaur</option>
+
+                      <option value="0138">Neemuch</option>
+
+                      <option value="0140">Ratlam</option>
+
+                      <option value="0141">Rewa</option>
+
+                      <option value="0144">Seoni</option>
+
+                      <option value="0146">Shajapur</option>
+
+                      <option value="0148">Singrauli</option>
+
+                      <option value="0150">Ujjain</option>
+
+                      <option value="0153">Sohagpur</option>
+
+                      <option value="0118">Alirajpur</option>
+
+                      <option value="0119">Anuppur</option>
+
+                      <option value="0122">Burhanpur</option>
+
+                      <option value="0126">Dewas</option>
+
+                      <option value="0128">Dindori</option>
+
+                      <option value="0129">Indore</option>
+
+                      <option value="0131">Jhabua</option>
+
+                      <option value="0132">Katni</option>
+
+                      <option value="0133">Khandwa</option>
+
+                      <option value="0135">Mandla</option>
+
+                      <option value="0137">Narsinghpur</option>
+
+                      <option value="0139">Panna</option>
+
+                      <option value="0142">Sagar</option>
+
+                      <option value="0143">Satna</option>
+
+                      <option value="0145">Shahdol</option>
+
+                      <option value="0147">Sidhi</option>
+
+                      <option value="0149">Tikamgarh</option>
+
+                      <option value="0151">Umaria</option>
+
+                      <option value="0152">Agar Malwa</option>
+
+                      <option value="0154">Babai</option>
+
+                      <option value="0103">SHIVPURI</option>
+
+                      <option value="0101">Demo District</option>
+
+                      <option value="0102">BHIND</option>
+
+                      <option value="0104">BHOPAL</option>
+
+                      <option value="0105">Raisen</option>
+
+                      <option value="0106">Rajgarh</option>
+
+                      <option value="0107">SEHORE</option>
+
+                      <option value="0108">Sheopur</option>
+
+                      <option value="0109">HOSHANGABAD</option>
+
+                      <option value="0110">HARDA</option>
+
+                      <option value="0111">Vidisha</option>
+
+                      <option value="0112">Guna</option>
+
+                      <option value="0113">Ashoknagar</option>
+
+                      <option value="0114">Betul</option>
+
+                      <option value="0115">GWALIOR</option>
+
+                      <option value="0116">Datia</option>
+
+                      <option value="0117">MORENA</option>
                 </select>
               </div>
+              <div class="form-group">
+                <label for="city2">City *</label>
+                <input type="text" name="city2" id="city2" data-validate="required" class="form-control" value="">
+              </div>
                 <div class="form-group">
-                <label for="inputName">Pincode *</label>
-                <input type="text" name="zip2" id="inputName" id="czip" class="form-control">
+                <label for="zip2">Pincode *</label>
+                <input type="text" name="zip2" id="zip2" id="czip" class="form-control" value="">
               </div>
             </div>
             <!-- /.card-body -->
@@ -244,7 +449,6 @@
               <h3 class="card-title">Firm / Company Details</h3>
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-minus"></i>
                 </button>
               </div>
             </div>
@@ -270,17 +474,26 @@
           <!-- /.card -->
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <input type="reset" value="Fix again" class="btn btn-secondary">
-          <!-- <input type="submit" value="Register" class="btn btn-success"> -->
-          <a href="dashboard2"></a>
-                                              
-          <button type="Submit" class="btn-second btn-submit ">Submit</button>
 
-          </a>
+
+
+
+
+
+    <div class="row card-body">
+      <div class="col-lg-5">
+            <div class="form-group">
+                <input type="reset" value="Previous" class="btn btn-secondary">
+            </div>
         </div>
-      </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+              <a href="dashboard2"></a>
+              <button type="Submit" class="btn btn-success" value="Save & Next">Submit</button>
+            </div>
+        </div>
+    </div>
+
     </form>
     </section>
     <!-- /.content -->

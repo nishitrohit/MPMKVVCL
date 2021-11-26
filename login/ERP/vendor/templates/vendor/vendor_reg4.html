@@ -17,7 +17,7 @@
 <!-- Site wrapper -->
 <div class="wrapper">
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+<!--  <div class="content-wrapper">-->
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -36,10 +36,8 @@
           <div class="card card-primary">
             <div class="card-header">
               <h3 class="card-title">Please fill in your details and company/firm details before using your account!</h3>
-
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-minus"></i>
                 </button>
               </div>
             </div>
@@ -50,11 +48,11 @@
 <div class="row card-body">
   <form   action="vendor_registration_four" method="POST">
     {% csrf_token %}
-    <div class="col-lg-6 flex-lg-fill">
+    <div class="col-lg-12 flex-lg-fill">
         <div class="form-group form-group-select">
-            <label for="exampleFormControlSelect1">Banks' Name *</label>
-            <select class="form-control" name="bank_name" id="authentication" name="authentication">
-                        <option value="">Select Bank</option>
+            <label for="bank_name">Banks' Name *</label>
+            <select class="form-control" name="bank_name" id="bank_name" required>
+                        <option selected disabled value="">Select Bank</option>
                         <option value="12">AU Small Finance Bank Limited</option>
                         <option value="1">Abhyudaya Cooperative Bank</option>
                         <option value="2">Abu Dhabi Commercial Bank</option>
@@ -258,19 +256,18 @@
         </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <div class="form-group">
             <label>IFSC code *</label>
-            <input type="text" id="protocol" name="ifsc" class="form-control" placeholder="" required>
+            <input type="text" id="ifsc" name="ifsc" class="form-control" placeholder="" required>
         </div>
     </div>
 
-   <div class="col-lg-6">
-        <div class="form-group">
-            <span style="font-size: 15px;">Find IFSC Code of your Bank - First of all select the name of your bank.</span>
-        </div>
-    </div>
-
+<!--   <div class="col-lg-6">-->
+<!--        <div class="form-group">-->
+<!--            <span style="font-size: 15px;">Find IFSC Code of your Bank - First of all select the name of your bank.</span>-->
+<!--        </div>-->
+<!--    </div>-->
      <!-- <div class="col-lg-6">
         <div class="form-group">
             <button  name="search_ifsc" id="search_ifsc" onClick="lightbox(this.id)" class="btn btn-info btn-sm pull-right iframe" type="button">Find IFSC code</button>
@@ -280,19 +277,19 @@
     <div class="col-lg-12">
         <div class="form-group">
             <label>Account holder name *</label>
-            <input type="text" id="protocol" name="ac_holder_name" class="form-control" placeholder="" width="100" required>
+            <input type="text" id="ac_holder_name" name="ac_holder_name" class="form-control" placeholder="" required>
         </div>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <div class="form-group">
             <label>Account number *</label>
-            <input type="text" id="protocol" name="ac_number" class="form-control" placeholder=""  type="text" required>
+            <input type="text" id="protocol" name="ac_number" class="form-control" placeholder="" required>
         </div>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-12">
         <div class="form-group">
             <label>Re-enter account number *</label>
-            <input type="text" id="protocol" name="re_ac_number" class="form-control" placeholder="" type="text" required>
+            <input type="text" id="re_ac_number" name="re_ac_number" class="form-control" placeholder="" required>
         </div>
     </div>
 </div>
@@ -333,22 +330,24 @@
 </div>
 </div>
 
+
+
+
+
     <div class="row card-body">
-        <div class="col-lg-5">
+      <div class="col-lg-5">
             <div class="form-group">
-                <input type="reset" value="Fix again" class="btn btn-secondary">
+                <input type="reset" value="Previous" class="btn btn-secondary">
             </div>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-6">
             <div class="form-group">
-                <!-- <input type="submit" value="Register" class="btn btn-success"> -->
-                <a href="dashboard4">
-                                              
-                <button type="Submit" class="btn-second btn-submit ">Submit</button>
-      
-                </a>
+                 <a href="dashboard4">
+                <input type="submit" value="Save & Next" class="btn btn-success">
             </div>
         </div>
+    </div>
+
       </form>
     </div>
     </section>
