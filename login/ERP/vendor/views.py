@@ -57,7 +57,32 @@ def Registration(request):
         email = request.POST.get('email') 
         mobile = request.POST.get('mobile')  
         current_time = datetime.now()
-        date_time = current_time.strftime("%d/%m/%Y %H:%M:%S")                      
+        date_time = current_time.strftime("%d/%m/%Y %H:%M:%S") 
+        
+        
+        def generateOTP():
+            digits = "0123456789"
+            OTP = ""
+            for i in range(6):
+                OTP += digits[math.floor(random.random() * 10)]
+
+            return OTP
+
+        otp = generateOTP()
+        print(otp)
+        request.session['otp'] = otp
+
+        payload = "message=This is%20a%20test%20message.Your otp is " + otp + "&language=english&route=q&numbers=" + mobile
+        print(payload)
+        headers = {
+            'authorization': "FxOXbDJ3kKZRYH2pInuv5cigmLUWw9toEdq1zfTNSPy87heQ4AXHwf94UNnvzpjdcGmTeMZEQ0LJqYBD",
+            'Content-Type': "application/x-www-form-urlencoded",
+            'Cache-Control': "no-cache",
+        }
+
+        # response = requests.request("POST", url, data=payload, headers=headers)
+        # print(response.text)
+                             
   
         if VendorRegistration.objects.filter(v_email=email).exists():
             messages.warning(request,"email already register")
@@ -631,6 +656,19 @@ def area_process(request):
 
 def area_stock(request):
 	return render(request, 'vendor/area_stock_inventory.html', {})
+
+
+def procurement_base(request):
+	return render(request, 'vendor/procurement_base.html', {})
+
+def procurement_dashboard(request):
+	return render(request, 'vendor/procurement_dashboard.html', {})
+
+def procurement_previous_po(request):
+	return render(request, 'vendor/procurement_previous_po.html', {})
+
+def procurement_generate_po(request):
+	return render(request, 'vendor/procurement_generate_po.html', {})
 
 
 

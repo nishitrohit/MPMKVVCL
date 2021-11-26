@@ -40,10 +40,17 @@ urlpatterns = [
     path('vendor_base', views.vendor_base, name ="vendor_base"),
     path('vendor_material', views.vendor_material, name ="vendor_material"),
     path('vendor_purchase', views.vendor_purchase, name ="vendor_purchase"),
-	path('area_base', views.area_base, name ="area_base"),
+    
+    path('area_base', views.area_base, name ="area_base"),
     path('area_dashboard', views.area_dashboard, name="area_dashboard"),
     path('area_process', views.area_process, name="area_process"),
     path('area_stock', views.area_stock, name="area_stock"),
+    
+    	path('procurement_base', views.procurement_base, name ="procurement_base"),
+    path('procurement_dashboard', views.procurement_dashboard, name="procurement_dashboard"),
+    path('procurement_previous_po', views.procurement_previous_po, name="procurement_previous_po"),
+	path('procurement_generate_po', views.procurement_generate_po, name="procurement_generate_po"),	
+	
 	
 
 ]
