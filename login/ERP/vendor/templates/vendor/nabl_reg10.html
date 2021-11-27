@@ -1,4 +1,4 @@
-{% extends 'nabl/base.html' %}
+{% extends 'vendor/nabl_base.html' %}
  {% load static %}
  {% block pagetitle %}  {% endblock pagetitle %}
 {% block css %}
@@ -18,7 +18,7 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-    <form   action="vendor_registration_sixteen" method="POST">
+    <form   action="nabl_Registration_eleven" method="POST">
       {% csrf_token %}
     <!-- Main content -->
     <section class="content">
@@ -56,8 +56,7 @@
 
             <button  style="margin-top: 10px;" class="button btn btn-primary" onclick="">Previous</button>
             <!-- <button  style="margin-top: 10px;" class="button btn btn-primary" onclick="">Next and Save</button> -->
-            <a href="dashboard14"></a>
-
+            <a href="nabl_Registration_eleven"></a>
             <button type="Submit" class="btn-success">Submit</button>
 
             </a>
