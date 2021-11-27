@@ -1,0 +1,70 @@
+{% extends 'nabl/base.html' %}
+ {% load static %}
+ {% block pagetitle %}  {% endblock pagetitle %}
+{% block css %}
+
+ {% endblock css %}
+{% block body %}
+<div class="wrapper">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Vendor Registration</h1>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Details</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+
+<div class=" card-body col-lg-12">
+<!-- <h4 class="heading">By uploading any document, all the pages related to that document will have to be re-uploaded.</h4> -->
+</div>
+<div class="card-body">
+      <div class="form-group">
+        <article>
+            <h5>Your signature has been successfully processed and your application has been accepted. Please proceed to Services Dashboard for further services.</h5>
+
+                <ol><li>Click here to download PDF of your documents.</li></ol>
+            </ul>
+        </article>
+      </div>
+    </div>
+
+
+</div>
+<button  style="margin-top: 10px;" class="button btn btn-primary" onclick="">Download Here</button>
+    <button  style="margin-top: 10px;" class="button btn btn-primary" onclick="">Go to Services Dashboard</button>
+
+</div>
+</div>
+    <div class="row card-body">
+        <div class="col-lg-5">
+            <div class="form-group">
+                <input type="reset" value="Seva Prabhandan pe Jaye" class="btn btn-secondary">
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+
+{% endblock body %}
