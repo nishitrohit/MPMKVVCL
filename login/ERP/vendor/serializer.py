@@ -19,5 +19,8 @@ class Working_Serializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-
+class NablRegistration_Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = NablRegistration
+        fields = "__all__"
 

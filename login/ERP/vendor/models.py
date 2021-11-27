@@ -241,10 +241,88 @@ class officer(models.Model):
 #     Temporary_Password = models.CharField(10)
 #     OTP = models.CharField(6)
 
+    def __str__(self):
+        return self.Contact_no
+    
+
+
+# class Nabl_login(models.Model):
+#     Nabl_id=models.AutoField(primary_key=True)
+#     Nabl_login_id=models.CharField(max_length=10)
+#     Nabl_password=models.CharField(max_length=15)
+#     Nabl_otp=models.CharField(max_length=6)
+#     Nabl_verify_status=models.BooleanField(default=False)
+#
 #     def __str__(self):
-#         return self.Contact_no
-    
+#         return self.Nabl_login_id
 
-  
 
-    
+# class Nabl_Registration(models.Model):
+#     Nabl_id=models.ForeignKey(Nabl_login,on_delete=models.CASCADE)
+#     Nabl_ownership_id=models.CharField(max_length=30)
+#     Nabl_authorisedperson_id=models.ForeignKey(Nabl_Authorisedperson,on_delete=models.CASCADE)
+#     Nabl_contact_no=models.IntegerField(max_length=13)
+#     Nabl_emailid=models.EmailField(max_length=30,unique=True)
+#     Nabl_experience=models.IntegerField(max_length=4)
+#     Nabl_turnover=models.IntegerField(max_length=20)
+#     Nabl_pancard=models.CharField(max_length=10)
+#     Nabl_aadhar=models.IntegerField(max_length=12)
+#
+#     def __str__(self):
+#         return self.Nabl_emailid
+
+
+class NablRegistration(models.Model):
+    n_service_type = models.CharField(max_length=15, null=True)
+    n_company_name = models.CharField(max_length=30, unique=True, primary_key=True)
+    n_name_of_authorized = models.CharField(max_length=30)
+    n_email = models.EmailField(max_length=30, unique=True)
+    n_mobile = models.CharField(max_length=10, unique=True)
+    n_company_reg_date = models.DateTimeField()
+    n_company_validity_date = models.DateTimeField()
+
+    n_fax_number = models.CharField(max_length=30, default="")
+    n_pan = models.CharField(max_length=10, default="")
+    n_company_reg_number = models.CharField(max_length=30, default="")
+    n_company_gst_number = models.CharField(max_length=30, default="")
+    n_company_reg_address_line1 = models.CharField(max_length=30, default="")
+    n_company_reg_address_line2 = models.CharField(max_length=30, default="")
+    n_company_reg_address_city = models.CharField(max_length=30, default="")
+    n_company_reg_address_state = models.CharField(max_length=30, default="")
+    n_company_reg_address_district = models.CharField(max_length=30, default="")
+    n_company_reg_address_pincode = models.CharField(max_length=6, default="")
+    n_company_cor_address_line1 = models.CharField(max_length=30, default="")
+    n_company_cor_address_line2 = models.CharField(max_length=30, default="")
+    n_company_cor_address_city = models.CharField(max_length=30, default="")
+    n_company_cor_address_state = models.CharField(max_length=30, default="")
+    n_company_cor_address_district = models.CharField(max_length=30, default="")
+    n_company_cor_address_pincode = models.CharField(max_length=6, default="")
+    n_name_of_authorized_aadhar = models.CharField(max_length=15, default="")
+    n_name_of_authorized_dob = models.CharField(max_length=15, default="")
+    n_company_auth_address_line1 = models.CharField(max_length=30, default="")
+    n_company_auth_address_line2 = models.CharField(max_length=30, default="")
+    n_company_auth_address_state = models.CharField(max_length=30, default="")
+    n_company_auth_address_district = models.CharField(max_length=30, default="")
+    n_company_auth_address_pincode = models.CharField(max_length=6, default="")
+
+    n_company_dir_cor_address_line1 = models.CharField(max_length=30,default="" )
+    n_company_dir_cor_address_line2 = models.CharField(max_length=30,default="" )
+    n_company_dir_cor_address_city = models.CharField(max_length=30,default="" )
+    n_company_dir_cor_address_state = models.CharField(max_length=30,default="" )
+
+    n_company_dir_cor_address_pincode = models.CharField(max_length=6,default="" )
+
+    n_company_dir_name = models.CharField(max_length=30,default="")
+    n_company_dir_name_hindi = models.CharField(max_length=30,default="")
+    n_company_dir_email = models.CharField(max_length=30,default="")
+    n_company_dir_aadhar= models.CharField(max_length=30,null=True,blank=True,default="")
+    n_company_dir_dob = models.CharField(max_length=30,default="")
+    n_company_dir_mobile = models.CharField(max_length=30,default="")
+    n_bank_name = models.CharField(max_length=30,default="")
+    n_bank_ifsc = models.CharField(max_length=30,default="")
+    n_bank_ac_holder_name = models.CharField(max_length=30,default="")
+    n_bank_ac_number = models.CharField(max_length=30,default="")
+    n_bank_ac_number_re_enter = models.CharField(max_length=30,default="")
+
+    def __str__(self):
+        return self.n_service_type

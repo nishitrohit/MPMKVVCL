@@ -1,0 +1,336 @@
+{% extends 'vendor/nabl_base.html' %}
+ {% load static %}
+ {% block pagetitle %}  {% endblock pagetitle %}
+{% block css %}
+     .btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #10707f;
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: inherit;
+}
+ {% endblock css %}
+{% block body %}
+
+
+
+<div class="wrapper mb-8">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content">
+    <!-- Content Header (Page header) -->
+
+
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>NABL Registration</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main content -->
+
+    <section class="content">
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-primary">
+              <div class="card-body" >
+                  <div class="btn-group w-100 mb-2 float-left">
+                    <a class="btn btn-info active float-left" data-filter="all" style="background-color: #007bff;"> Upload Your Document </a>
+                  </div>
+                <div>
+                </div>
+
+              </div>
+              <form   action="nabl_Registration_seven" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+              <div class="container">
+                <table class="table">
+                  <label for="inputStatus">1.Valid NABL Accreditation Certificate *</label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          Document Name
+                      </th>
+                      <th style="width:20%">
+                          Document issued Date
+                      </th>
+                        <th style="width:20%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                        </td>
+                    <td><input type="text" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+
+                      <table class="table">
+                  <label for="inputStatus">2. NABL Scope of Accreditation *</label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          Document Name
+                      </th>
+                      <th style="width:20%">
+                          Document issued Date
+                      </th>
+                        <th style="width:20%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                        </td>
+                    <td><input type="text" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+                   <table class="table">
+                  <label for="inputStatus">3. Pan Card Details *</label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          Document Name
+                      </th>
+                      <th style="width:20%">
+                          Document issued Date
+                      </th>
+                        <th style="width:20%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                        </td>
+                    <td><input type="text" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+
+                      <table class="table">
+                  <label for="inputStatus">4.GST Registration Certificate *</label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          Document Name
+                      </th>
+                      <th style="width:20%">
+                          Document issued Date
+                      </th>
+                        <th style="width:20%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                        </td>
+                    <td><input type="text" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+                      <table class="table">
+                  <label for="inputStatus">5. Legal Entity of Document Optional</label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          Document Name
+                      </th>
+                      <th style="width:20%">
+                          Document issued Date
+                      </th>
+                        <th style="width:20%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                        </td>
+                    <td><input type="text" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+                    <table class="table">
+                  <label for="inputStatus">6. Authorisation Document Details</label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          Document Name
+                      </th>
+                      <th style="width:15%">
+                          Document issued Date
+                      </th>
+                        <th style="width:15%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                        </td>
+                    <td><input type="text" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+                 <table class="table">
+                  <label for="inputStatus">7. Aadhar Card of Authorised Person</label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          Document Name
+                      </th>
+                      <th style="width:20%">
+                          Document issued Date
+                      </th>
+                        <th style="width:20%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                        </td>
+                    <td><input type="text" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="v_office_name_supply" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+
+              </div>
+              <div class="container">
+                <div class="row card-body">
+      <div class="col-lg-6">
+            <div class="form-group">
+                <input type="reset" value="Previous" class="btn btn-secondary">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <!-- <div class="form-group">
+                <input type="submit" value="Save & Next" class="btn btn-success">
+            </div> -->
+            <a href="nabl_Registration_eight"></a>
+
+                  <button type="Submit" class="btn-success ">Submit</button>
+
+                  </a>
+          </div>
+        </div>
+              </div>
+
+
+              </div>
+          </div>
+        </div>
+
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+
+<script>
+  $(function () {
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({gutterPixels: 3});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+  })
+</script>
+
+{% endblock body %}

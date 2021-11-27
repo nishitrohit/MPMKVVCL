@@ -1,0 +1,486 @@
+{% extends 'vendor/nabl_base.html' %}
+ {% load static %}
+ {% block pagetitle %}  {% endblock pagetitle %}
+{% block css %}
+
+ {% endblock css %}
+{% block body %}
+<div class="wrapper">
+  <!-- Content Wrapper. Contains page content -->
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>NABL Registration</h1>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Please fill in your details and company/firm details before using your account!</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                </button>
+              </div>
+            </div>
+            <form action="nabl_Registration_two" method="POST">
+              {% csrf_token %}
+            <div class="card-body">
+              <div class="form-group">
+                <label for="n_service_type">Service Type/Business Ownership Type</label>
+                <input id="n_service_type" name="n_service_type" data-validate="required" readonly="readonly" type="text" value='{{type}}' class="form-control">
+
+              </div>
+              <div class="form-group">
+                <label for="n_company_name">NABL Lab Name (English) *</label>
+                <input id="n_company_name" name="n_company_name" data-validate="required" readonly="readonly" type="text" value='{{cname}}' class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="n_company_name">NABL Lab Name (Hindi) *</label>
+                <input id="n_company_name" name="n_company_name" data-validate="required" readonly="readonly" type="text" value='{{cname}}' class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="n_mobile">Telephone number *</label>
+                <input type="text" id="n_mobile" name="n_mobile" value='{{mobile}}' readonly="readonly" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="n_fax">Fax number *</label>
+                <input type="tel" id="n_fax" name="n_fax" class="form-control" pattern="^\d{10}$" maxlength="10" minlength="10" required="required">
+              </div>
+              <div class="form-group">
+                <label for="n_pan">NABL Lab PAN Number *</label>
+                <input type="text" name="n_pan" id="n_pan" class="form-control" required="required">
+              </div>
+              <div class="form-group">
+                <label for="n_reg_no">NABL Lab Registration Number* *</label>
+                <input type="tel" id="n_reg_no" name="n_reg_no" class="form-control" pattern="^\d{10}$" maxlength="10" minlength="10" required="required">
+              </div>
+                <div class="form-group">
+                <label for="n_gst">NABL Lab GST Number</label>
+                <input type="tel" id="n_gst" name="n_gst" class="form-control" pattern="^\d{10}$" maxlength="10" minlength="10" required="required">
+              </div>
+                <div class="form-group">
+                <label for="n_reg_date">NABL Lab Registration Date*</label>
+                <input type="date" name="n_reg_date" id="n_reg_date" class="form-control" required="required">
+              </div>
+                <div class="form-group">
+                <label for="n_validity_date">Validity date of registration of NABL Lab</label>
+                <input type="date" name="n_validity_date" id="n_validity_date" class="form-control" required="required">
+              </div>
+                <div class="form-group">
+                <label>Registered Office Address</label>
+              </div>
+                <div class="form-group">
+                <label for="n_add1">NABL Lab Address Line 1*</label>
+                <input type="text" name="n_add1" id="n_add1" class="form-control" required="required">
+              </div>
+                <div class="form-group">
+                <label for="n_add2">NABL Lab Address Line 2</label>
+                <input type="text" name="n_add2" id="n_add2" class="form-control" required="required">
+              </div>
+                <div class="form-group">
+                <label for="n_state">State *</label>
+                <select name="n_state" id="n_state" data-validate="required" class="form-control" required>
+                        <option selected disabled value="">Select One</option>
+                        <option value="02">Andaman and Nicobar Island</option>
+                        <option value="03">Andhra Pradesh</option>
+                        <option value="04">Arunachal Pradesh</option>
+                        <option value="05">Assam</option>
+                        <option value="06">Bihar</option>
+                        <option value="07">Chandigarh</option>
+                        <option value="08">Chhattisgarh</option>
+                        <option value="09">Dadra and Nagar Haveli</option>
+                        <option value="10">Daman and Diu</option>
+                        <option value="11">Delhi</option>
+                        <option value="12">Goa</option>
+                        <option value="13">Gujarat</option>
+                        <option value="14">Haryana</option>
+                        <option value="15">Himachal Pradesh</option>
+                        <option value="16">Jammu and Kashmir</option>
+                        <option value="17">Jharkhand</option>
+                        <option value="18">Karnataka</option>
+                        <option value="19">Kerala</option>
+                        <option value="20">Lakshadweep</option>
+                        <option value="21">Maharashtra</option>
+                        <option value="22">Manipur</option>
+                        <option value="23">Meghalaya</option>
+                        <option value="24">Mizoram</option>
+                        <option value="25">Nagaland</option>
+                        <option value="26">Odisha</option>
+                        <option value="27">Puducherry</option>
+                        <option value="28">Punjab</option>
+                        <option value="29">Rajasthan</option>
+                        <option value="30">Sikkim</option>
+                        <option value="31">Tamil Nadu</option>
+                        <option value="32">Telangana</option>
+                        <option value="33">Tripura</option>
+                        <option value="34">Uttar Pradesh</option>
+                        <option value="35">Uttarakhand</option>
+                        <option value="36">West Bengal</option>
+                        <option value="01">Madhya Pradesh</option>
+                </select>
+              </div>
+                <div class="form-group">
+                <label for="n_district">District *</label>
+                <select name="n_district" id="n_district" data-validate="required" class="form-control" required>
+                      <option selected disabled value="">Select one</option>
+
+                      <option value="0120">Balaghat</option>
+
+                      <option value="0121">Barwani</option>
+
+                      <option value="0123">Chhatarpur</option>
+
+                      <option value="0124">Chhindwara</option>
+
+                      <option value="0125">Damoh</option>
+
+                      <option value="0127">Dhar</option>
+
+                      <option value="0130">Jabalpur</option>
+
+                      <option value="0134">Khargone</option>
+
+                      <option value="0136">Mandsaur</option>
+
+                      <option value="0138">Neemuch</option>
+
+                      <option value="0140">Ratlam</option>
+
+                      <option value="0141">Rewa</option>
+
+                      <option value="0144">Seoni</option>
+
+                      <option value="0146">Shajapur</option>
+
+                      <option value="0148">Singrauli</option>
+
+                      <option value="0150">Ujjain</option>
+
+                      <option value="0153">Sohagpur</option>
+
+                      <option value="0118">Alirajpur</option>
+
+                      <option value="0119">Anuppur</option>
+
+                      <option value="0122">Burhanpur</option>
+
+                      <option value="0126">Dewas</option>
+
+                      <option value="0128">Dindori</option>
+
+                      <option value="0129">Indore</option>
+
+                      <option value="0131">Jhabua</option>
+
+                      <option value="0132">Katni</option>
+
+                      <option value="0133">Khandwa</option>
+
+                      <option value="0135">Mandla</option>
+
+                      <option value="0137">Narsinghpur</option>
+
+                      <option value="0139">Panna</option>
+
+                      <option value="0142">Sagar</option>
+
+                      <option value="0143">Satna</option>
+
+                      <option value="0145">Shahdol</option>
+
+                      <option value="0147">Sidhi</option>
+
+                      <option value="0149">Tikamgarh</option>
+
+                      <option value="0151">Umaria</option>
+
+                      <option value="0152">Agar Malwa</option>
+
+                      <option value="0154">Babai</option>
+
+                      <option value="0103">SHIVPURI</option>
+
+                      <option value="0101">Demo District</option>
+
+                      <option value="0102">BHIND</option>
+
+                      <option value="0104">BHOPAL</option>
+
+                      <option value="0105">Raisen</option>
+
+                      <option value="0106">Rajgarh</option>
+
+                      <option value="0107">SEHORE</option>
+
+                      <option value="0108">Sheopur</option>
+
+                      <option value="0109">HOSHANGABAD</option>
+
+                      <option value="0110">HARDA</option>
+
+                      <option value="0111">Vidisha</option>
+
+                      <option value="0112">Guna</option>
+
+                      <option value="0113">Ashoknagar</option>
+
+                      <option value="0114">Betul</option>
+
+                      <option value="0115">GWALIOR</option>
+
+                      <option value="0116">Datia</option>
+
+                      <option value="0117">MORENA</option>
+
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="n_city">City *</label>
+                <input type="text" name="n_city" id="n_city" class="form-control" required="required">
+              </div>
+                <div class="form-group">
+                <label for="n_zip">Pincode *</label>
+                <input type="text" name="n_zip" id="n_zip" class="form-control" required="required">
+              </div>
+                <div class="form-group">
+                    <label>Office correspondence address</label>
+                    <label for="n_homepostalcheck">If the address is the same</label><br><br>
+                   <span class="text-danger pull-right" style="font-size: 15px">
+                    <input type="checkbox" name="n_homepostalcheck" id="n_homepostalcheck" value="FALSE"/>If the address is the same<br></span>
+                </div>
+                <div class="form-group">
+                <label for="n_add3">Firm / Company Address Line 1*</label>
+                <input type="text" name="n_add3" id="n_add3" data-validate="required" class="form-control" value="">
+              </div>
+                <div class="form-group">
+                <label for="n_add4">Firm / Company Address Line 2</label>
+                <input type="text" name="n_add4" id="n_add4" data-validate="required" class="form-control" value="">
+              </div>
+              <div class="form-group">
+                <label for="n_state2">State *</label>
+                <select  name="n_state2" id="n_state2" data-validate="required" class="form-control">
+                      <option value="0">select one</option>
+                      <option value="02">Andaman and Nicobar Island</option>
+                        <option value="03">Andhra Pradesh</option>
+                        <option value="04">Arunachal Pradesh</option>
+                        <option value="05">Assam</option>
+                        <option value="06">Bihar</option>
+                        <option value="07">Chandigarh</option>
+                        <option value="08">Chhattisgarh</option>
+                        <option value="09">Dadra and Nagar Haveli</option>
+                        <option value="10">Daman and Diu</option>
+                        <option value="11">Delhi</option>
+                        <option value="12">Goa</option>
+                        <option value="13">Gujarat</option>
+                        <option value="14">Haryana</option>
+                        <option value="15">Himachal Pradesh</option>
+                        <option value="16">Jammu and Kashmir</option>
+                        <option value="17">Jharkhand</option>
+                        <option value="18">Karnataka</option>
+                        <option value="19">Kerala</option>
+                        <option value="20">Lakshadweep</option>
+                        <option value="21">Maharashtra</option>
+                        <option value="22">Manipur</option>
+                        <option value="23">Meghalaya</option>
+                        <option value="24">Mizoram</option>
+                        <option value="25">Nagaland</option>
+                        <option value="26">Odisha</option>
+                        <option value="27">Puducherry</option>
+                        <option value="28">Punjab</option>
+                        <option value="29">Rajasthan</option>
+                        <option value="30">Sikkim</option>
+                        <option value="31">Tamil Nadu</option>
+                        <option value="32">Telangana</option>
+                        <option value="33">Tripura</option>
+                        <option value="34">Uttar Pradesh</option>
+                        <option value="35">Uttarakhand</option>
+                        <option value="36">West Bengal</option>
+                        <option value="01">Madhya Pradesh</option>
+                </select>
+              </div>
+                <div class="form-group">
+                <label for="n_district2">District *</label>
+                <select name="n_district2" id="n_district2" data-validate="required" class="form-control">
+                      <option value="0">select one</option>
+                      <option value="0120">Balaghat</option>
+
+                      <option value="0121">Barwani</option>
+
+                      <option value="0123">Chhatarpur</option>
+
+                      <option value="0124">Chhindwara</option>
+
+                      <option value="0125">Damoh</option>
+
+                      <option value="0127">Dhar</option>
+
+                      <option value="0130">Jabalpur</option>
+
+                      <option value="0134">Khargone</option>
+
+                      <option value="0136">Mandsaur</option>
+
+                      <option value="0138">Neemuch</option>
+
+                      <option value="0140">Ratlam</option>
+
+                      <option value="0141">Rewa</option>
+
+                      <option value="0144">Seoni</option>
+
+                      <option value="0146">Shajapur</option>
+
+                      <option value="0148">Singrauli</option>
+
+                      <option value="0150">Ujjain</option>
+
+                      <option value="0153">Sohagpur</option>
+
+                      <option value="0118">Alirajpur</option>
+
+                      <option value="0119">Anuppur</option>
+
+                      <option value="0122">Burhanpur</option>
+
+                      <option value="0126">Dewas</option>
+
+                      <option value="0128">Dindori</option>
+
+                      <option value="0129">Indore</option>
+
+                      <option value="0131">Jhabua</option>
+
+                      <option value="0132">Katni</option>
+
+                      <option value="0133">Khandwa</option>
+
+                      <option value="0135">Mandla</option>
+
+                      <option value="0137">Narsinghpur</option>
+
+                      <option value="0139">Panna</option>
+
+                      <option value="0142">Sagar</option>
+
+                      <option value="0143">Satna</option>
+
+                      <option value="0145">Shahdol</option>
+
+                      <option value="0147">Sidhi</option>
+
+                      <option value="0149">Tikamgarh</option>
+
+                      <option value="0151">Umaria</option>
+
+                      <option value="0152">Agar Malwa</option>
+
+                      <option value="0154">Babai</option>
+
+                      <option value="0103">SHIVPURI</option>
+
+                      <option value="0101">Demo District</option>
+
+                      <option value="0102">BHIND</option>
+
+                      <option value="0104">BHOPAL</option>
+
+                      <option value="0105">Raisen</option>
+
+                      <option value="0106">Rajgarh</option>
+
+                      <option value="0107">SEHORE</option>
+
+                      <option value="0108">Sheopur</option>
+
+                      <option value="0109">HOSHANGABAD</option>
+
+                      <option value="0110">HARDA</option>
+
+                      <option value="0111">Vidisha</option>
+
+                      <option value="0112">Guna</option>
+
+                      <option value="0113">Ashoknagar</option>
+
+                      <option value="0114">Betul</option>
+
+                      <option value="0115">GWALIOR</option>
+
+                      <option value="0116">Datia</option>
+
+                      <option value="0117">MORENA</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="n_city2">City *</label>
+                <input type="text" name="n_city2" id="n_city2" data-validate="required" class="form-control" value="">
+              </div>
+                <div class="form-group">
+                <label for="n_zip2">Pincode *</label>
+                <input type="text" name="n_zip2" id="n_zip2" id="czip" class="form-control" value="">
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <div class="col-md-6">
+          <div class="card card-secondary">
+            <div class="card-header">
+              <h3 class="card-title">NABL Lab Details</h3>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <article>
+                    <h3>Fill the information related to the NABL Lab</h3>
+                    <p></p>
+                    <ul>
+                        <li>Write the name of the NABL Lab in English and Hindi.</li>
+                        <li>To write name in Hindi, type in English, choose your name from Hindi words.</li>
+                        <li>Tel./Fax No. ,</li>
+                        <li>Write the address of the NABL Lab:- Any communication, whether in writing, type or printed letters, will be sent by registered post to the correspondence office address given by you, will be deemed to have been received by you.</li>
+                        <li>NABL Lab PAN No. Write |</li>
+                        <li>NABL Lab Registration No. and write the date of validity.</li>
+                    </ul>
+                    <span class="text-danger">Note: It is mandatory to give the information marked with * in the information related to the firm / company.</span>
+                </article>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+
+    <div class="row card-body">
+      <div class="col-lg-5">
+            <div class="form-group">
+                <input type="reset" value="Previous" class="btn btn-secondary">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+              <a href="nabl_dashboard2"></a>
+              <button type="Submit" class="btn btn-success" value="Save & Next">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    </form>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+
+{% endblock body %}

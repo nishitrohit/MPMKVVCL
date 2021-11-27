@@ -1,0 +1,193 @@
+{% extends 'nabl/base.html' %}
+ {% load static %}
+ {% block pagetitle %}  {% endblock pagetitle %}
+{% block css %}
+
+ {% endblock css %}
+{% block body %}
+<div class="wrapper mb-8">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-10">
+            <h4>The Details Given By You Are Below, You Have To Do Digital Signature, Before That Check It.</h4>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+<!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-primary">
+              <form   action="vendor_registration_fifteen" method="POST">
+                {% csrf_token %}
+
+
+                <div class="card-body p-3">
+          <table class="table table-striped projects">
+              <thead>
+                  <tr>
+                      <th style="width:10%">
+                          Serial No
+                      </th>
+                      <th>
+                          Document Name
+                      </th>
+
+                        <th style="width: 10%">
+                        Document type
+                      </th>
+                         <th style="width: 10%">
+                        Image
+                      </th>
+
+                        <th style="width: 10%">
+                        View
+                      </th>
+                  </tr>
+              </thead>
+                <tbody>
+
+                  <tr>
+                      <td>
+                        <p>1</p>
+                      </td>
+                      <td>
+                          <p>AADHAR CARD</p>
+                      <td>
+
+                      <td>
+                          <p></p>
+                      </td>
+
+                    </tr>
+
+
+
+                  <tr>
+                    <td>
+                      <p>2</p>
+                    </td>
+                      <td>
+                        <p>AADHAR CARD FATHER</p>
+                      </td>
+
+                      <td >
+                          <p></p>
+                      </td>
+
+
+                  </tr>
+           </tbody>
+
+
+
+
+              <tbody>
+                {% for name in supplier %}
+                  <tr>
+                      <td>
+                         {{name.Supplier_id}}Test
+                      </td>
+                      <td>
+                          <a>
+                              {{name.Supplier_name}}Test
+                          </a>
+                          <br/>
+                              Created {{name.Supplier_Add_date}}Test
+                      </td>
+                      <td>
+                          {{name.Supplier_phone_no}}
+                      </td>
+                      <td class="project_progress">
+                              {{name.Supplier_email}}
+                      </td>
+                      <td class="project-state">
+                          {{name.Supplier_address}}
+                      </td>
+                      <td class="project-actions text-right">
+                          <a class="btn btn-primary btn-sm" href="/dashboard/showSupplier/{{name.Supplier_id}}">
+                              <i class="fas fa-folder">
+                              </i>
+                              View
+                          </a>
+                          <a class="btn btn-info btn-sm" href="/dashboard/editSupplier/{{name.Supplier_id}}">
+                              <i class="fas fa-pencil-alt">
+                              </i>
+                              Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm" href="/dashboard/deleteSupplier/{{name.Supplier_id}}">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
+                      </td>
+                  </tr>
+              {% endfor %}
+
+           </tbody>
+          </table>
+        </div>
+
+
+
+
+
+
+              <div class="container">
+                <div class="row card-body">
+      <div class="col-lg-6">
+            <div class="form-group">
+                <input type="reset" value="Previous" class="btn btn-secondary">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+              <a href="dashboard13"></a>
+
+              <button type="Submit" class="btn-success">Submit</button>
+
+              </a>
+                <!-- <input type="submit" value="For" class="btn btn-success"> -->
+            </div>
+          </div>
+        </div>
+              </div>
+              </div>
+          </div>
+        </div>
+
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+
+<script>
+  $(function () {
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({gutterPixels: 3});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+  })
+</script>
+{% endblock body %}

@@ -15,6 +15,7 @@ import random,math
 from copy import deepcopy
 from django.db.models import Count
 
+
 def Login(request):
     # if request.method == 'POST':
     #     return HttpResponse("We are working on Dashboard")
@@ -43,23 +44,23 @@ def Login(request):
         #         return render(request, 'vendor/login.html', {"msg": "invalid username"})
     # else:
     #     return HttpResponse("We are working on Dashboard")
+
     return render(request, 'vendor/login.html')
 
-  
 
-
-def Registration(request):
-  
-    if request.method == "POST":   
-        service_type = request.POST.get('service_type')     
-        company_name = request.POST.get('company_name')
-        name_of_authorized = request.POST.get('name_of_authorized')                        
-        email = request.POST.get('email') 
-        mobile = request.POST.get('mobile')  
+def nabl_Registration(request):
+    if request.method == "POST":
+        service_type = request.POST.get('n_service_type')
+        company_name = request.POST.get('n_company_name')
+        name_of_authorized = request.POST.get('n_name_of_authorized')
+        email = request.POST.get('n_email')
+        mobile = request.POST.get('n_mobile')
+        print("type(mobile)", type(mobile))
+        print("type(mobile)", type(mobile))
         current_time = datetime.now()
-        date_time = current_time.strftime("%d/%m/%Y %H:%M:%S") 
-        
-        
+        date_time = current_time.strftime("%d/%m/%Y %H:%M:%S")
+
+        url = "https://www.fast2sms.com/dev/bulkv2"
         def generateOTP():
             digits = "0123456789"
             OTP = ""
@@ -82,6 +83,77 @@ def Registration(request):
 
         # response = requests.request("POST", url, data=payload, headers=headers)
         # print(response.text)
+
+        if NablRegistration.objects.filter(n_email=email).exists():
+            messages.warning(request, "email already register")
+            return redirect('nabl_register')
+
+        elif NablRegistration.objects.filter(n_mobile=mobile).exists():
+            messages.warning(request, "no already register")
+            return redirect('nabl_register')
+
+
+        else:
+            user_data = NablRegistration(n_service_type=service_type, n_company_name=company_name,
+                                           n_name_of_authorized=name_of_authorized, n_email=email, n_mobile=mobile,
+                                           n_company_reg_date=current_time, n_company_validity_date=current_time)
+
+            user_data.save()
+            request.session['uid'] = request.POST['n_email']
+            aaaaa = request.session['uid']
+
+            # url = "https://www.fast2sms.com/dev/bulkV2"
+
+            # payload = "message=This%20is%20a%20test%20message&language=english&route=q&numbers=9407820866"
+            # headers = {
+            #     'authorization': "FxOXbDJ3kKZRYH2pInuv5cigmLUWw9toEdq1zfTNSPy87heQ4AXHwf94UNnvzpjdcGmTeMZEQ0LJqYBD",
+            #     'Content-Type': "application/x-www-form-urlencoded",
+            #     'Cache-Control': "no-cache",
+            #     }
+
+            # response = requests.request("POST", url, data=payload, headers=headers)
+            # print(response.text)
+
+            return redirect('nabl_dashboard')
+    # return render(request, 'vendor/vendor_reg1.html')
+    return render(request, 'vendor/nabl_reg1.html')
+
+
+
+def Registration(request):
+  
+    if request.method == "POST":   
+        service_type = request.POST.get('service_type')     
+        company_name = request.POST.get('company_name')
+        name_of_authorized = request.POST.get('name_of_authorized')                        
+        email = request.POST.get('email') 
+        mobile = request.POST.get('mobile')  
+        current_time = datetime.now()
+        date_time = current_time.strftime("%d/%m/%Y %H:%M:%S") 
+
+        url = "https://www.fast2sms.com/dev/bulkv2"
+        def generateOTP():
+            digits = "0123456789"
+            OTP = ""
+            for i in range(6):
+                OTP += digits[math.floor(random.random() * 10)]
+
+            return OTP
+
+        otp = generateOTP()
+        print(otp)
+        request.session['otp'] = otp
+
+        payload = "message=This is%20a%20test%20message.Your otp is " + otp + "&language=english&route=q&numbers=" + mobile
+        print(payload)
+        headers = {
+            'authorization': "FxOXbDJ3kKZRYH2pInuv5cigmLUWw9toEdq1zfTNSPy87heQ4AXHwf94UNnvzpjdcGmTeMZEQ0LJqYBD",
+            'Content-Type': "application/x-www-form-urlencoded",
+            'Cache-Control': "no-cache",
+        }
+
+        response = requests.request("POST", url, data=payload, headers=headers)
+        print(response.text)
                              
   
         if VendorRegistration.objects.filter(v_email=email).exists():
@@ -111,9 +183,43 @@ def Registration(request):
             # response = requests.request("POST", url, data=payload, headers=headers)
 
             # print(response.text)
-            return redirect('dashboard')
+            return redirect('nabl_otp')
     return render(request,'vendor/vendor_reg1.html')
 
+
+def nabl_Registration_Two(request):
+    if request.session.has_key('uid'):
+        nabl_db = NablRegistration.objects.filter(n_email=request.session['uid'])
+        nabl_serializer = NablRegistration_Serializer(nabl_db, many=True)
+        data = nabl_serializer.data
+        jsondata = json.loads(json.dumps(data))
+        contact = jsondata[-1]['n_mobile']
+        company_name = jsondata[-1]['n_company_name']
+        business_type = jsondata[-1]['n_service_type']
+
+        if request.method == "POST":
+            nabl_data = request.session['uid']
+            get_data = NablRegistration.objects.get(n_email=nabl_data)
+            get_data.n_fax_number = request.POST.get('n_fax')
+            get_data.n_pan = request.POST.get('n_pan')
+            get_data.n_company_reg_number = request.POST.get('n_reg_no')
+            get_data.n_company_gst_number = request.POST.get('n_gst')
+            get_data.n_company_reg_address_line1 = request.POST.get('n_add1')
+            get_data.n_company_reg_address_line2 = request.POST.get('n_add2')
+            get_data.n_company_reg_address_city = request.POST.get('n_city')
+            get_data.n_company_reg_address_state = request.POST.get('n_state')
+            get_data.n_company_reg_address_district = request.POST.get('n_district')
+            get_data.n_company_reg_address_pincode = request.POST.get('n_zip')
+            get_data.n_company_cor_address_line1 = request.POST.get('n_add3')
+            get_data.n_company_cor_address_line2 = request.POST.get('n_add4')
+            get_data.n_company_cor_address_city = request.POST.get('n_city2')
+            get_data.n_company_cor_address_state = request.POST.get('n_state2')
+            get_data.n_company_cor_address_district = request.POST.get('n_district2')
+            get_data.n_company_cor_address_pincode = request.POST.get('n_zip2')
+
+            get_data.save()
+            return redirect("nabl_dashboard3")
+    return render(request, 'vendor/nabl_reg2.html', {"type": business_type, "cname": company_name, "mobile": contact})
 
 
 def Vendor_Registration_Two(request):
@@ -149,6 +255,74 @@ def Vendor_Registration_Two(request):
             get_data.save()
             return redirect("dashboard2")
     return render(request,'vendor/vendor_reg2.html',{"type":business_type,"cname":company_name,"mobile":contact})
+
+
+def nabl_Registration_Three(request):
+    if request.session.has_key('uid'):
+        nabl_db = NablRegistration.objects.filter(n_email=request.session['uid'])
+        vendor_serializer = NablRegistration_Serializer(nabl_db, many=True)
+        data = vendor_serializer.data
+        jsondata = json.loads(json.dumps(data))
+        contact = jsondata[-1]['n_mobile']
+        auth_name = jsondata[-1]['n_name_of_authorized']
+        email = jsondata[-1]['n_email']
+
+        if request.method == "POST":
+            vendor_data = request.session['uid']
+            get_data = NablRegistration.objects.get(n_email=vendor_data)
+            get_data.n_name_of_authorized_dob = request.POST.get('n_dob')
+            get_data.n_name_of_authorized_aadhar = request.POST.get('n_aadhar')
+            get_data.n_company_auth_address_line1 = request.POST.get('n_add5')
+            get_data.n_company_auth_address_line2 = request.POST.get('n_add6')
+            get_data.n_company_auth_address_state = request.POST.get('n_state')
+
+            get_data.n_company_auth_address_district = request.POST.get('n_district')
+            get_data.n_company_auth_address_pincode = request.POST.get('n_zip')
+            get_data.n_company_dir_name = request.POST.get('n_dir_name')
+            get_data.n_company_dir_name_hindi = request.POST.get('n_dir_name_hindi')
+            get_data.n_company_dir_dob = request.POST.get('n_dir_dob')
+
+            get_data.n_company_dir_mobile = request.POST.get('n_dir_mobile')
+            get_data.n_company_dir_email = request.POST.get('n_dir_email')
+            get_data.n_company_dir_aadhar = request.POST.get('n_dir_aadhar')
+            get_data.n_company_dir_cor_address_line1 = request.POST.get('n_dir_add1')
+            get_data.n_company_dir_cor_address_line2 = request.POST.get('n_dir_add2')
+
+            get_data.n_company_dir_cor_address_state = request.POST.get('n_dir_state')
+            get_data.n_company_dir_cor_address_city = request.POST.get('n_dir_city')
+            get_data.n_company_dir_cor_address_pincode = request.POST.get('n_dir_zip')
+
+            get_data.save()
+            return redirect("nabl_dashboard3")
+    return render(request, 'vendor/nabl_reg3.html', {"auth_name": auth_name, "mobile": contact, "email": email})
+
+def otp(request):
+    if request.method == "POST":
+        otp = request.POST.get('otp')
+        print("test1")
+        check = request.session['otp']
+        if otp == check:
+            print(request.session['otp'])
+            return redirect("dashboard")
+        else:
+            return redirect("register")
+
+    return render(request, 'vendor/otp.html')
+
+
+def nabl_otp(request):
+    if request.method == "POST":
+        nabl_otp = request.POST.get('nabl_otp')
+        print("test1")
+        check = request.session['nabl_otp']
+        if nabl_otp == check:
+            print(request.session['nabl_otp'])
+            return redirect("nabl_dashboard")
+        else:
+            return redirect("nabl_register")
+
+    return render(request, 'vendor/nabl_otp.html')
+
 
 def Vendor_Registration_Three(request):
     if request.session.has_key('uid'):
@@ -189,6 +363,23 @@ def Vendor_Registration_Three(request):
             return redirect("dashboard3")
     return render(request,'vendor/vendor_reg3.html',{"auth_name":auth_name,"mobile":contact,"email":email})
 
+
+def nabl_Registration_Four(request):
+    if request.session.has_key('uid'):
+        if request.method == "POST":
+            nabl_data=request.session['uid']
+            get_data = NablRegistration.objects.get(n_email=nabl_data)
+            get_data.n_bank_name= request.POST.get('n_bank_name')
+            get_data.n_bank_ifsc=request.POST.get('n_ifsc')
+            get_data.n_bank_ac_holder_name=request.POST.get('n_ac_holder_name')
+            get_data.n_bank_ac_number=request.POST.get('n_ac_number')
+            get_data.n_bank_ac_number_re_enter=request.POST.get('n_re_ac_number')
+            get_data.save()
+            return redirect("nabl_dashboard4")
+    return render(request,'vendor/nabl_reg4.html')
+
+
+
 def Vendor_Registration_Four(request):
     if request.session.has_key('uid'):
         if request.method == "POST":
@@ -203,10 +394,16 @@ def Vendor_Registration_Four(request):
             return redirect("dashboard4")
     return render(request,'vendor/vendor_reg4.html')
 
+
+def nabl_Registration_Five(request):
+    return render(request,'vendor/nabl_reg5.html')
+
+
 def Vendor_Registration_Five(request):
     return render(request,'vendor/vendor_reg5.html')
 
-
+def nabl_Registration_Six(request):
+    return render(request, 'vendor/nabl_reg6.html')
 
 
 
@@ -227,10 +424,15 @@ def payment_success(request):
     return render(request, "success.html")
 
 
+def nabl_Registration_Seven(request):
+    return render(request,'vendor/nabl_reg7.html')
+
 def Vendor_Registration_Seven(request):
     return render(request,'vendor/vendor_reg7.html')
 
 
+def nabl_Registration_Eight(request):
+    return render(request,'vendor/nabl_reg8.html')
 
 def Vendor_Registration_Eight(request):
     if request.session.has_key('uid'):
@@ -243,6 +445,9 @@ def Vendor_Registration_Eight(request):
             return redirect("dashboard7")
     return render(request,'vendor/vendor_reg8.html')
 
+
+def nabl_Registration_Nine(request):
+    return render(request,'vendor/nabl_reg9.html')
 
 
 def Vendor_Registration_Nine(request):
