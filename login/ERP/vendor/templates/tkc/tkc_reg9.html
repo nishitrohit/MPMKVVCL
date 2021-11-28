@@ -1,0 +1,159 @@
+{% extends 'tkc/base.html' %}
+ {% load static %}
+ {% block pagetitle %}  {% endblock pagetitle %}
+{% block css %}
+.btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #10707f;
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: inherit;
+}
+ {% endblock css %}
+{% block body %}
+
+<div class="wrapper">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content">
+    <!-- Content Header (Page header) -->
+<!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-primary">
+              <div class="card-body" >
+                  <div class="btn-group w-100 mb-2 ">
+                    <a class="btn btn-info active" href="javascript:void(0)" data-filter="all" style="background-color: #007bff;">Technical/Eligibility Details  </a>
+                    <a class="btn btn-info " href="javascript:void(0)" data-filter="1" style="background-color: #007bff;"> Annual Income Details</a>
+                    <a class="btn btn-info" href="javascript:void(0)" data-filter="2" style="background-color: #007bff;"> Document Details </a>
+                    <a class="btn btn-info" href="javascript:void(0)" data-filter="3" style="background-color: #007bff;"> Paid Amount  Details </a>
+                  </div>
+                <div>
+                  <div class="filter-container p-3 col-md-12">
+
+                  <form   action="tkc_reg_nine" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+              <div class="container">
+                <table class="table">
+                  <tr>
+                      <th style="width:5%">
+                           Serial No
+                      </th>
+                      <th style="width: 20%">
+                          Work Detail
+                      </th>
+                      <th style="width:20%">
+                          Required Work Quantity
+                      </th>
+                        <th style="width:50%">
+                         Details
+                      </th>
+                    </tr>
+                    <tr>
+                    <td>1</td>
+                    <td>Part B 1)33 Kb line</td>
+                    <td> 20 KM</td>
+                    <td>Part (A) 100% of AND 2)sumof percentage of any 4 works mentaioned in part(B) should be 100% or more </td>
+
+                  </tr>
+
+                       <tr>
+                    <td>2</td>
+                    <td>Part B 1)33 Kb line</td>
+                    <td> 20 KM</td>
+                    <td>Part (A) 100% of AND 2)sumof percentage of any 4 works mentaioned in part(B) should be 100% or more </td>
+
+                  </tr>
+
+                </table>
+                  </div>
+                  </form>
+                  <form action="tkc_reg_nine" method="POST">
+                    {% csrf_token %}
+                  <div class="col-lg-12">
+                      <div class="form-group">
+                          <label>Are you currently or existing vendor? *</label>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-12">
+                      <div class="form-group">
+                          <label class="radio-inline">
+                            <input type="radio" name="optradio" checked>Yes (Existing member)
+                          </label>
+                          <label class="radio-inline">
+                            <input type="radio" name="optradio">No (New member)
+                          </label>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-12">
+                      <div class="form-group">
+                          <label>PAN CARD NO.</label>
+                          <!-- <input type="text" id="pan" name="ac_number" class="form-control"> -->
+                          <input type="text" name="pan_number" id="inputName" class="form-control" required="required">
+                      </div>
+                  </div>
+
+
+                  <div class="col-lg-6">
+                      <div class="form-group">
+                          <div class="form-group multiple-radio">
+                         <div class="d-flex justify-content-between">
+                         <div class="form-check pt-1 pb-1">
+                            <input class="form-check-input form-check-input-cve" type="checkbox" name="defaultCheck" id="defaultCheck1" required=required>
+                            <label class="form-check-label" for="defaultCheck1">
+                              All the details provided by me are completely correct, if found to be wrong / forged in future, the company Can take any kind of legal action against me.
+                            </label>
+                          </div>
+                         </div>
+                      </div>
+                      </div>
+                  </div>
+
+
+                  <button type="Submit" class="btn-success">Submit</button>
+                  </a>
+                </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+
+<script>
+  $(function () {
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({gutterPixels: 3});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+  })
+</script>
+
+{% endblock body %}

@@ -1,0 +1,337 @@
+{% extends 'tkc/base.html' %}
+ {% load static %}
+ {% block pagetitle %}  {% endblock pagetitle %}
+{% block css %}
+ {% endblock css %}
+{% block body %}
+<div class="wrapper">
+  <!-- Content Wrapper. Contains page content -->
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Please fill in your details and company/firm details before using your account!</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+
+<div class=" card-body col-lg-6">
+<h4 class="heading">Bank Account Details</h4>
+</div>
+<div class="row card-body">
+  <form   action="tkc_reg_four" method="POST">
+    {% csrf_token %}
+    <div class="col-lg-6 flex-lg-fill">
+        <div class="form-group form-group-select">
+            <label for="exampleFormControlSelect1">Banks' Name *</label>
+            <select class="form-control" name="bank_name" id="authentication" name="authentication">
+                        <option value="">Select Bank</option>
+                        <option value="12">AU Small Finance Bank Limited</option>
+                        <option value="1">Abhyudaya Cooperative Bank</option>
+                        <option value="2">Abu Dhabi Commercial Bank</option>
+                        <option value="3">Ahmedabad Mercantile Cooperative Bank</option>
+                        <option value="4">Airtel Payments Bank Limited</option>
+                        <option value="5">Akola Janata Commercial Cooperative Bank</option>
+                        <option value="6">Allahabad Bank</option>
+                        <option value="7">Almora Urban Co-Operative Bank ltd</option>
+                        <option value="8">Andhra Bank</option>
+                        <option value="9">Andhra Pragathi Grameena Bank</option>
+                        <option value="10">Apna Sahakari Bank Ltd</option>
+                        <option value="11">Australia and New Zealand Banking Group Ltd</option>
+                        <option value="13">Axis Bank</option>
+                        <option value="27">BNP Paribas Bank</option>
+                        <option value="14">Bandhan Bank Limited</option>
+                        <option value="15">Bank Internasional Indonesia</option>
+                        <option value="16">Bank of America</option>
+                        <option value="17">Bank of Bahrein and Kuwait</option>
+                        <option value="18">Bank of Baroda</option>
+                        <option value="19">Bank of Ceylon</option>
+                        <option value="20">Bank of India</option>
+                        <option value="21">Bank of Maharashtra</option>
+                        <option value="22">Bank of Tokyo Mitsubishi Ltd</option>
+                        <option value="23">Barclays Bank</option>
+                        <option value="24">Bassein Catholic Co-Op Bank Ltd</option>
+                        <option value="25">Bharat Cooperative Bank Mumbai Ltd</option>
+                        <option value="26">Bharatiya Mahila Bank Ltd</option>
+                        <option value="202">Bhopal Co-operative Central Bank Limited</option>
+                        <option value="34">CITI Bank</option>
+                        <option value="28">Canara Bank</option>
+                        <option value="30">Capital Local Area Bank Ltd</option>
+                        <option value="29">Capital Small Finance Bank Ltd</option>
+                        <option value="31">Catholic Syrian Bank</option>
+                        <option value="32">Central Bank of India</option>
+                        <option value="33">Chinatrust Commercial Bank</option>
+                        <option value="35">Citizen Credit Cooperative Bank</option>
+                        <option value="36">City Union Bank Ltd</option>
+                        <option value="37">Commonwealth Bank of Australia</option>
+                        <option value="38">Corporation Bank</option>
+                        <option value="39">Credit Agricole Corporate and Investment Bank</option>
+                        <option value="40">Credit Suisse AG</option>
+                        <option value="41">DBS Bank Ltd</option>
+                        <option value="42">DCB Bank Ltd</option>
+                        <option value="44">Dena Bank</option>
+                        <option value="43">Deogiri Nagari Sahakari Bank Ltd. Aurangabad</option>
+                        <option value="49">Deposit Insurance and Credit Guarantee Corporation (DICGC)</option>
+                        <option value="47">Development Bank of Singapore DBS</option>
+                        <option value="48">Dhanlakshmi Bank</option>
+                        <option value="50">Doha Bank QSC</option>
+                        <option value="51">Dombivli Nagari Sahakari Bank Ltd</option>
+                        <option value="53">Equitas Small Finance Bank Limited</option>
+                        <option value="52">Esaf Small Finance Bank Limited</option>
+                        <option value="54">Export Import Bank of India</option>
+                        <option value="56">FINO Payments Bank</option>
+                        <option value="55">Federal Bank Ltd</option>
+                        <option value="57">Firstrand Bank Ltd</option>
+                        <option value="58">G P Parsik Bank</option>
+                        <option value="59">Gurgaon Gramin Bank Ltd</option>
+                        <option value="60">HDFC Bank Ltd</option>
+                        <option value="62">HSBC</option>
+                        <option value="61">Himachal Pradesh State Co-Operative Bank Ltd</option>
+                        <option value="64">ICICI Bank Ltd</option>
+                        <option value="65">IDBI Ltd</option>
+                        <option value="66">IDFC Bank Ltd</option>
+                        <option value="67">Idukki District Co-Operative Bank Ltd</option>
+                        <option value="68">Indian Bank</option>
+                        <option value="69">Indian Overseas Bank</option>
+                        <option value="70">Indusind Bank Ltd</option>
+                        <option value="72">Industrial Bank of Korea</option>
+                        <option value="71">Industrial and Commercial Bank of China Ltd</option>
+                        <option value="80">JP Morgan Chase Bank NA</option>
+                        <option value="73">Jalgaon Janata Sahkari Bank Ltd</option>
+                        <option value="74">Jammu and Kashmir Bank</option>
+                        <option value="76">Janaseva Sahakari Bank (Borivli) Ltd</option>
+                        <option value="77">Janaseva Sahakari Bank Ltd</option>
+                        <option value="78">Janata Sahakari Bank Ltd (Pune)</option>
+                        <option value="79">Jankalyan Sahakari Bank Ltd</option>
+                        <option value="88">KEB Hana Bank</option>
+                        <option value="81">Kallappanna Awade Ichalkaranji Janata Sahakari Bank Ltd</option>
+                        <option value="83">Kalupur Commercial Cooperative Bank</option>
+                        <option value="82">Kalyan Janata Sahakari Bank Ltd</option>
+                        <option value="84">Kapol Cooperative Bank</option>
+                        <option value="85">Karnataka Bank Ltd</option>
+                        <option value="86">Karnataka Vikas Grameena Bank</option>
+                        <option value="87">Karur Vysya Bank</option>
+                        <option value="89">Kerala Gramin Bank</option>
+                        <option value="90">Kotak Mahindra Bank</option>
+                        <option value="91">Kozhikode District Cooperative Bank Ltd</option>
+                        <option value="92">Laxmi Vilas Bank</option>
+                        <option value="93">Mahanagar Cooperative Bank Ltd</option>
+                        <option value="94">Maharashtra Gramin Bank</option>
+                        <option value="95">Maharashtra State Cooperative Bank</option>
+                        <option value="96">MashreqBank PSC</option>
+                        <option value="97">Mizuho Bank Ltd</option>
+                        <option value="103">NKGSB Cooperative Bank Ltd</option>
+                        <option value="98">Nagar Urban Co-Operative Bank</option>
+                        <option value="100">Nagpur Nagrik Sahakari Bank Ltd</option>
+                        <option value="101">National Australia Bank</option>
+                        <option value="99">National Bank of Abu Dhabi PJSC</option>
+                        <option value="102">New India Cooperative Ban Ltd</option>
+                        <option value="104">North Malabar Gramin Bank</option>
+                        <option value="105">Nutan Nagarik Sahakari Bank Ltd</option>
+                        <option value="106">Oman International Bank</option>
+                        <option value="107">Oriental Bank of Commerce</option>
+                        <option value="112">PT Bank Maybank Indonesia TBK</option>
+                        <option value="108">Paytm Payments Bank Ltd</option>
+                        <option value="109">Pragathi Krishna Gramin Bank</option>
+                        <option value="110">Prathama Bank</option>
+                        <option value="111">Prime Co-Operative Bank Ltd</option>
+                        <option value="115">Punjab National Bank</option>
+                        <option value="113">Punjab and Maharashtra Cooperative Bank Ltd</option>
+                        <option value="114">Punjab and Sind Bank</option>
+                        <option value="119">RBL Bank Limited</option>
+                        <option value="116">Rabobank International</option>
+                        <option value="117">Rajgurunagar Sahakari Bank Ltd</option>
+                        <option value="118">Rajkot Nagarik Sahakari Bank Ltd</option>
+                        <option value="120">Reserve Bank of India</option>
+                        <option value="124">SBER Bank</option>
+                        <option value="125">SBM Bank Mauritius Ltd</option>
+                        <option value="121">Sahebrao Deshmukh Co-Op. Bank Ltd</option>
+                        <option value="122">Samarth Sahakari Bank Ltd</option>
+                        <option value="123">Saraswat Cooperative Bank Ltd</option>
+                        <option value="126">Shikshak Sahakari Bank Ltd</option>
+                        <option value="127">Shinhan Bank</option>
+                        <option value="128">Shivalik Mercantile Co Operative Bank Ltd</option>
+                        <option value="129">Shri Chhatrapati Rajashri Shahu Urban Co-Op Bank Ltd</option>
+                        <option value="130">Societe Generale</option>
+                        <option value="131">Solapur Janata Sahkari Bank Ltd</option>
+                        <option value="132">South Indian Bank</option>
+                        <option value="133">Standard Chartered Bank</option>
+                        <option value="134">State Bank of Bikaner and Jaipur</option>
+                        <option value="135">State Bank of Hyderabad</option>
+                        <option value="136">State Bank of India</option>
+                        <option value="137">State Bank of Mauritius Ltd</option>
+                        <option value="138">State Bank of Mysore</option>
+                        <option value="139">State Bank of Patiala</option>
+                        <option value="140">State Bank of Travancore</option>
+                        <option value="141">Sumitomo Mitsui Banking Corporation</option>
+                        <option value="142">Surat National Cooperative Bank Limited</option>
+                        <option value="143">Suryoday Small Finance Bank Limited</option>
+                        <option value="144">Sutex Cooperative Bank Ltd</option>
+                        <option value="145">Syndicate Bank</option>
+                        <option value="188">TJSB Sahakari Bank Ltd</option>
+                        <option value="146">Tamilnad Mercantile Bank Limited</option>
+                        <option value="147">Telangana State Coop Apex Bank</option>
+                        <option value="148">Textile Traders Co-Operative Bank Ltd</option>
+                        <option value="149">The A.P. Mahesh Co-Op Urban Bank Ltd</option>
+                        <option value="150">The Akola District Central Co-Operative Bank</option>
+                        <option value="151">The Andhra Pradesh State Coop Bank Ltd</option>
+                        <option value="152">The Bank of Nova Scotia</option>
+                        <option value="153">The Baramati Sahakari Bank Ltd</option>
+                        <option value="154">The Cosmos Cooperative Bank Ltd</option>
+                        <option value="155">The Delhi State Cooperative Bank Ltd</option>
+                        <option value="156">The Gadchiroli District Central Cooperative Bank Ltd</option>
+                        <option value="157">The Greater Bombay Co-operative Bank Ltd</option>
+                        <option value="158">The Gujarat State Co-Operative Bank Ltd</option>
+                        <option value="159">The HASTI Co-Operative Bank Ltd</option>
+                        <option value="160">The Jalgaon Peoples Co-Op Bank</option>
+                        <option value="161">The Kangra Central Cooperative Bank Ltd</option>
+                        <option value="162">The Kangra Cooperative Bank Ltd</option>
+                        <option value="163">The Karad Urban Co-op Bank Ltd</option>
+                        <option value="164">The Karanataka State Co-Operative Apex Bank Limited</option>
+                        <option value="165">The Kurmanchal Nagar Sahkari Bank Ltd</option>
+                        <option value="166">The Mehsana Urban Cooperative Bank Ltd</option>
+                        <option value="167">The Mumbai District Central Co-Op Bank Ltd</option>
+                        <option value="168">The Municipal Co Operative Bank Ltd, Mumbai</option>
+                        <option value="169">The Nainital Bank Ltd</option>
+                        <option value="170">The Nasik Merchants Co-Op Bank Ltd</option>
+                        <option value="171">The Navnirman Co-Operative Bank Limited</option>
+                        <option value="172">The Pandharpur Urban Co Op. Bank Ltd. Pandharpur</option>
+                        <option value="173">The Rajasthan State Cooperative Bank Ltd</option>
+                        <option value="174">The Royal Bank of Scotland N.V.</option>
+                        <option value="175">The Seva Vikas Co-Operative Bank Ltd</option>
+                        <option value="176">The Shamrao Vithal Cooperative Bank Ltd</option>
+                        <option value="177">The Sindhudurg District Central Coop Bank Ltd</option>
+                        <option value="178">The Surat District Co Operative Bank Ltd</option>
+                        <option value="179">The Surat Peoples Co-Op Bank Ltd</option>
+                        <option value="180">The Tamilnadu State Apex Cooperative Bank</option>
+                        <option value="181">The Thane Bharat Sahakari Bank Ltd</option>
+                        <option value="182">The Thane District Central Co-Op Bank Ltd</option>
+                        <option value="183">The Thane Janata Sahakari Bank Ltd</option>
+                        <option value="184">The Varachha Co-Op. Bank Ltd</option>
+                        <option value="185">The Vishweshwar Sahakari Bank Ltd</option>
+                        <option value="186">The West Bengal State Cooperative Bank Ltd</option>
+                        <option value="187">The Zoroastrian Cooperative Bank Limited</option>
+                        <option value="189">Tumkur Grain Merchants Cooperative Bank Ltd</option>
+                        <option value="190">UCO Bank</option>
+                        <option value="191">Ujjivan Small Finance Bank Limited</option>
+                        <option value="192">Union Bank of India</option>
+                        <option value="193">United Bank of India</option>
+                        <option value="194">United Overseas Bank</option>
+                        <option value="195">Utkarsh Small Finance Bank</option>
+                        <option value="196">Vasai Vikas Sahakari Bank Ltd</option>
+                        <option value="197">Vijaya Bank</option>
+                        <option value="198">Westpac Banking Corporation</option>
+                        <option value="199">Woori Bank</option>
+                        <option value="200">Yes Bank Ltd</option>
+                        <option value="201">Zila Sahkari Bank Ltd Ghaziabad</option>
+                        <option value="46">deutsche bank</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>IFSC code *</label>
+            <input type="text" id="protocol" name="ifsc" class="form-control" placeholder="" required>
+        </div>
+    </div>
+
+   <div class="col-lg-6">
+        <div class="form-group">
+            <span style="font-size: 15px;">Find IFSC Code of your Bank - First of all select the name of your bank.</span>
+        </div>
+    </div>
+
+     <!-- <div class="col-lg-6">
+        <div class="form-group">
+            <button  name="search_ifsc" id="search_ifsc" onClick="lightbox(this.id)" class="btn btn-info btn-sm pull-right iframe" type="button">Find IFSC code</button>
+        </div>
+    </div> -->
+
+    <div class="col-lg-12">
+        <div class="form-group">
+            <label>Account holder name *</label>
+            <input type="text" id="protocol" name="ac_holder_name" class="form-control" placeholder="" width="100" required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Account number *</label>
+            <input type="text" id="protocol" name="ac_number" class="form-control" placeholder=""  type="text" required>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Re-enter account number *</label>
+            <input type="text" id="protocol" name="re_ac_number" class="form-control" placeholder="" type="text" required>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+    <div class="col-md-6">
+  <div class="card card-secondary">
+    <div class="card-header">
+      <h3 class="card-title">Bank Account Details</h3>
+      <div class="card-tools">
+        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+          <i class="fas fa-minus"></i>
+        </button>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <article>
+            <h3>Process to select IFSC Code -</h3>
+            <p></p>
+            <ul>
+                <li>After selecting the name of the bank, select your state, city and branch address or you can also search by branch name or address.</li>
+                <li>Before choosing a branch, match your IFSC code and your account number with your pass book.</li>
+            </ul>
+            <h3>Fill the information related to the bank account -</h3>
+            <p></p>
+            <ul>
+                <li>Your amount will be refunded in this account.</li>
+                <li>The Bank Account Number provided by you will be exclusively used for all transactions with MPMKVVCL.</li>
+            </ul>
+            <span class="text-danger">Note: It is mandatory to give the information marked with * in the information related to the bank account.</span>
+        </article>
+      </div>
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</div>
+</div>
+
+    <div class="row card-body">
+        <div class="col-lg-5">
+            <div class="form-group">
+                <input type="reset" value="Fix again" class="btn btn-secondary">
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="form-group">
+                <!-- <input type="submit" value="Register" class="btn btn-success"> -->
+             
+
+                <button type="Submit" class="btn-second btn-submit btn-success ">Submit</button>
+
+                </a>
+            </div>
+        </div>
+      </form>
+    </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+
+{% endblock body %}

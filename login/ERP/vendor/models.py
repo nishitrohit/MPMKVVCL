@@ -1,5 +1,7 @@
 from django.db import models
+from django.utils import timezone
 
+from datetime import datetime  
 # Create your models here.
 
 class VendorRegistration(models.Model):
@@ -158,9 +160,6 @@ class VendorRegistration(models.Model):
     v_verified_by_financne = models.BooleanField(default=False)
     v_verified_by_working = models.BooleanField(default=False)
 
-    def __str__(self):
-        return self.v_service_type
-
 
 class finance_officer(models.Model):
     # v_company_name = models.ForeignKey(VendorRegistration,on_delete=models.CASCADE)
@@ -184,67 +183,196 @@ class working_officer(models.Model):
 
 class officer(models.Model):
     v_company_name = models.CharField(max_length=30,null=True,blank=True)
+    verified = models.ImageField(upload_to="images/",null=True)
+    po_number = models.CharField(max_length=30,null=True,blank=True)
+  
+class my_order(models.Model):
+    v_company_name = models.CharField(max_length=30,null=True,blank=True)
+    verified = models.ImageField(upload_to="images/",null=True)
+    v_name_of_authorized = models.CharField(max_length=30,null=True,blank=True)
+    po_number = models.CharField(max_length=30,null=True,blank=True)
+    material_name = models.CharField(max_length=30,null=True,blank=True)
+    material_type = models.CharField(max_length=30,null=True,blank=True)
+    created_date = models.DateTimeField(auto_now_add=True,null=True)
+    disabled_date = models.DateField(auto_now_add=True,null=True)
+
+class dispatch(models.Model):
+    verified = models.ImageField(upload_to="images/",null=True)
+    po_number = models.CharField(max_length=30,null=True,blank=True)
+    material_name = models.CharField(max_length=30,null=True,blank=True)
+    material_type = models.CharField(max_length=30,null=True,blank=True)
+    created_date = models.DateTimeField(default=datetime.now(),null=True)
+    dispatch_date = models.DateTimeField(default=datetime.now(),null=True)
+
+
+
+
+
+
+class Ownership(models.Model):
+    Ownership_type = models.CharField(max_length=50)
+    Created_by = models.CharField(max_length=50)
+    Created_date = models.DateTimeField(auto_now_add=True)
+    Disabled_date = models.DateField(default=timezone.now)
+    Enable_date = models.DateField(default=timezone.now)
+
+
+
+
+class Gender(models.Model):
+    Gender = models.CharField(max_length=50)
+    Created_by = models.CharField(max_length=50)
+    Created_date = models.DateTimeField(auto_now_add=True)
+    Disabled_date = models.DateField(default=timezone.now)
+    Enable_date = models.DateField(default=timezone.now)
+
+
+class TkcLogin(models.Model):
+    v_service_type = models.CharField(max_length=15,null=True)
+    C_Name = models.CharField(max_length=50,null=True)
+    Authorised_Person = models.CharField(max_length=50,null=True)
+    Contact_no = models.CharField(max_length=13,null=True)
+    email = models.CharField(max_length=100,null=True)
+    Temporary_Password = models.CharField(max_length=10,null=True)
+    OTP = models.CharField(max_length=6,null=True)
+    reg_No = models.CharField(max_length=13,null=True)
+    C_Fax_No = models.CharField(max_length=13,null=True)
+    C_Pan_No = models.CharField(max_length=13,null=True)
+    Created_by = models.CharField(max_length=50,null=True)
+    Created_date = models.DateTimeField(auto_now_add=True,null=True)
+    Disabled_date = models.DateField(default=timezone.now,null=True)
+    Line_1 = models.CharField(max_length=50,null=True)
+    Line_2 = models.CharField(max_length=50,null=True)
+    # Use for Both Town/City
+    Town = models.CharField(max_length=50,null=True)
+    District = models.CharField(max_length=50,null=True)
+    State = models.CharField(max_length=50,null=True)
+    Pin_Code = models.CharField(max_length=13,null=True)
+    # Flag for Detect permanent and correspondence address
+    Flag = models.CharField(max_length=10,null=True)
+
+
+    dob = models.CharField(max_length=100,null=True)
+    aadhar = models.CharField(max_length=10,null=True)
+    add1 = models.CharField(max_length=6,null=True)
+    add2 = models.CharField(max_length=13,null=True)
+    state_auth = models.CharField(max_length=13,null=True)
+    pin = models.CharField(max_length=13,null=True)
+    city = models.CharField(max_length=50,null=True)
+
+
+    company_dir_cor_address_line1 = models.CharField(max_length=30,null=True)
+    vcompany_dir_cor_address_line2 = models.CharField(max_length=30,null=True)
+    vcompany_dir_cor_address_city = models.CharField(max_length=30,null=True)
+    vcompany_dir_cor_address_state = models.CharField(max_length=30,null=True)
+    vcompany_dir_cor_address_pincode = models.CharField(max_length=6,null=True)
+    vcompany_dir_name = models.CharField(max_length=30,null=True)
+    vcompany_dir_name_hindi = models.CharField(max_length=30,null=True)
+    company_dir_email = models.CharField(max_length=30,null=True)
+    company_dir_aadhar= models.CharField(max_length=30,null=True,blank=True)
+    company_dir_dob = models.CharField(max_length=30,null=True)
+    company_dir_mobile = models.CharField(max_length=30,null=True)
+
+    bank_name = models.CharField(max_length=30,null=True)
+    bank_ifsc = models.CharField(max_length=30,null=True)
+    bank_ac_holder_name = models.CharField(max_length=30,null=True)
+    bank_ac_number = models.CharField(max_length=30,null=True)
+    bank_ac_number_re_enter = models.CharField(max_length=30,null=True)
+
+    experienc = models.CharField(max_length=3,null=True,blank=True)
+    turnover = models.CharField(max_length=15,null=True,blank=True)
+    tkc_type = models.CharField(max_length=15,null=True,blank=True)
+    existing_pan = models.CharField(max_length=10,null=True,blank=True)
+
+    three_years_income_1 = models.CharField(max_length=30,null=True,blank=True)
+    three_years_income_2 = models.CharField(max_length=30,null=True,blank=True)
+    three_years_income_3= models.CharField(max_length=30,null=True,blank=True)
+    three_years_tax_1= models.CharField(max_length=30,null=True,blank=True)
+    three_years_tax_2= models.CharField(max_length=30,null=True,blank=True)
+    three_years_tax_3= models.CharField(max_length=30,null=True,blank=True)  
+
+    e_aadhar_office_name  = models.CharField(max_length=30,null=True,blank=True)
+    e_aadhar_number = models.CharField(max_length=30,null=True,blank=True)
+    e_one_doc_issued_date = models.CharField(max_length=30,null=True,blank=True)
+    e_one_doc_expired_date = models.CharField(max_length=30,null=True,blank=True)
+    e_one_upload= models.ImageField(upload_to="images/",null=True)
+
+    e_gst_office_name = models.CharField(max_length=30,null=True,blank=True)
+    e_gst_serial_no = models.CharField(max_length=30,null=True,blank=True)
+    e_gst_issued_date = models.CharField(max_length=30,null=True,blank=True)
+    e_gst_expired_date = models.CharField(max_length=30,null=True,blank=True)
+    e_gst_upload= models.ImageField(upload_to="images/",null=True)
+
+    e_finance_office_name = models.CharField(max_length=30,null=True,blank=True)
+    e_itr_number = models.CharField(max_length=30,null=True,blank=True)
+    e_finance_document_issued_date = models.CharField(max_length=30,null=True,blank=True)
+    e_finance_document_expire_date = models.CharField(max_length=30,null=True,blank=True)
+    e_fiancne_upload= models.ImageField(upload_to="images/",null=True)
+
+    e_contractor_document_office_name = models.CharField(max_length=30,null=True,blank=True)
+    e_contractor_ex_employ_no = models.CharField(max_length=30,null=True,blank=True)
+    e_contractor_doc_issued_date = models.CharField(max_length=30,null=True,blank=True)
+    e_contractor_expired_date = models.CharField(max_length=30,null=True,blank=True)
+    e_conrractor_upload= models.ImageField(upload_to="images/",null=True)
+
+    e_electrical_doc_office_name = models.CharField(max_length=30,null=True,blank=True)
+    e_electrical_licence_no = models.CharField(max_length=30,null=True,blank=True)
+    e_electrical_issued_date = models.CharField(max_length=30,null=True,blank=True)
+    e_electrical_expired_date = models.CharField(max_length=30,null=True,blank=True)
+    e_electrical_upload= models.ImageField(upload_to="images/",null=True)
+
+    e_epf_doc_office_name = models.CharField(max_length=30,null=True,blank=True)
+    e_epf_reg_no = models.CharField(max_length=30,null=True,blank=True)
+    e_epf_doc_issued_date = models.CharField(max_length=30,null=True,blank=True)
+    e_epf_doc_expire_date = models.CharField(max_length=30,null=True,blank=True)
+    e_epf_upload= models.ImageField(upload_to="images/",null=True)
+
+    e_esi_doc_office_name = models.CharField(max_length=30,null=True,blank=True)
+    e_esi_reg_no = models.CharField(max_length=30,null=True,blank=True)
+    e_esi_doc_issued_date = models.CharField(max_length=30,null=True,blank=True)
+    e_esi_doc_expire_date = models.CharField(max_length=30,null=True,blank=True)
+    e_esi_upload= models.ImageField(upload_to="images/",null=True)
+
+    e_experience_doc_office_name = models.CharField(max_length=30,null=True,blank=True)
+    e_experience_reg_no = models.CharField(max_length=30,null=True,blank=True)
+    e_experience_doc_issued_date = models.CharField(max_length=30,null=True,blank=True)
+    e_experience_doc_expire_date = models.CharField(max_length=30,null=True,blank=True)
+    e_experience_upload= models.ImageField(upload_to="images/",null=True)
+
+    e_supervisor_doc_office_name = models.CharField(max_length=30,null=True,blank=True)
+    e_supervisor_reg_no = models.CharField(max_length=30,null=True,blank=True)
+    e_supervisor_doc_issued_date = models.CharField(max_length=30,null=True,blank=True)
+    e_supervisor_doc_expire_date = models.CharField(max_length=30,null=True,blank=True)
+    e_supervisor_upload= models.ImageField(upload_to="images/",null=True)
+
+    e_firm_doc_office_name = models.CharField(max_length=30,null=True,blank=True)
+    e_firm_reg_no = models.CharField(max_length=30,null=True,blank=True)
+    e_firm_doc_issued_date = models.CharField(max_length=30,null=True,blank=True)
+    e_firm_doc_expire_date = models.CharField(max_length=30,null=True,blank=True)
+    e_firm_upload= models.ImageField(upload_to="images/",null=True)
+    
+    e_pan_doc_office_name = models.CharField(max_length=30,null=True,blank=True)
+    e_pan_reg_no = models.CharField(max_length=30,null=True,blank=True)
+    e_pan_doc_issued_date = models.CharField(max_length=30,null=True,blank=True)
+    e_pan_doc_expire_date = models.CharField(max_length=30,null=True,blank=True)
+    e_pan_upload= models.ImageField(upload_to="images/",null=True)
+
+
+class tkc_finance_officer(models.Model):
+    # v_company_name = models.ForeignKey(VendorRegistration,on_delete=models.CASCADE)
+    company_name = models.CharField(max_length=30,null=True,blank=True)
+    user_name = models.CharField(max_length=10,null=True,blank=True,default="finance")
+    password = models.CharField(max_length=10,null=True,blank=True,default="12345")
+    verified = models.BooleanField(default=False,null=True)
+
+    v_file_upload_eleven = models.ImageField(upload_to="images/",null=True)
+    v_file_upload = models.ImageField(upload_to="images/",null=True)
+
+class tkc_working_officer(models.Model):
+    company_name = models.CharField(max_length=30,null=True,blank=True)
     user_name = models.CharField(max_length=10,null=True,blank=True,default="working")
     password = models.CharField(max_length=10,null=True,blank=True,default="12345")
-    verified = models.BooleanField(default=False)
-    v_name_of_authorized = models.CharField(max_length=30,null=True,blank=True)
-  
- 
+    verified = models.BooleanField(default=False,null=True)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-# class Company_Details(models.Model):
-#     V_id = models.ForeignKey(Vendor, default="", on_delete=models.CASCADE)
-#     C_Name_E = models.CharField(max_length=50)
-#     C_Name_H = models.CharField(max_length=50)
-#     C_Contact_No = models.CharField(max_length=13)
-#     C_Fax_No = models.CharField(max_length=13)
-#     Created_by = models.CharField(max_length=50)
-#     Created_date = models.DateTimeField(auto_now_add=True)
-#     Disabled_date = models.DateField(default=timezone.now)
-#     Enable_date = models.DateField(default=timezone.now)
-
-#     def __str__(self):
-#         return self.C_Name_E
-
-# class Vendor_Authorised_Person_Info(models.Model):
-#     Gender = models.CharField(max_length=50)
-#     E_Name = models.CharField(max_length=50)
-#     H_Name = models.CharField(max_length=50)
-#     DOB = models.DateField(default=timezone.now)
-#     # Contact_no Used for identification purposes
-#     Contact_no = models.CharField(max_length=13)
-#     email = models.CharField(max_length=100)
-#     aadhar = models.CharField(max_length=13)
-#     Created_by = models.CharField(max_length=50)
-#     Created_date = models.DateTimeField(auto_now_add=True)
-#     Disabled_date = models.DateField(default=timezone.now)
-#     Enable_date = models.DateField(default=timezone.now)
-
-#     def __str__(self):
-#         return self.Contact_no
-
-# class VendorLogin(models.Model):
-#     Contact_no = models.CharField(max_length=13)
-#     email = models.CharField(max_length=100)
-#     Temporary_Password = models.CharField(10)
-#     OTP = models.CharField(6)
-
-#     def __str__(self):
-#         return self.Contact_no
-    
-
-  
-
-    
+    incode_first_year = models.CharField(max_length=30,null=True,blank=True)
+    incode_secound_year = models.CharField(max_length=30,null=True,blank=True)

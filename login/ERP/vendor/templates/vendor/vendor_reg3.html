@@ -16,9 +16,6 @@
 <!--<body class="hold-transition sidebar-mini">-->
 <!-- Site wrapper -->
 <div class="wrapper">
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -26,7 +23,7 @@
             <h1>Vendor Registration</h1>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
 
     <!-- Main content -->
@@ -53,37 +50,42 @@
     <div class="col-lg-6">
         <div class="form-group">
             <label>Name (English) *</label>
-            <input type="text" id="port" name="auth_name" value={{auth_name}} readonly="readonly" class="form-control" placeholder="Frequently used port by the Device/Product" required>
+            <input type="text" id="auth_name" name="auth_name" value={{auth_name}} readonly="readonly" class="form-control" placeholder="Frequently used port by the Device/Product" required>
+<!--            <input type="text" id="port" name="auth_name" value={{auth_name}} readonly="readonly" class="form-control" placeholder="Frequently used port by the Device/Product" required>-->
         </div>
     </div>
     <div class="col-lg-6">
         <div class="form-group">
             <label>Name (Hindi) *</label>
-            <input type="text" id="protocol" name="auth_name" value={{auth_name}} readonly="readonly" class="form-control" placeholder="" required>
+            <input type="text" id="auth_name" name="auth_name" value={{auth_name}} readonly="readonly" class="form-control" placeholder="" required>
+<!--            <input type="text" id="protocol" name="auth_name" value={{auth_name}} readonly="readonly" class="form-control" placeholder="" required>-->
         </div>
     </div>
     <div class="col-lg-6">
         <div class="form-group">
             <label>Date of birth*</label>
-            <input type="text" id="protocol" name="dob" class="form-control" placeholder="" required>
+            <input type="date" id="dob" name="dob" class="form-control" placeholder="" required="required">
         </div>
     </div>
     <div class="col-lg-6">
         <div class="form-group">
             <label>Mobile number *</label>
-            <input type="text" id="protocol" name="mobile" value={{mobile}} class="form-control" placeholder="" readonly="readonly" type="text" required>
+            <input type="text" id="mobile" name="mobile" class="form-control" placeholder="" required>
+<!--            <input type="text" id="protocol" name="mobile" value={{mobile}} class="form-control" placeholder="" readonly="readonly" type="text" required>-->
         </div>
     </div>
     <div class="col-lg-6">
         <div class="form-group">
             <label>E-mail *</label>
-            <input type="text" id="protocol" name="email" class="form-control" placeholder="" readonly="readonly" type="text" value={{email}} required>
+            <input type="email" id="email" name="email" class="form-control" placeholder="" readonly="readonly" value={{email}} required="required">
+<!--            <input type="text" id="protocol" name="email" class="form-control" placeholder="" readonly="readonly" type="text" value={{email}} required>-->
         </div>
     </div>
     <div class="col-lg-6">
         <div class="form-group">
             <label>Aadhar Number*</label>
-            <input type="text" id="protocol" name="aadhar" class="form-control" placeholder="Adhar Number" required>
+            <input type="tel" id="aadhar" name="aadhar" class="form-control" pattern="^\d{12}$" maxlength="12" minlength="12" placeholder="Adhar Number" required="required">
+<!--            <input type="text" id="protocol" name="aadhar" class="form-control" placeholder="Adhar Number" required>-->
         </div>
         <div class="form-group multiple-radio">
            <div class="d-flex justify-content-between">
@@ -99,20 +101,22 @@
     <div class="col-lg-6">
         <div class="form-group">
             <label>Address Line 1*</label>
-            <input type="text" id="erererer" name="add5" class="form-control" placeholder="" required>
+            <input type="text" id="add5" name="add5" class="form-control" placeholder="" required="required">
+<!--            <input type="text" id="erererer" name="add5" class="form-control" placeholder="" required>-->
         </div>
     </div>
     <div class="col-lg-6">
         <div class="form-group">
             <label>Address Line 2*</label>
-            <input type="text" id="protocol" name="add6" class="form-control" placeholder="" required>
+            <input type="text" id="add6" name="add6" class="form-control" placeholder="" required="required">
+<!--            <input type="text" id="protocol" name="add6" class="form-control" placeholder="" required>-->
         </div>
     </div>
      <div class="col-lg-6 flex-lg-fill">
         <div class="form-group form-group-select">
-            <label for="exampleFormControlSelect1">State *</label>
-            <select class="form-control" name="state" id="authentication" >
-                <option value="0">select one</option>
+            <label for="state">State *</label>
+            <select class="form-control" name="state" id="state" required>
+                <option selected disabled value="">Select one</option>
                   <option value="02">Andaman and Nicobar Island</option>
                     <option value="03">Andhra Pradesh</option>
                     <option value="04">Arunachal Pradesh</option>
@@ -154,20 +158,124 @@
     </div>
      <div class="col-lg-6 flex-lg-fill">
         <div class="form-group form-group-select">
-            <label for="exampleFormControlSelect1">District/City *</label>
-            <select class="form-control" name="district" id="authentication">
-                  <option value="0">select one</option>
-                  <option value="2">Bhopal</option>
-                  <option value="3">Gwalior</option>
-                  <option value="4">Sehore</option>
-                  <option value="5">Honsangabad</option>
+            <label for="district">District/City *</label>
+            <select class="form-control" name="district" id="district" required>
+                <option selected disabled value="">Select one</option>
+                      <option value="0120">Balaghat</option>
+
+                      <option value="0121">Barwani</option>
+
+                      <option value="0123">Chhatarpur</option>
+
+                      <option value="0124">Chhindwara</option>
+
+                      <option value="0125">Damoh</option>
+
+                      <option value="0127">Dhar</option>
+
+                      <option value="0130">Jabalpur</option>
+
+                      <option value="0134">Khargone</option>
+
+                      <option value="0136">Mandsaur</option>
+
+                      <option value="0138">Neemuch</option>
+
+                      <option value="0140">Ratlam</option>
+
+                      <option value="0141">Rewa</option>
+
+                      <option value="0144">Seoni</option>
+
+                      <option value="0146">Shajapur</option>
+
+                      <option value="0148">Singrauli</option>
+
+                      <option value="0150">Ujjain</option>
+
+                      <option value="0153">Sohagpur</option>
+
+                      <option value="0118">Alirajpur</option>
+
+                      <option value="0119">Anuppur</option>
+
+                      <option value="0122">Burhanpur</option>
+
+                      <option value="0126">Dewas</option>
+
+                      <option value="0128">Dindori</option>
+
+                      <option value="0129">Indore</option>
+
+                      <option value="0131">Jhabua</option>
+
+                      <option value="0132">Katni</option>
+
+                      <option value="0133">Khandwa</option>
+
+                      <option value="0135">Mandla</option>
+
+                      <option value="0137">Narsinghpur</option>
+
+                      <option value="0139">Panna</option>
+
+                      <option value="0142">Sagar</option>
+
+                      <option value="0143">Satna</option>
+
+                      <option value="0145">Shahdol</option>
+
+                      <option value="0147">Sidhi</option>
+
+                      <option value="0149">Tikamgarh</option>
+
+                      <option value="0151">Umaria</option>
+
+                      <option value="0152">Agar Malwa</option>
+
+                      <option value="0154">Babai</option>
+
+                      <option value="0103">SHIVPURI</option>
+
+                      <option value="0101">Demo District</option>
+
+                      <option value="0102">BHIND</option>
+
+                      <option value="0104">BHOPAL</option>
+
+                      <option value="0105">Raisen</option>
+
+                      <option value="0106">Rajgarh</option>
+
+                      <option value="0107">SEHORE</option>
+
+                      <option value="0108">Sheopur</option>
+
+                      <option value="0109">HOSHANGABAD</option>
+
+                      <option value="0110">HARDA</option>
+
+                      <option value="0111">Vidisha</option>
+
+                      <option value="0112">Guna</option>
+
+                      <option value="0113">Ashoknagar</option>
+
+                      <option value="0114">Betul</option>
+
+                      <option value="0115">GWALIOR</option>
+
+                      <option value="0116">Datia</option>
+
+                      <option value="0117">MORENA</option>
             </select>
         </div>
     </div>
     <div class="col-lg-6">
         <div class="form-group">
             <label>Pin Code *</label>
-            <input type="text" id="protocol" name="zip" name="protocol" class="form-control" placeholder="" required>
+            <input type="text" id="zip" name="zip"  class="form-control" placeholder="" required="required">
+<!--            <input type="text" id="protocol" name="zip" name="protocol" class="form-control" placeholder="" required>-->
         </div>
     </div>
 </div>
@@ -187,37 +295,37 @@
     <div class="col-lg-6">
         <div class="form-group">
             <label>Name (English) *</label>
-            <input type="text" id="port" name="dir_name" class="form-control" placeholder="Frequently used port by the Device/Product" required>
+            <input type="text" id="dir_name" name="dir_name" class="form-control" placeholder="Frequently used port by the Device/Product" >
         </div>
     </div>
     <div class="col-lg-6">
         <div class="form-group">
             <label>Name (Hindi) *</label>
-            <input type="text" id="protocol" name="dir_name_hindi" class="form-control" placeholder="" required>
+            <input type="text" id="dir_name_hindi" name="dir_name_hindi" class="form-control" placeholder="">
         </div>
     </div>
     <div class="col-lg-6">
         <div class="form-group">
             <label>Date of birth*</label>
-            <input type="text" id="protocol" name="dir_dob" class="form-control" placeholder="" required>
+            <input type="text" id="dir_dob" name="dir_dob" class="form-control" placeholder="">
         </div>
     </div>
     <div class="col-lg-6">
         <div class="form-group">
             <label>Mobile number *</label>
-            <input type="text" id="protocol" name="dir_mobile" class="form-control" placeholder=""  type="text"  required>
+            <input type="text" id="dir_mobile" name="dir_mobile" class="form-control" placeholder="">
         </div>
     </div>
     <div class="col-lg-6">
         <div class="form-group">
             <label>E-mail *</label>
-            <input type="text" id="protocol" name="dir_email" class="form-control" placeholder=""  type="text"  required>
+            <input type="text" id="dir_email" name="dir_email" class="form-control" placeholder="" >
         </div>
     </div>
     <div class="col-lg-6">
         <div class="form-group">
             <label>Aadhar Number*</label>
-            <input type="text" id="protocol" name="dir_aadhar" class="form-control" placeholder="" required>
+            <input type="text" id="dir_aadhar" name="dir_aadhar" class="form-control" placeholder="">
         </div>
         <div class="form-group multiple-radio">
            <div class="d-flex justify-content-between">
@@ -233,19 +341,19 @@
     <div class="col-lg-6">
         <div class="form-group">
             <label>Address Line 1*</label>
-            <input type="text" id="erererer" name="dir_add1" class="form-control" placeholder="" required>
+            <input type="text" id="dir_add1" name="dir_add1" class="form-control" placeholder="">
         </div>
     </div>
     <div class="col-lg-6">
         <div class="form-group">
             <label>Address Line 2*</label>
-            <input type="text" id="protocol" name="dir_add2" class="form-control" placeholder="" required>
+            <input type="text" id="dir_add2" name="dir_add2" class="form-control" placeholder="">
         </div>
     </div>
      <div class="col-lg-6 flex-lg-fill">
         <div class="form-group form-group-select">
-            <label for="exampleFormControlSelect1">State *</label>
-            <select class="form-control" name="dir_state" id="authentication">
+            <label for="dir_state">State *</label>
+            <select class="form-control" name="dir_state" id="dir_state">
                 <option value="0">select one</option>
                   <option value="02">Andaman and Nicobar Island</option>
                     <option value="03">Andhra Pradesh</option>
@@ -288,8 +396,8 @@
     </div>
      <div class="col-lg-6 flex-lg-fill">
         <div class="form-group form-group-select">
-            <label for="exampleFormControlSelect1">District/City *</label>
-            <select class="form-control" id="authentication" name="dir_city">
+            <label for="dir_city">District/City *</label>
+            <select class="form-control" id="dir_city" name="dir_city">
                   <option value="0">select one</option>
                   <option value="2">Bhopal</option>
                   <option value="3">Gwalior</option>
@@ -301,7 +409,7 @@
     <div class="col-lg-6">
         <div class="form-group">
             <label>Pin Code *</label>
-            <input type="text" id="protocol" name="dir_zip" class="form-control" placeholder="" required>
+            <input type="text" id="protocol" name="dir_zip" class="form-control" placeholder="">
         </div>
     </div>
 </div>
@@ -313,7 +421,6 @@
       <h3 class="card-title">Firm / Company Details</h3>
       <div class="card-tools">
         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-          <i class="fas fa-minus"></i>
         </button>
       </div>
     </div>
@@ -340,24 +447,23 @@
 </div>
 </div>
 
-    <div class="row card-body">
-        <div class="col-lg-5">
-            <div class="form-group">
-                <input type="reset" value="Fix again" class="btn btn-secondary">
-            </div>
-        </div>
-        <div class="col-lg-5">
-            <div class="form-group">
-                <!-- <input type="submit" value="Register" class="btn btn-success"> -->
-                <a href="dashboard2"></a>
-                                              
-                <button type="Submit" class="btn-second btn-submit ">Submit</button>
-      
-                </a>
-            </div>
+
+
+<div class="row card-body">
+  <div class="col-lg-5">
+        <div class="form-group">
+            <input type="reset" value="Previous" class="btn btn-secondary">
         </div>
     </div>
-    </section>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <a href="dashboard2"></a>
+            <input type="submit" value="Save & Next" class="btn btn-success">
+        </div>
+    </div>
+</div>
+
+</section>
     <!-- /.content -->
   </div>
 </form>

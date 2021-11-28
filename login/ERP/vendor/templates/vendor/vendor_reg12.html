@@ -58,7 +58,8 @@
                   <div class="filter-container p-0 row">
                   </div>
                 </div>
-                <form   action="vendor_registration_twelve" method="POST" enctype="multipart/form-data">
+
+                <form action="vendor_registration_twelve" method="POST" enctype="multipart/form-data">
                   {% csrf_token %}
               <div class="container">
                 <table class="table">   
@@ -67,22 +68,22 @@
                             <label>TURN OVER OF LAST THREE YEARS(in lakhs), PREVIOUS LAST THREE YEARS MAXIMUM INCOME(in lakhs)*</label>
                             <div class="form-group">
                                 <label>Yearly Income 2021-2020</label>
-                                <input type="text" id="erererer" name="v_three_years_income_1" class="form-control" placeholder="" required>
+                                <input type="text" id="erererer" name="v_three_years_income_1" class="form-control" placeholder="" required="required">
                                 <label>Yearly Income 2021-2020 </label>
-                                <input type="text" id="erererer" name="v_three_years_income_2" class="form-control" placeholder="" required>
+                                <input type="text" id="erererer" name="v_three_years_income_2" class="form-control" placeholder="" required="required">
                                 <label>Yearly Income 2021-2020 </label>
-                                <input type="text" id="erererer" name="v_three_years_income_3" class="form-control" placeholder="" required>
+                                <input type="text" id="erererer" name="v_three_years_income_3" class="form-control" placeholder="" required="required">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <label>LAST THREE YEARS TAX RETURN(in lakhs)*</label>
                             <div class="form-group">
                                 <label>Tax 2021-2020</label>
-                                <input type="text" id="protocol" name="v_three_years_tax_1" class="form-control" placeholder="" required>
+                                <input type="text" id="protocol" name="v_three_years_tax_1" class="form-control" placeholder="" required="required">
                                 <label>Tax 2021-2020</label>
-                                <input type="text" id="protocol" name="v_three_years_tax_2" class="form-control" placeholder="" required>
+                                <input type="text" id="protocol" name="v_three_years_tax_2" class="form-control" placeholder="" required="required">
                                 <label>Tax 2021-2020</label>
-                                <input type="text" id="protocol" name="v_three_years_tax_3" class="form-control" placeholder="" required>
+                                <input type="text" id="protocol" name="v_three_years_tax_3" class="form-control" placeholder="" required="required">
                             </div>
                         </div>
 
@@ -93,17 +94,17 @@
                       <tr>
                         <th>
                         <label for="exampleFormControlSelect1">Year *</label>
-                            <select class="form-control" id="authentication" name="v_balance_sheet_1">
-                                  <option value="0">select one</option>
+                            <select class="form-control" id="authentication" name="v_balance_sheet_1" required>
+                                  <option selected disabled value="">Select One</option>
                                   <option value="2">2021-2020</option>
                                   <option value="3">2020-2019</option>
                                   <option value="4">2019-2018</option>
                                   <option value="5">2018-2017</option>
                             </select>
                         </th>
-                          <th>Balance Sheet Number<input type="text" name="v_balance_sheet_2" id="inputName" class="form-control">
+                          <th>Balance Sheet Number<input type="text" name="v_balance_sheet_2" id="inputName" class="form-control" required="required">
                           </th>
-                          <th>Choose Document file<input type="file" name="v_balance_sheet_1_upload" id="inputName" class="form-control">
+                          <th>Choose Document file<input type="file" name="v_balance_sheet_1_upload" id="inputName" class="form-control" required="required">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                           </div>
@@ -112,17 +113,17 @@
                      <tr>
                         <th>
                         <label for="exampleFormControlSelect1">Year *</label>
-                            <select class="form-control" id="authentication" name="v_balance_sheet_3">
-                                  <option value="0">select one</option>
+                            <select class="form-control" id="authentication" name="v_balance_sheet_3" required>
+                                  <option selected disabled value="">Select One</option>
                                   <option value="2">2021-2020</option>
                                   <option value="3">2020-2019</option>
                                   <option value="4">2019-2018</option>
                                   <option value="5">2018-2017</option>
                             </select>
                         </th>
-                          <th>Balance Sheet Number<input type="text" id="inputName" name="v_balance_sheet_4" class="form-control">
+                          <th>Balance Sheet Number<input type="text" id="inputName" name="v_balance_sheet_4" class="form-control" required="required">
                           </th>
-                          <th>Choose Document file<input type="file" name="v_balance_sheet_2_upload" id="inputName" class="form-control">
+                          <th>Choose Document file<input type="file" name="v_balance_sheet_2_upload" id="inputName" class="form-control" required="required">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                           </div>
@@ -131,17 +132,17 @@
                     <tr>
                         <th>
                         <label for="exampleFormControlSelect1">Year *</label>
-                            <select class="form-control" id="authentication" name="v_balance_sheet_5">
-                                  <option value="0">select one</option>
+                            <select class="form-control" id="authentication" name="v_balance_sheet_5" required>
+                                  <option selected disabled value="">Select One</option>
                                   <option value="2">2021-2020</option>
                                   <option value="3">2020-2019</option>
                                   <option value="4">2019-2018</option>
                                   <option value="5">2018-2017</option>
                             </select>
                         </th>
-                          <th>Balance Sheet Number<input type="text"  name="v_balance_sheet_6" id="inputName" class="form-control">
+                          <th>Balance Sheet Number<input type="text"  name="v_balance_sheet_6" id="inputName" class="form-control" required="required">
                           </th>
-                          <th>Choose Document file<input type="file" name="v_balance_sheet_3_upload" id="inputName" class="form-control">
+                          <th>Choose Document file<input type="file" name="v_balance_sheet_3_upload" id="inputName" class="form-control" required="required">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                           </div>
@@ -154,17 +155,17 @@
                       <tr>
                         <th>
                         <label for="exampleFormControlSelect1">Year *</label>
-                            <select class="form-control" id="authentication" name="v_profit_loss_sheet_1">
-                                  <option value="0">select one</option>
+                            <select class="form-control" id="authentication" name="v_profit_loss_sheet_1" required>
+                                  <option selected disabled value="">Select One</option>
                                   <option value="2">2021-2020</option>
                                   <option value="3">2020-2019</option>
                                   <option value="4">2019-2018</option>
                                   <option value="5">2018-2017</option>
                             </select>
                         </th>
-                          <th>Profit - Loss Sheet Number<input type="text" name="v_profit_loss_sheet_2" id="inputName" class="form-control">
+                          <th>Profit - Loss Sheet Number<input type="text" name="v_profit_loss_sheet_2" id="inputName" class="form-control" required="required">
                           </th>
-                          <th>Choose Document file<input type="file" name="v_profit_loss_sheet_1_upload" id="inputName" class="form-control">
+                          <th>Choose Document file<input type="file" name="v_profit_loss_sheet_1_upload" id="inputName" class="form-control" required="required">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                           </div>
@@ -173,17 +174,17 @@
                      <tr>
                         <th>
                         <label for="exampleFormControlSelect1">Year *</label>
-                            <select class="form-control" id="authentication" name="v_profit_loss_sheet_3">
-                                  <option value="0">select one</option>
+                            <select class="form-control" id="authentication" name="v_profit_loss_sheet_3" required>
+                                  <option selected disabled value="">Select One</option>
                                   <option value="2">2021-2020</option>
                                   <option value="3">2020-2019</option>
                                   <option value="4">2019-2018</option>
                                   <option value="5">2018-2017</option>
                             </select>
                         </th>
-                          <th>Profit - Loss Sheet Number<input type="text" name="v_profit_loss_sheet_4" id="inputName" class="form-control">
+                          <th>Profit - Loss Sheet Number<input type="text" name="v_profit_loss_sheet_4" id="inputName" class="form-control" required="required">
                           </th>
-                          <th>Choose Document file<input type="file" name="v_profit_loss_sheet_2_upload" id="inputName" class="form-control">
+                          <th>Choose Document file<input type="file" name="v_profit_loss_sheet_2_upload" id="inputName" class="form-control" required="required">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                           </div>
@@ -192,17 +193,17 @@
                     <tr>
                         <th>
                         <label for="exampleFormControlSelect1">Year *</label>
-                            <select class="form-control" id="authentication" name="v_profit_loss_sheet_5">
-                                  <option value="0">select one</option>
+                            <select class="form-control" id="authentication" name="v_profit_loss_sheet_5" required>
+                                  <option selected disabled value="">Select One</option>
                                   <option value="2">2021-2020</option>
                                   <option value="3">2020-2019</option>
                                   <option value="4">2019-2018</option>
                                   <option value="5">2018-2017</option>
                             </select>
                         </th>
-                          <th>Profit - Loss Sheet Number<input type="text" name="v_profit_loss_sheet_6" id="inputName" class="form-control">
+                          <th>Profit - Loss Sheet Number<input type="text" name="v_profit_loss_sheet_6" id="inputName" class="form-control" required="required">
                           </th>
-                          <th>Choose Document file<input type="file" name="v_profit_loss_sheet_3_upload" id="inputName" class="form-control">
+                          <th>Choose Document file<input type="file" name="v_profit_loss_sheet_3_upload" id="inputName" class="form-control" required="required">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -213,13 +214,13 @@
                   <thead>
                       <tr>
                         </th>
-                          <th>Name<input type="text" id="inputName" name="v_pan_name_t" class="form-control">
+                          <th>Name<input type="text" id="inputName" name="v_pan_name_t" class="form-control" required="required">
                           </th>
-                          <th>Pan Card Number<input type="text" id="inputName" name="v_pan_number_t" class="form-control">
+                          <th>Pan Card Number<input type="text" id="inputName" name="v_pan_number_t" class="form-control" required="required">
                           </th>
-                          <th>Date of issue<input type="text" id="inputName" name="v_pan_issue_t" class="form-control">
+                          <th>Date of issue<input type="date" name="v_pan_issue_t" id="v_pan_issue_t" class="form-control" required="required">
                           </th>
-                          <th>Choose Document file<input type="file" name="v_pan_issue_t_upload" id="inputName" class="form-control">
+                          <th>Choose Document file<input type="file" name="v_pan_issue_t_upload" id="inputName" class="form-control" required="required">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -230,11 +231,11 @@
                   <thead>
                       <tr>
                         </th>
-                          <th>Name<input type="text" name="v_income_tax_return_name" id="inputName" class="form-control">
+                          <th>Name<input type="text" name="v_income_tax_return_name" id="inputName" class="form-control" required="required">
                           </th>
-                          <th>Income Tax Return Number<input type="text" name="v_income_tax_return_number" id="inputName" class="form-control">
+                          <th>Income Tax Return Number<input type="text" name="v_income_tax_return_number" id="inputName" class="form-control" required="required">
                           </th>
-                          <th>Choose Document file<input type="file" name="v_income_tax_return_name_doc_upload" id="inputName" class="form-control">
+                          <th>Choose Document file<input type="file" name="v_income_tax_return_name_doc_upload" id="inputName" class="form-control" required="required">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -247,11 +248,11 @@
                   <thead>
                       <tr>
                         </th>
-                          <th>State<input type="text" name="v_gst_number_state" id="inputName" class="form-control">
+                          <th>State<input type="text" name="v_gst_number_state" id="inputName" class="form-control" required="required">
                           </th>
-                          <th>Active GST Serial Number<input type="text" name="v_gst_serial_number" id="inputName" class="form-control">
+                          <th>Active GST Serial Number<input type="text" name="v_gst_serial_number" id="inputName" class="form-control" required="required">
                           </th>
-                          <th>Choose Document file<input type="file" name="v_gst_doc" id="inputName" class="form-control">
+                          <th>Choose Document file<input type="file" name="v_gst_doc" id="inputName" class="form-control" required="required">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -266,7 +267,7 @@
         <div class="form-group multiple-radio">
            <div class="d-flex justify-content-between">
            <div class="form-check pt-1 pb-1">
-              <input class="form-check-input form-check-input-cve" type="checkbox" name="defaultCheck" id="defaultCheck1" checked value="yes">
+              <input class="form-check-input form-check-input-cve" type="checkbox" name="defaultCheck" id="defaultCheck1" checked value="yes" required="required">
               <label class="form-check-label" for="defaultCheck1">
                     Document finally submitted !!
               </label>
@@ -284,7 +285,7 @@
             <div class="form-group">
               <a href="dashboard11"></a>
                                               
-              <button type="Submit" class="btn-second btn-submit ">Submit</button>
+              <button type="Submit" class="btn-success">Submit</button>
     
               </a>
                 <!-- <input type="submit" value="Save & Next" class="btn btn-success"> -->

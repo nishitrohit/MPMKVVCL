@@ -22,6 +22,9 @@
     border-color: #10707f;
 }
 
+label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: inherit;
+}
  </style>
 </head>
 <!--<body class="hold-transition sidebar-mini">-->
@@ -44,7 +47,7 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-8">
+          <div class="col-12">
             <div class="card card-primary">
               <div class="card-body" >
                   <div class="btn-group w-100 mb-2 ">
@@ -64,18 +67,18 @@
                 {% csrf_token %}
               <div class="container">
                 <table class="table">
-                  <label for="inputStatus">1.NSIC/MSME/DIC REGISTRATION</label>
+                  <label> 1.NSIC/MSME/DIC REGISTRATION </label>
                   <thead>
                       <tr>
-                        <th>office Name<input type="text" name="v_office_name" id="inputName" class="form-control">
+                        <th>office Name<input type="text" name="v_office_name" id="inputName" class="form-control" required="required">
                         </th>
-                          <th>NSIC/MSME/DIC/Registration number<input type="text" name="v_dic_reg_num" id="inputName" class="form-control">
+                          <th>NSIC/MSME/DIC/Registration number<input type="text" name="v_dic_reg_num" id="inputName" class="form-control" required="required">
                           </th>
-                          <th>Issue Date<input type="text" name="v_issue_date"  id="inputName" class="form-control">
+                          <th>Issue Date<input type="date" id="v_issue_date" name="v_issue_date" class="form-control" required="required">
                           </th>
-                          <th>END Date<input type="text" id="inputName" name="v_end_date" class="form-control">
+                          <th>END Date<input type="date" id="v_end_date" name="v_end_date" class="form-control" required="required">
                           </th>
-                          <th><input type="button" class="button btn btn-primary" value="View"></th>
+                          <th><input type="button" class="button btn btn-primary" value="View" required="required"></th>
                       </tr>
                   </thead>
                   
@@ -86,13 +89,13 @@
                   <label for="inputStatus">2.ADHAAR CARD(proprietor/Director/Prartner)</label>
                   <thead>
                       <tr>
-                        <th>Adhar card Holder<input type="text" name="v_p_aadhar_hoder_name" id="inputName" class="form-control">
+                        <th>Adhar card Holder<input type="text" name="v_p_aadhar_hoder_name" id="v_p_aadhar_hoder_name" class="form-control" required="required">
                         </th>
-                          <th>Adhar card Registration number<input type="text" name="v_p_aadhar_reg_number" id="inputName" class="form-control">
+                          <th>Adhar card Registration number<input type="text" name="v_p_aadhar_reg_number" id="v_p_aadhar_reg_number" class="form-control" required="required">
                           </th>
-                          <th>Issue Date<input type="text" name="v_p_issue_date" id="inputName" class="form-control">
+                          <th>Issue Date<input type="date" id="v_p_issue_date" name="v_p_issue_date" class="form-control" required="required">
                           </th>
-                          <th>END Date<input type="text" name="v_p_a_end_date" id="inputName" class="form-control">
+                          <th>END Date<input type="date" id="v_p_a_end_date" name="v_p_a_end_date" class="form-control" required="required">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
 
@@ -106,13 +109,13 @@
                   <label for="inputStatus">3.PROOF OF FIRM/COMPANY REGISTRATION</label>
                   <thead>
                       <tr>
-                        <th>office Name<input type="text" name="v_p_office_name" id="inputName" class="form-control">
+                        <th>office Name<input type="text" name="v_p_office_name" id="v_p_office_name" class="form-control" required="required">
                         </th>
-                          <th>proof of Registration number<input type="text" name="v_p_reg_number" id="inputName" class="form-control">
+                          <th>proof of Registration number<input type="text" name="v_p_reg_number" id="v_p_reg_number" class="form-control" required="required">
                           </th>
-                          <th>End Date<input type="text" id="inputName" name="v_p_end_date" class="form-control">
+                          <th>End Date<input type="date" id="v_p_end_date" name="v_p_end_date" class="form-control" required="required" >
                           </th>
-                          <th>uploade file<input type="file"  name="v_upload_file" accept="image/*" id="inputName" class="form-control">
+                          <th>uploade file<input type="file" id="v_upload_file" name="v_upload_file" accept="image/*" class="form-control" required="required">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                           </div>
@@ -125,12 +128,12 @@
                   <label for="inputStatus">4.ADHAAR CARD FATHER</label>
                   <thead>
                       <tr>
-                        <th>Adhaar card holder<input type="text" name="v_father_aadhar_name" id="inputName" class="form-control">
+                        <th>Adhaar card holder<input type="text" name="v_father_aadhar_name" id="v_father_aadhar_name" class="form-control" required="required">
                         </th>
                           </th>
-                          <th>adaar card mother number<input type="text" name="v_father_number" id="inputName" class="form-control">
+                          <th>adaar card mother number<input type="text" name="v_father_number" id="v_father_number" class="form-control" required="required">
                           </th>
-                          <th>Upload file<input type="file" id="inputName" name="v_upload_file_father" accept="image/*" class="form-control">
+                          <th>Upload file<input type="file" id="v_upload_file_father" name="v_upload_file_father" accept="image/*" class="form-control" required="required">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -142,11 +145,12 @@
                   <label for="inputStatus">5.ADHAAR CARD MOTHER</label>
                   <thead>
                       <tr>
-                        <th>Adhaar card holder<input type="text" name="v_mother_aadhar_name" id="inputName" class="form-control">
+                        <th>Adhaar card holder<input type="text" name="v_mother_aadhar_name" id="v_mother_aadhar_name" class="form-control" required="required">
                         </th>
-                        <th>Adhaar card mother number<input type="text" name="v_mother_number" id="inputName" class="form-control">
+                        <th>Adhaar card mother number
+                          <input type="text" name="v_mother_number" id="v_mother_number" class="form-control" required="required">
                         </th>
-                          <th>Upload file<input type="file" name="v_upload_file_mother" accept="image/*" id="file" class="form-control">
+                          <th>Upload file<input type="file" name="v_upload_file_mother" accept="image/*" id="v_upload_file_mother" class="form-control" required="required">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>
                       </tr>
@@ -158,11 +162,9 @@
                   <label for="inputStatus">6.faculty license number</label>
                   <thead>
                       <tr>
-                        <th>faculty license number<input type="text" name="v_faculty_license_number" id="inputName" class="form-control">
+                        <th>faculty license number<input type="text" name="v_faculty_license_number" id="v_faculty_license_number" class="form-control" required="required">
                         </th>
-                          <th>Choose Documents<input type="file" name="v_upload_file_factory" accept="image/*" id="file" class="form-control">
-                          </th> id="file" class="form-control">
-                          </th>
+                          <th>Choose Documents<input type="file" name="v_upload_file_factory" accept="image/*" id="v_upload_file_factory" class="form-control" required="required">
                           </th>
                           <th><input type="button" class="button btn btn-primary" value="View"></th>    
                       </tr>
@@ -174,7 +176,7 @@
                 <table class="table">
                   <div class="form-group">
                     <label>Area Of Land Occupied By Factor *</label>
-                    <input type="text" id="protocol" name="v_area_occupied" class="form-control" placeholder="" required>
+                    <input type="text" id="v_area_occupied" name="v_area_occupied" class="form-control" placeholder="" required="required">
                 </div>
               </div>
 
@@ -182,7 +184,7 @@
                 <table class="table">
                   <div class="form-group">
                     <label>Number Of Working Shift in Factory *</label>
-                    <input type="text" id="protocol" name="v_working_shift" class="form-control" placeholder="" required>
+                    <input type="text" id="v_working_shift" name="v_working_shift" class="form-control" placeholder="" required="required">
                 </div>
               </div>
 
@@ -190,7 +192,7 @@
                 <table class="table">
                   <div class="form-group">
                     <label>Other Persional Work In Factroyr *</label>
-                    <input type="text" id="protocol" name="v_personal_work_factroyr" class="form-control" placeholder="" required>
+                    <input type="text" id="v_personal_work_factroyr" name="v_personal_work_factroyr" class="form-control" placeholder="" required="required">
                 </div>
               </div>
 
@@ -198,7 +200,7 @@
                 <table class="table">
                   <div class="form-group">
                     <label>Buit Up Area Of Factory *</label>
-                    <input type="text" id="protocol" name="v_buit_up" class="form-control" placeholder="" required>
+                    <input type="text" id="v_buit_up" name="v_buit_up" class="form-control" placeholder="" required="required">
                 </div>
               </div>
 
@@ -206,20 +208,29 @@
                 <table class="table">
                   <div class="form-group">
                     <label>Product Capacity Per annum(Qulity) *</label>
-                    <input type="text" id="protocol" name="v_product_capacity" class="form-control" placeholder="" required>
+                    <input type="text" id="v_product_capacity" name="v_product_capacity" class="form-control" placeholder="" required="required">
                 </div>
               </div>
               </div>
           </div>
-         
-          <button  style="margin-top: 10px;" class="button btn btn-primary"  onclick="preview()">Preview</button>&nbsp;&nbsp;
-          <!-- <button  style="margin-top: 10px;" class="button btn btn-primary" onclick="preview()">Save & Next</button> -->
-          <a href="dashboard9"></a>
-                                              
-          <button type="Submit" class="btn-second btn-submit ">Submit</button>
 
-          </a>
+
+    <div class="row card-body">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <button  style="margin-top: 10px;" class="button btn btn-primary"  onclick="preview()">Preview</button>&nbsp;&nbsp;
+<!--                <input type="reset" value="Preview" class="btn btn-secondary" onclick="preview()">-->
+            </div>
         </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+              <a href="dashboard9"></a>
+              <button type="Submit" class="btn-success">Save and Next</button>
+<!--              <input type="submit" value="Save and Next" class="btn btn-success">-->
+            </div>
+        </div>
+    </div>
+
 
       </div><!-- /.container-fluid -->
     </section>

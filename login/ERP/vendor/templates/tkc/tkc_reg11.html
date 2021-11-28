@@ -1,0 +1,456 @@
+{% extends 'tkc/base.html' %}
+ {% load static %}
+ {% block pagetitle %}  {% endblock pagetitle %}
+{% block css %}
+     .btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #10707f;
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: inherit;
+}
+ {% endblock css %}
+{% block body %}
+
+
+
+<div class="wrapper mb-8">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content">
+    <!-- Content Header (Page header) -->
+
+<!-- Main content -->
+
+    <section class="content">
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-primary">
+              <div class="card-body" >
+                  <div class="btn-group w-100 mb-2 float-left">
+                    <a class="btn btn-info active float-left" data-filter="all" style="background-color: #007bff;"> Upload Your Document </a>
+                  </div>
+                <div>
+                </div>
+
+              </div>
+              <form   action="tkc_reg_eleven" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+              <div class="container">
+                <table class="table">
+                    <label for="inputStatus"><b>1. AADHAR CARD * </b></label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          AADHAR CARD NO
+                      </th>
+                      <th style="width:20%">
+                          Document issued Date
+                      </th>
+                        <th style="width:20%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="one" id="v_office_name_supply" class="form-control" PLACEHOLDER="UIDAI" required>
+                        </td>
+                    <td><input type="number" name="two" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="three" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="four" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="five" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+
+                      <table class="table">
+                          <label for="inputStatus"> <b>2. ACTIVE GST NO (ALONG WITH COPY OF CURRENT PAID CHALLAN AND ITS RECEIPT) * </b></label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          ACTIVE GST SERIAL NO
+                      </th>
+                      <th style="width:20%">
+                          Document issued Date
+                      </th>
+                        <th style="width:20%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="six" id="v_office_name_supply" class="form-control" placeholder="GST DEPARTMENT" required>
+                        </td>
+                    <td><input type="text" name="seven" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="eight" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="nine" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="ten" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+                   <table class="table">
+                       <label for="inputStatus"> <b>3. COMPLETE FINANCIAL DOCUMENT OF LAST THREE CONSECUTIVE FINANCIAL YEAR </b></label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          COMPLETE YEAR ITR NUMBER *
+                      </th>
+                      <th style="width:20%">
+                          Document issued Date
+                      </th>
+                        <th style="width:20%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="eleven" id="v_office_name_supply" class="form-control" placeholder="INCOME TAX RETURN" required>
+                        </td>
+                    <td><input type="text" name="twelve" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="thrteen" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="fourteen" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="fifteen" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+
+                      <table class="table">
+                  <label for="inputStatus"> <b>4. DETAIL OF CONTRACTOR & SUPERVISOR & RELATIVE WHETHER EX-EMPLOYEE/EMPLOYEE OF MPEB/MPSEB & MP DISCOM/OTHER STATE DISCOM</b></label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          EX Employ No
+                      </th>
+                      <th style="width:20%">
+                          Document issued Date
+                      </th>
+                        <th style="width:20%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="sixteen" id="v_office_name_supply" class="form-control" required="required">
+                        </td>
+                    <td><input type="text" name="seventeen" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="eighteen" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="nineteen" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="twenteen" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+                      <table class="table">
+                          <label for="inputStatus"><b>5. ELECTRICAL LICENSE </b></label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          ELECTRICAL LICENSE NUMBER
+                      </th>
+                      <th style="width:20%">
+                          Document issued Date
+                      </th>
+                        <th style="width:20%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="one_one" id="v_office_name_supply" class="form-control"  placeholder="M.P LICENCING BOARD" required>
+                        </td>
+                    <td><input type="text" name="two_two" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="three_three" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="four_four" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="five_five" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+                    <table class="table">
+                  <label for="inputStatus"><b>6. AEPF(ALONG WITH COPY OF CURRENT PAID CHALLAN AND ITS RECEIPT)</b></label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          EPF REGISTRATION NO *
+                      </th>
+                      <th style="width:15%">
+                          Document issued Date
+                      </th>
+                        <th style="width:15%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="six_six" id="v_office_name_supply" class="form-control" placeholder="EPF DEPARTMENT" required>
+                        </td>
+                    <td><input type="text" name="seven_seven" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="eight_eight" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="nine_nine" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="ten_ten" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+                 <table class="table">
+                     <label for="inputStatus"><b>7. ESI REGISTRATION (ALONG WITH COPY OF CURRENT PAID CHALLAN AND ITS RECEIPT) </b></label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          ESI Registration No
+                      </th>
+                      <th style="width:20%">
+                          Document issued Date
+                      </th>
+                        <th style="width:20%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="eleven_eleven" id="v_office_name_supply" class="form-control" placeholder="ESI DEPARTMENT" required>
+                        </td>
+                    <td><input type="text" name="twelve_twelve" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="thrteen_thrteen" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="fourteen_fourteen" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="fifteen_fifteen" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+
+                  <table class="table">
+                     <label for="inputStatus"><b>8. EXPERIENCE CERTIFICATE $ RELATED WORKS FOR AT LEAST 5 YEARS  </b></label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          Experience Certificate
+                      </th>
+                      <th style="width:20%">
+                          Document issued Date
+                      </th>
+                        <th style="width:20%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="sixteen_sixteen" id="v_office_name_supply" class="form-control" required="required">
+                        </td>
+                    <td><input type="text" name="seventeen_seventeen" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="eighteen_eighteen" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="nineteen_nineteen" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="twenteen_twenteen" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+
+                  <table class="table">
+                     <label for="inputStatus"><b>9. NAME AND REGISTRATION NO OF SUPERVISOR </b></label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          Document Name
+                      </th>
+                      <th style="width:20%">
+                          Document issued Date
+                      </th>
+                        <th style="width:20%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="one_two" id="v_office_name_supply" class="form-control" required="required">
+                        </td>
+                    <td><input type="text" name="two_one" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="three_two" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="four_two" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="five_two" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+
+                  <table class="table">
+                     <label for="inputStatus"><b>10. NAME OF CONTRACTOR/FIRM AND CLASS </b></label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          Document Name
+                      </th>
+                      <th style="width:20%">
+                          Document issued Date
+                      </th>
+                        <th style="width:20%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="six_two" id="v_office_name_supply" class="form-control" required="required">
+                        </td>
+                    <td><input type="text" name="seven_two" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="eight_two" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="nine_two" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="ten_two" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+                  <table class="table">
+                     <label for="inputStatus"><b>11. PAN CARD NUMBER </b></label>
+                  <tr>
+                      <th style="width:20%">
+                           Document Office Name
+                      </th>
+                      <th style="width: 20%">
+                          Document Name
+                      </th>
+                      <th style="width:20%">
+                          Document issued Date
+                      </th>
+                        <th style="width:20%">
+                         Document Expired Date
+                      </th>
+                      <th style="width:20%">
+                          Document Uplaod
+                      </th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" name="eleven_two" id="v_office_name_supply" class="form-control" required="required">
+                        </td>
+                    <td><input type="text" name="twelve_two" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td><input type="date" name="thirtee_two" id="v_office_name_supply" class="form-control" required="required"></td>
+                    <td >
+                          <input type="date" name="fourteen_two" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                      <td>
+                          <input type="file" name="fifteen_two" id="v_office_name_supply" class="form-control" required="required">
+                      </td>
+                  </tr>
+                </table>
+
+              </div>
+              <div class="container">
+                <div class="row card-body">
+      <div class="col-lg-6">
+            <div class="form-group">
+                <input type="reset" value="Previous" class="btn btn-secondary">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <!-- <div class="form-group">
+                <input type="submit" value="Save & Next" class="btn btn-success">
+            </div> -->
+         
+
+                  <button type="Submit" class="btn-success ">Submit</button>
+
+                  </a>
+          </div>
+        </div>
+              </div>
+
+
+              </div>
+          </div>
+        </div>
+
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+
+<script>
+  $(function () {
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({gutterPixels: 3});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+  })
+</script>
+
+{% endblock body %}

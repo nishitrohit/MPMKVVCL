@@ -1,76 +1,53 @@
- {% extends 'vendor/vendor_base.html' %}
- {% load static %}
- {% block pagetitle %}  {% endblock pagetitle %}</li>
- {% block body %}
+{% extends 'vendor/vendor_base.html' %}
+{% load static %}
+{% block pagetitle %}  {% endblock pagetitle %}</li>
+{% block body %}
 
-<div class="card-body">
-   <table id="example2" class="table table-bordered table-hover">
-   <thead>
-     <tr>
-         <th style="width:5%" class="btn-info">
-             Serial No
-         </th>
-         <th style="width: 25%" class="btn-primary">
-             Material Name
-         </th>
-         <th style="width: 25%" class="btn-info">
-             Material Type Image
-         </th>
-           <th style="width: 25%" class="btn-primary">
-           Purchase Order Date
-         </th>
-         <th style="width:20%" class="btn-info">
-             Dispatch Date
-         </th>
-     </tr>
-     </thead>
-     <tbody>
-     <tr >
-       <td>1.</td>
-       <td>Transformer</td>
-       <td>A</td>
-       <td >
-             10/10/2021
-         </td>
-         <td>
-             20/10/2021
-         </td>
-     </tr>
-       <tr>
-       <td>2.</td>
-       <td>Switcher</td>
-       <td>A</td>
-       <td >
-             20/10/2021
-         </td>
-         <td>
-             22/10/2021
-         </td>
-     </tr>
-       <tr>
-       <td>3.</td>
-       <td>Conductor</td>
-       <td>A</td>
-       <td >
-             24/10/2021
-         </td>
-         <td>
-             27/10/2021
-         </td>
-     </tr>
-       <tr>
-       <td>4.</td>
-       <td>Wires</td>
-       <td>A</td>
-       <td >
-             02/11/2021
-         </td>
-         <td>
-             09/11/2021
-         </td>
-     </tr>
-     </tbody>
-   </table>
- </div>
+<center>
+      <form  action="vendor_material"  method="POST">
+             {% csrf_token %}
+             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Send" class="btn btn-success">
+             </td>
+      <!-- <img src="static/assets/h_images/po.png"  width="1000" height="800"> -->
+      <table  class="table table-striped">
+             <thead>
+                 <tr>
+                     <!-- <th>Id</th> -->
+                     <th>PO Number</th>
+                     
+                     <th>PO</th>
 
- {% endblock body %}
+                     <th>SEND DISPATCH</th>
+                 </tr>
+                 <!-- <input type="checkbox" name="vehicle3" value="Boat" checked> -->
+                
+             </thead>
+             <tbody id="data">
+                <!-- <tr> -->
+                  
+                {% for i, j in final %}
+                <tr>
+                  <td>{{i}}</td>
+                  <td><img src={{j}} style="width: 400px;">
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <select id="stateuser" name="vehicle3" class=" form-control form-control-submit registration-cont" required="required">
+                            <option value="select-option-user" type="test" disabled selected hidden selected>Select State</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                           
+                            
+                          </select>
+                       
+                    </td>
+                    
+                </tr> 
+                {% endfor %}
+               
+               
+               
+             </tbody>
+          </table>
+         
+</center>
+
+{% endblock body %}

@@ -103,10 +103,87 @@ class officerAdmin(admin.ModelAdmin):
 
     list_display = (
         "v_company_name",
-        "user_name",
-        "password", 
+        "verified",
+        "po_number"
 
     )
     list_filter = (
-        'user_name',
+        
+        'verified',
+        'po_number'
    )
+
+
+@admin.register(dispatch)
+class DispatchAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "material_name",
+        "po_number"
+
+    )
+    list_filter = (
+        'material_name',
+        'po_number'
+       
+   )
+
+
+@admin.register(my_order)
+class OrderAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "v_company_name",
+        "po_number"
+
+    )
+    list_filter = (
+        'v_company_name',
+        'po_number'
+       
+   )
+
+@admin.register(TkcLogin)
+class TkcLoginAdmin(admin.ModelAdmin):
+    list_display = (
+        "v_service_type",
+        "C_Name",
+        "Contact_no"
+       
+    )
+    list_filter= (
+         "v_service_type",
+         "C_Name",
+         "Contact_no"
+    )
+
+
+# @admin.register(Company_Details)
+# class Company_DetailsAdmin(admin.ModelAdmin):
+#     list_display = (
+#         "C_Contact_No",
+#         "C_Fax_No",
+#         "C_Pan_No"
+       
+#     )
+#     list_filter= (
+#         "C_Contact_No",
+#         "C_Fax_No",
+#         "C_Pan_No"
+#     )
+
+
+
+# @admin.register(Address)
+# class Company_DetailsAdmin(admin.ModelAdmin):
+#     list_display = (
+#         "Line_1",
+#         "Line_2",
+#         "C_Contact_No"
+       
+#     )
+#     list_filter= (
+#         "Line_1",
+#         "Line_2",
+#         "C_Contact_No"
+#     )

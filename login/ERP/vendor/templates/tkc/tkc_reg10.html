@@ -1,0 +1,106 @@
+{% extends 'tkc/base.html' %}
+ {% load static %}
+ {% block pagetitle %}  {% endblock pagetitle %}
+{% block css %}
+.btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #10707f;
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: inherit;
+}
+ {% endblock css %}
+{% block body %}
+
+<div class="wrapper">
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content">
+    <!-- Content Header (Page header) -->
+<!-- Main content -->
+<form action="tkc_reg_ten" method="POST">
+  {% csrf_token %}
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-primary">
+              <div class="card-body" >
+                  <div class="btn-group w-100 mb-2 ">
+                    <a class="btn btn-info active" href="javascript:void(0)" data-filter="all" style="background-color: #007bff;">Technical/Eligibility Details  </a>
+                    <a class="btn btn-info " href="javascript:void(0)" data-filter="1" style="background-color: #007bff;"> Annual Income Details</a>
+                    <a class="btn btn-info" href="javascript:void(0)" data-filter="2" style="background-color: #007bff;"> Document Details </a>
+                    <a class="btn btn-info" href="javascript:void(0)" data-filter="3" style="background-color: #007bff;"> Paid Amount  Details </a>
+                  </div>
+                <div>
+                  <div class="filter-container p-3 col-md-12 float-centered">
+                     <div class="row">
+                      <div class="col-lg-6">
+                          <label> <b>TURN OVER OF LAST THREE YEARS(in lakhs), PREVIOUS LAST THREE YEARS MAXIMUM INCOME(in lakhs) * </b></label>
+                            <div class="form-group">
+                                <label>Yearly Income 2021-2020</label>
+                                <input type="text" id="erererer" name="v_three_years_income_1" class="form-control" placeholder="" required="required">
+                                <label>Yearly Income 2020-2019 </label>
+                                <input type="text" id="erererer" name="v_three_years_income_2" class="form-control" placeholder="" required="required">
+                                <label>Yearly Income 2019-2018 </label>
+                                <input type="text" id="erererer" name="v_three_years_income_3" class="form-control" placeholder="" required="required">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <label><b>PREVIOUS LAST THREE YEARS TAX RETURN(in lakhs) * </b></label>
+                            <div class="form-group">
+                                <label>Tax 2021-2020</label>
+                                <input type="text" id="protocol" name="v_three_years_tax_1" class="form-control" placeholder="" required="required">
+                                <label>Tax 2020-2019</label>
+                                <input type="text" id="protocol" name="v_three_years_tax_2" class="form-control" placeholder="" required="required">
+                                <label>Tax 2019-2018</label>
+                                <input type="text" id="protocol" name="v_three_years_tax_3" class="form-control" placeholder="" required="required">
+                            </div>
+                        </div>
+                        <div class="row card-body">
+      <div class="col-lg-6">
+            <div class="form-group">
+                <input type="reset" value="Previous" class="btn btn-secondary">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+              <a href="dashboard12"></a>
+
+                  <button type="Submit" class="btn-success">Submit</button>
+
+                  </a>
+                <!-- <input type="submit" value="Save & Next" class="btn btn-success"> -->
+            </div>
+        </div>
+    </div>
+
+                  </div>
+
+  <!-- /.content-wrapper -->
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+
+<script>
+  $(function () {
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({gutterPixels: 3});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+  })
+</script>
+
+{% endblock body %}

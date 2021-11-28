@@ -4,7 +4,46 @@
  {% block body %}
 
 <center>
-       <img src="static/assets/h_images/po.png"  width="1000" height="800">
+       <form  action="vendor_purchase"  method="POST">
+              {% csrf_token %}
+       <!-- <img src="static/assets/h_images/po.png"  width="1000" height="800"> -->
+       <table  class="table table-striped">
+              <thead>
+                  <tr>
+                      <!-- <th>Id</th> -->
+                      <th>PO Number</th>
+                      
+                      <th>PO</th>
+                  </tr>
+                  <!-- <input type="checkbox" name="vehicle3" value="Boat" checked> -->
+                 
+              </thead>
+              
+              <tbody id="data">
+                  <!-- <tr> -->
+                    
+                  {% for i, j in final %}
+                  <tr>
+                    <td>{{i}}</td>
+                    <td><img src={{j}} style="width: 400px;"></td>
+                  </tr> 
+                  {% endfor %}
+                    
+                      <!-- <td>{% for i in father_data %}
+                        <img src={{i}} style="width: 400px;"><br>
+                      {% endfor %}</td>
+  
+                      <td>{% for i in mother_data %}
+                        <img src={{i}} style="width: 400px;"><br>
+                      {% endfor %}</td> -->
+  
+                      
+                     
+                  <!-- </tr> -->
+               
+                
+              </tbody>
+           </table>
 </center>
 
  {% endblock body %}

@@ -17,7 +17,7 @@
 <!-- Site wrapper -->
 <div class="wrapper">
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+<!--  <div class="content-wrapper">-->
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -32,11 +32,9 @@
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <div class="card card-primary">
-            <div class="card-header"><h1>सेवा प्रबंधन</h1>
-
-              <!-- <h3 class="card-title">Please fill in your details and company/firm details before using your account!</h3> -->
+            <div class="card-header"><h1>service management</h1>
 
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -68,35 +66,35 @@
                 <label for="inputName">collection Agent</label>
                 <!-- <input type="text" name="fax" id="inputName" class="form-control"> -->
               </div>
-                <label for="inputStatus">VENDOR *</label><br>
-                <select id="serviceOwnerType" name="experience" data-validate="required" class="form-control">
-                      <option value="0">select one</option>
+                <label for="experience">VENDOR *</label><br>
+                <select id="experience" name="experience" data-validate="required" class="form-control" required>
+<!--                      <option value="0">select one</option>-->
+                      <option selected disabled value="">Select One</option>
                       <option value="02">supplier</option>
-                        <option value="03">vendor</option>
+                      <option value="03">vendor</option>
                 </select>
-                <div class="form-group">
-                    <label for="inputName">Work Experience *</label>
-                    <input type="text" name="work_experience" id="inputName" class="form-control">
+              <div class="form-group">
+                    <label for="work_experience">Work Experience *</label>
+                    <input type="text" name="work_experience" id="work_experience" class="form-control" required>
               </div>
               <div class="form-group">
-                <label for="inputName">Turn Over *</label>
-                <input type="text" name="turn_over" id="inputName" class="form-control">
+                <label for="turn_over">Turn Over *</label>
+                <input type="text" name="turn_over" id="turn_over" class="form-control" required>
               </div>
           </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-         
-          <a href="dashboard7"></a>
-                                              
-          <button type="Submit" class="btn-second btn-submit ">Submit</button>
 
-          </a>
 
+    <div class="col-lg-12">
+        <div class="form-group">
+            <a href="dashboard7"></a>
+            <button type="Submit" class="btn-success">Submit</button>
         </div>
-      </div>
+    </div>
+
+
     </section>
   </form>
     <!-- /.content -->
