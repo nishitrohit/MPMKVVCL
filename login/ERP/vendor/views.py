@@ -461,6 +461,9 @@ def Vendor_Registration_Nine(request):
     return render(request,'vendor/vendor_reg9.html')
 
 
+def nabl_Registration_Ten(request):
+    return render(request,'vendor/nabl_reg10.html')
+
 def Vendor_Registration_Ten(request):
     if request.session.has_key('uid'):
         if request.method == "POST":
@@ -500,6 +503,8 @@ def Vendor_Registration_Ten(request):
     return render(request,'vendor/vendor_reg10.html')
 
 
+def nabl_Registration_Eleven(request):
+    return render(request, 'vendor/nabl_reg11.html')
 
 def Vendor_Registration_Eleven(request):
     if request.session.has_key('uid'):

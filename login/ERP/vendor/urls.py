@@ -67,7 +67,7 @@ urlpatterns = [
 	path('nabl_Registration_seven', views.nabl_Registration_Seven, name='nabl_dashboard6'),
 	path('nabl_Registration_eight', views.nabl_Registration_Eight, name='nabl_dashboard7'),
 	path('nabl_Registration_nine', views.nabl_Registration_Nine, name='nabl_dashboard8'),
-
-
+	path('nabl_Registration_ten', views.nabl_Registration_Ten, name='nabl_dashboard9'),
+	path('nabl_Registration_eleven', views.nabl_Registration_Eleven, name='nabl_dashboard10'),
 
 ]
