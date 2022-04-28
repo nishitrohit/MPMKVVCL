@@ -1,0 +1,86 @@
+{% extends 'vendor/RCA_vendor_base.html' %}
+{% load static %}
+{% block pagetitle %} {% endblock pagetitle %}</li>
+{% block body %}
+<!-- Main content -->
+<section class="content">
+
+  <!-- Default box -->
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">All RCA Order</h3>
+
+      <div class="card-tools">
+        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+          <i class="fas fa-minus"></i>
+        </button>
+        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    <div class="card-body p-0">
+      <table class="table table-striped projects m-3" style="width:95%">
+        <thead class="bg-primary">
+          <tr>
+            <th style="width: 1%">
+              #
+            </th>
+            <th style="width: 10%">
+              Vendor
+            </th>
+            <th style="width: 10%">
+              Vendor Mail Id
+            </th>
+            <th style="width: 10%">
+              RCA Order No
+            </th>
+            <th style="width: 10%">
+              Bid Open Date
+            </th>
+            <th style="width:10%">
+              View
+            </th>
+            <th style="width:10%">
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for name in data%}
+          <tr>
+            <td>
+              {{ forloop.counter }}
+            </td>
+            <td>
+              <b>{{name.wo.vendor_id.CompanyName_E}}</b>
+            </td>
+            <td>
+              <b>{{name.wo.vendor_id.Email_Id}}</b>
+            </td>
+            <td>
+              <b>MPCZWO{{name.wo.id}}</b>
+            </td>
+            <td>
+              <b>{{name.wo.bid_open_date }}</b>
+            </td>
+            <td>
+              <a href="/vendor/rca_release_order_view/{{name.id}}"  class="fas fa-eye text-secondary">View</a>
+            </td>
+            <td>
+              <a href="/vendor/oil_request1/{{name.id}}"  class="text-secondary"><b>Request For oil</b></a>
+            </td>
+          {% endfor %}
+          </tr>  
+        </tbody>
+      </table>
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+
+</section>
+<!-- /.content -->
+</div>
+
+{% endblock body %}
