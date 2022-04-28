@@ -1,0 +1,89 @@
+ {% extends 'vendor/RCA_vendor_base.html' %}
+{% load static %}
+{% block pagetitle %} {% endblock pagetitle %}</li>
+{% block body %}
+
+  <div class="mx-auto" style="width: 85%;">
+<table class="table table-striped m-4 " border="2" style="width:90%">
+            <thead class="bg-primary">
+              <tr>
+                <th colspan="2">Work Order Information</th>
+
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr>
+                 <td>Work Order No</td>
+                  <td><b>MPCZ00{{ ro.wo.id}}</b></td>
+              </tr>
+               <tr>
+                 <td>RCA Vendor Company name</td>
+                  <td><b>{{ ro.wo.vendor_id.CompanyName_E}}</b></td>
+              </tr>
+              <tr>
+                 <td> Material </td>
+                  <td><b>{{ ro.wo.wo_specification}}</b></td>
+              </tr>
+            </tbody>
+     </table>
+
+
+     <table class="table table-striped m-4 " border="2" style="width:90%">
+    <thead class="bg-primary">
+    <tr>
+      <th scope="col-3"> Rating </th>
+        <th scope="col-3"> Description </th>
+      <th scope="col-9"> Quantity </th>
+        <th scope="col-9"> Rate </th>
+        <th scope="col-9"> Total amount </th>
+
+     </tr>
+     </thead>
+     <tbody>
+        {%  for data in material %}
+    <tr>
+          <td>{{data.rating}}</td>
+          <td>{{data.description}}</td>
+          <td>{{data.quantity}}</td>
+          <td>{{data.rate}}</td>
+          <td>{{data.total_rate}}</td>
+    </tr>
+      {% endfor %}
+       </tbody>
+      </table>
+     <table class="table table-striped m-4 " border="2" style="width:90%">
+    <thead class="bg-primary">
+    <tr>
+      <th scope="col-3"> Rating </th>
+      <th scope="col-3"> XMR Code </th>
+     </tr>
+     </thead>
+     <tbody>
+        {%  for data in xmr %}
+    <tr>
+          <td>{{data.material.rating}}</td>
+          <td>{{data.xmr}}</td>
+    </tr>
+      {% endfor %}
+       </tbody>
+      </table>
+
+           <form action="/vendor/oil_request1/{{ro.id}}" method="POST">
+            {% csrf_token %}
+            <div class="col-md-4 m-2">
+                <div class="form-group">
+                    <label for="add1"> Enter Oil Amount (Liter) <span style="color: red;">*</span></label>
+                    <input type="Number" name="quantity" id="sched_desc" onfocus="validateForm()" onkeyup="fill();validateForm()" onchange="fill();" class="form-control" placeholder="Oil Amount In Liter" required>
+                    <span id="address" class="text-danger font-weight-bold" style="font-size: 80%;"></span>
+                </div>
+            </div>
+        <div class="row">
+       <div class="col-md-10">
+         <input type="submit" onclick="check()" name="submit" value="Request"
+            class="btn btn-success float-right m-4" autocomplete="off">
+           </div>
+      </div>
+      </form>
+    </div>
+ {% endblock body %}
